@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greco Romano RPG</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/jpg" href="icon.jpg">
+</head>
+<body>
+
+<!-- Starfield -->
+<div id="starfield"></div>
+
+<!-- Nav Overlay -->
+<div id="nav-overlay"></div>
+
+<!-- Side Nav (Mobile) -->
+<nav id="side-nav">
+  <div class="nav-header">
+    <div class="nav-title">Greco Romano RPG</div>
+    <div class="nav-subtitle">Grimório dos Cavaleiros</div>
+  </div>
+  <div class="nav-items" id="side-nav-items"></div>
+  <div class="gold-rule mx-5 mt-4"></div>
+  <div class="px-5 py-4" style="font-family:'Crimson Pro',serif; font-size:0.78rem; color: var(--silver-dim); line-height:1.6;">
+    Sistema de consulta para RPG<br/>Cavaleiros Greco Romano
+  </div>
+</nav>
+
+<!-- Header -->
+<header id="app-header">
+  <div class="header-inner">
+    <div class="site-logo">
+      ✦ Greco Romano RPG
+      <span>Grimório dos Cavaleiros</span>
+    </div>
+    <nav id="desktop-nav"></nav>
+    <button id="menu-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Main -->
+<main id="main-content">
+  <!-- Pages rendered here by JS -->
+</main>
+
+<!-- Footer -->
+<footer id="app-footer">
+  <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--silver-dim);">
+    Greco Romano RPG · GRIMÓRIO DOS CAVALEIROS · SISTEMA DE CONSULTA
+  </p>
+</footer>
+
+<script src="database.js"></script>
+<script src="pages.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
