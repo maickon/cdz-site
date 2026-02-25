@@ -399,22 +399,6 @@ const database = [
     ]
   },
   {
-    "table": "Tamanho da Forma Criada ou Invocada",
-    "description": "Tamanho máximo da forma criada ou criatura invocada.",
-    "full_description": "Algumas técnicas permitem alterar o corpo do próprio Cavaleiro ou criar/convocar entidades cósmicas. O Tamanho influencia alcance físico, força, peso, e pode determinar quais manobras são possíveis em combate. O tamanho máximo depende do Rank da técnica.",
-    "data": [
-      { "rank": 1, "tamanho": "Pequeno" },
-      { "rank": 2, "tamanho": "Pequeno" },
-      { "rank": 3, "tamanho": "Pequeno" },
-      { "rank": 4, "tamanho": "Médio" },
-      { "rank": 5, "tamanho": "Médio" },
-      { "rank": 6, "tamanho": "Grande" },
-      { "rank": 7, "tamanho": "Enorme" },
-      { "rank": 8, "tamanho": "Imaneso" },
-      { "rank": 9, "tamanho": "Colossal" }
-    ]
-  },
-  {
     "table":"Quantidade de Peso Manipulável (Kg)",
     "description":"Peso máximo de objetos físicos que podem ser manipulados por força cósmica.",
     "full_description":"Algumas técnicas permitem levantar, empurrar, arremessar ou manipular objetos físicos utilizando força cósmica. O peso máximo manipulável depende do Rank da técnica e é calculado em quilogramas por nível, respeitando um limite máximo quando aplicável.",
@@ -428,22 +412,6 @@ const database = [
       { "rank":7, "peso máximo":"120 Kg por nível (sem limite)" },
       { "rank":8, "peso máximo":"240 Kg por nível (sem limite)" },
       { "rank":9, "peso máximo":"480 Kg por nível (sem limite)" }
-    ]
-  },
-  {
-    "table": "Quantidade de Peso Manipulável (Kg)",
-    "description": "Peso máximo manipulável por força cósmica.",
-    "full_description": "Algumas técnicas permitem levantar, empurrar, arremessar ou manipular objetos físicos por força cósmica. O peso máximo controlado depende do Rank da técnica.",
-    "data": [
-      { "rank": 1, "por nível": 10, "máximo": 80 },
-      { "rank": 2, "por nível": 20, "máximo": 120 },
-      { "rank": 3, "por nível": 30, "máximo": 240 },
-      { "rank": 4, "por nível": 50, "máximo": 480 },
-      { "rank": 5, "por nível": 70, "máximo": 960 },
-      { "rank": 6, "por nível": 90, "máximo": 1920 },
-      { "rank": 7, "por nível": 120, "máximo": null },
-      { "rank": 8, "por nível": 240, "máximo": null },
-      { "rank": 9, "por nível": 480, "máximo": null }
     ]
   },
   {
