@@ -2,9 +2,9 @@ const database = [
   {
     "table": "Requisitos",
     "description": "Requisitos mínimos para progressão de Rank Cósmico.",
-    "full_description": "O requisito estabelece o nível mínimo que uma cavaleiro deverá ter para ter acesso ao ní-vel das técnicas. Cada RANK pertence a um determinado nível. Caso você cumpra tal re-quisito, você estará habilitado a adquirir aquele RANK desde que tenha XP suficiente para pagar o custo necessário para habilitar o RANK.",
+    "full_description": "O requisito estabelece o nível mínimo que uma cavaleiro deverá ter para ter acesso ao nível das técnicas. Cada RANK pertence a um determinado nível. Caso você cumpra tal requisito, você estará habilitado a adquirir aquele RANK desde que tenha XP suficiente para pagar o custo necessário para habilitar o RANK.",
     "data": [
-      { "rank": 1, "nível mínimo": null, "requisito de rank": null },
+      { "rank": 1, "nível mínimo": "-", "requisito de rank": "-" },
       { "rank": 2, "nível mínimo": 4, "requisito de rank": 1 },
       { "rank": 3, "nível mínimo": 6, "requisito de rank": 2 },
       { "rank": 4, "nível mínimo": 8, "requisito de rank": 3 },
@@ -101,9 +101,9 @@ const database = [
     ]
   },
   {
-    "table":"Arremesso (Distância de Projeção)",
-    "description":"Distância em metros que um alvo pode ser projetado por técnicas de arremesso.",
-    "full_description":"Algumas técnicas permitem projetar ou arremessar o alvo a uma determinada distância. A metragem é calculada com base no nível do personagem que executa a técnica, respeitando um limite máximo definido pelo Rank da técnica. A distância final nunca pode exceder o limite máximo indicado para o Rank correspondente.",
+    "table":"Arremesso (Distância)",
+    "description":"Distância em metros que um alvo pode ser arremessado por técnicas de arremesso.",
+    "full_description":"Algumas técnicas permitem arremessar o alvo a uma determinada distância. A metragem é calculada com base no nível do personagem que executa a técnica, respeitando um limite máximo definido pelo Rank da técnica. A distância final nunca pode exceder o limite máximo indicado para o Rank correspondente.",
     "data":[
       { "rank":1, "distância por nível":"1 m por nível", "distância máxima":"até +4 m" },
       { "rank":2, "distância por nível":"1 m por nível", "distância máxima":"até +6 m" },
@@ -186,7 +186,7 @@ const database = [
   {
     "table": "Dureza",
     "description": "Dureza Cósmica de barreiras e objetos.",
-    "full_description": "",
+    "full_description": "A Dureza representa a resistência absoluta de um objeto, barreira ou manifestação criada pela técnica. Ela reduz diretamente o dano recebido, funcionando como uma proteção sólida causada pela condensação do Cosmo.",
     "data": [
       { "rank": 1, "dureza": 10 },
       { "rank": 2, "dureza": 15 },
@@ -283,6 +283,22 @@ const database = [
     ]
   },
   {
+    "table":"Aumentar tamanho",
+    "description":"Aumenta o tamanho do cavaleiro o tornando mais poderoso.",
+    "full_description":"Esta característica permite que o cavaleiro aumente o seu tamanho e se beneficie dos ajustes concedidos pelo seu novo tamanho conforme a tabela de tamanhos de criaturas. A tabela a seguir apenas indica até quantas categorias você é capaz de aumentar baseado no seu tamanho atual.",
+    "data":[
+      { "rank":1, "tamanho máximo":"+1 categoria" },
+      { "rank":2, "tamanho máximo":"+2 categoria" },
+      { "rank":3, "tamanho máximo":"+2 categoria" },
+      { "rank":4, "tamanho máximo":"+3 categoria" },
+      { "rank":5, "tamanho máximo":"+3 categoria" },
+      { "rank":6, "tamanho máximo":"+4 categoria" },
+      { "rank":7, "tamanho máximo":"+4 categoria" },
+      { "rank":8, "tamanho máximo":"+5 categoria" },
+      { "rank":9, "tamanho máximo":"+6 categoria" }
+    ]
+  },
+  {
     "table":"Alcance da Técnica",
     "description":"Distância máxima em que uma técnica pode ser executada.",
     "full_description":"O alcance determina a distância máxima na qual o Cavaleiro pode executar sua técnica contra um alvo ou ponto no espaço. Técnicas de Rank mais alto representam maior domínio do Cosmo, permitindo atingir oponentes a grandes distâncias.",
@@ -299,6 +315,22 @@ const database = [
     ]
   },
   {
+    "table":"Alcance de Salto",
+    "description":"Distância máxima em altura que um personagem pode saltar e causar dano.",
+    "full_description":"O alcance determina a altura e distância máxima na qual o Cavaleiro pode saltar. Sendo a distância sempre a metade da altura máxima.",
+    "data":[
+      { "rank":1, "alcance":"9 m (fixo)" },
+      { "rank":2, "alcance":"2 m por nível (máx. 16 m)" },
+      { "rank":3, "alcance":"3 m por nível (máx. 32 m)" },
+      { "rank":4, "alcance":"4 m por nível (máx. 64 m)" },
+      { "rank":5, "alcance":"6 m por nível (máx. 128 m)" },
+      { "rank":6, "alcance":"8 m por nível (máx. 256 m)" },
+      { "rank":7, "alcance":"10 m por nível (sem limite)" },
+      { "rank":8, "alcance":"13 m por nível (sem limite)" },
+      { "rank":9, "alcance":"16 m por nível (sem limite)" }
+    ]
+  },
+  {
     "table":"Alcance de Teletransporte",
     "description":"Distância máxima que o Cavaleiro pode se mover instantaneamente através do Cosmo.",
     "full_description":"Algumas técnicas permitem ao Cavaleiro dobrar o espaço e mover-se instantaneamente através do Cosmo. O teletransporte é uma habilidade avançada e não deve ser utilizada em Ranks mais baixos devido à instabilidade e aos riscos envolvidos.",
@@ -309,7 +341,7 @@ const database = [
     ]
   },
   {
-    "table":"Teletransporte — Alcance Máximo Absoluto",
+    "table":"Teletransporte — Alcance",
     "description":"Limite máximo seguro para uso de técnicas de teletransporte.",
     "full_description":"Mesmo quando o teletransporte é medido em metros por nível, existe um limite máximo absoluto de segurança. Ultrapassar esse limite pode causar falha cósmica, danos corporais severos ou a perda total do Cavaleiro no vazio entre dimensões.",
     "data":[
@@ -325,9 +357,9 @@ const database = [
     ]
   },
   {
-    "table":"Alcance de Telepatia / Detecção Cósmica",
-    "description":"Distância máxima para percepção, detecção ou comunicação mental através do Cosmo.",
-    "full_description":"Algumas técnicas permitem ao Cavaleiro sentir presenças, emoções, intenções hostis ou estabelecer comunicação mental à distância. O alcance dessa percepção é determinado pelo Rank da técnica e calculado por quilômetros por nível.",
+    "table":"Detecção Cósmica",
+    "description":"Distância máxima para percepção, detecção de outros seres através do Cosmo.",
+    "full_description":"Algumas técnicas permitem ao Cavaleiro sentir presenças, emoções ou intenções hostis à distância. O alcance dessa percepção é determinado pelo Rank da técnica e calculado por quilômetros por nível.",
     "data":[
       { "rank":"1 a 3", "alcance por nível":"1 km por nível" },
       { "rank":"4 a 6", "alcance por nível":"2 km por nível" },
@@ -335,9 +367,9 @@ const database = [
     ]
   },
   {
-    "table":"Telepatia / Detecção — Alcance Máximo Absoluto",
-    "description":"Limite máximo de alcance seguro para telepatia e detecção cósmica.",
-    "full_description":"Mesmo que o alcance da telepatia ou detecção cósmica seja calculado por nível, existe um limite máximo absoluto de percepção. Esse limite representa a distância máxima em que a mente do Cavaleiro consegue manter informações sem sofrer colapso psíquico ou interferência de forças divinas externas.",
+    "table":"Telepatia",
+    "description":"Limite máximo de alcance seguro para telepatia.",
+    "full_description":"Capacidade de se comunicar mentalmente a distância com outros seres que possuem a mesma capacidade. Um ser sem telepatia pode apenas ouvir sua voz em sua mente. A telepatia funciona como um sistema de ondas de rádio onde quem o ouvir pode responder de volta se for capaz. E as pessoas que o ouvirem podeem te responder sem problemas de distância desde que elas tenham sido alcançadas por você.",
     "data":[
       { "rank":1, "alcance máximo":"4 km" },
       { "rank":2, "alcance máximo":"6 km" },
@@ -353,7 +385,7 @@ const database = [
   {
     "table":"Raio de Efeito",
     "description":"Área circular afetada por uma técnica.",
-    "full_description":"O raio de efeito determina a área de influência de uma técnica, afetando múltiplos alvos dentro de uma zona circular. Em Ranks mais baixos essa capacidade não existe, manifestando-se a partir do Rank 2 conforme o domínio do Cosmo do Cavaleiro.",
+    "full_description":"O raio de efeito determina a área de influência de uma técnica, afetando todos que estiverem dentro de uma zona circular. Em Ranks mais baixos essa capacidade não existe, manifestando-se a partir do Rank 2 conforme o domínio do Cosmo do Cavaleiro.",
     "data":[
       { "rank":1, "raio de efeito":"não possui área" },
       { "rank":2, "raio de efeito":"0,5 m por nível (máx. 3 m)" },
@@ -367,7 +399,7 @@ const database = [
     ]
   },
   {
-    "table":"Alvos Afetados pela Técnica",
+    "table":"Alvos",
     "description":"Quantidade máxima de alvos que podem ser afetados simultaneamente.",
     "full_description":"A quantidade máxima de alvos representa quantas criaturas, objetos ou pontos no espaço podem ser afetados simultaneamente pela técnica cósmica do Cavaleiro. Em Ranks mais elevados, o Cosmo pode se expandir a ponto de envolver grandes grupos ou exércitos inteiros.",
     "data":[
@@ -401,7 +433,7 @@ const database = [
   {
     "table":"Quantidade de Peso Manipulável (Kg)",
     "description":"Peso máximo de objetos físicos que podem ser manipulados por força cósmica.",
-    "full_description":"Algumas técnicas permitem levantar, empurrar, arremessar ou manipular objetos físicos utilizando força cósmica. O peso máximo manipulável depende do Rank da técnica e é calculado em quilogramas por nível, respeitando um limite máximo quando aplicável.",
+    "full_description":"Algumas técnicas permitem levantar, empurrar, arremessar ou manipular objetos físicos utilizando uma força cósmica invisível (o cavaleiro nem toca no objeto levantado). O peso máximo manipulável depende do Rank da técnica e é calculado em quilogramas por nível, respeitando um limite máximo quando aplicável.",
     "data":[
       { "rank":1, "peso máximo":"10 Kg por nível (máx. 80 Kg)" },
       { "rank":2, "peso máximo":"20 Kg por nível (máx. 120 Kg)" },
@@ -571,25 +603,25 @@ const database = [
     ]
   },
   {
-    "table":"Dano por Rodada de Manutenção",
-    "description":"Dano contínuo causado por técnicas mantidas ativas.",
-    "full_description":"Algumas técnicas geram dano contínuo enquanto permanecem ativas. O dano por rodada é calculado com base no nível do personagem que executa a técnica, respeitando um valor máximo de dano por rodada definido pelo Rank da técnica. O dano nunca pode exceder o limite máximo indicado para o Rank correspondente, independentemente do nível do personagem.",
+    "table":"Dano/cura por Rodada de Manutenção",
+    "description":"Dano/Cura contínua causado por técnicas mantidas ativas.",
+    "full_description":"Algumas técnicas geram dano ou cura contínua enquanto permanecem ativas. O dano/cura por rodada é calculado com base no nível do personagem que executa a técnica, respeitando um valor máximo por rodada definido pelo Rank da técnica. O dano nunca pode exceder o limite máximo indicado para o Rank correspondente, independentemente do nível do personagem.",
     "data":[
-      { "rank":1, "dano por nível":1, "dano por rodada":4 },
-      { "rank":2, "dano por nível":1, "dano por rodada":6 },
-      { "rank":3, "dano por nível":1, "dano por rodada":8 },
-      { "rank":4, "dano por nível":2, "dano por rodada":13 },
-      { "rank":5, "dano por nível":2, "dano por rodada":16 },
-      { "rank":6, "dano por nível":2, "dano por rodada":19 },
-      { "rank":7, "dano por nível":3, "dano por rodada":23 },
-      { "rank":8, "dano por nível":3, "dano por rodada":27 },
-      { "rank":9, "dano por nível":3, "dano por rodada":31 }
+      { "rank":1, "dano/cura por rodada":"1/nível", "máximo por rodada":"até 4"},
+      { "rank":2, "dano/cura por rodada":"1/nível", "máximo por rodada":"até 6"},
+      { "rank":3, "dano/cura por rodada":"1/nível", "máximo por rodada":"até 8"},
+      { "rank":4, "dano/cura por rodada":"2/nível", "máximo por rodada":"até 13" },
+      { "rank":5, "dano/cura por rodada":"2/nível", "máximo por rodada":"até 16" },
+      { "rank":6, "dano/cura por rodada":"2/nível", "máximo por rodada":"até 19" },
+      { "rank":7, "dano/cura por rodada":"3/nível", "máximo por rodada":"até 23" },
+      { "rank":8, "dano/cura por rodada":"3/nível", "máximo por rodada":"até 27" },
+      { "rank":9, "dano/cura por rodada":"3/nível", "máximo por rodada":"até 31" }
     ]
   },
   {
-    "table":"Habilidade (Aumento de Atributos)",
+    "table":"Habilidade (Aumento de Atributos Primários)",
     "description":"Aumento temporário de atributos físicos, mentais ou espirituais.",
-    "full_description":"Algumas técnicas elevam os atributos físicos, mentais ou espirituais do Cavaleiro, representando o despertar de potencial adormecido ou a benção direta dos deuses. O valor do aumento é definido pelo Dado de Habilidade, que varia conforme o Rank da técnica.",
+    "full_description":"Algumas técnicas elevam os atributos primários do cavaleiro como FOR, CON, DES, SAB, INT ou CAR .",
     "data":[
       { "rank":1, "dado de habilidade":"d4 + 1" },
       { "rank":2, "dado de habilidade":"d6 + 3" },
@@ -603,19 +635,51 @@ const database = [
     ]
   },
   {
+    "table":"Habilidade (Aumento de Atributos Secundários)",
+    "description":"Aumento temporário de atributos secundários.",
+    "full_description":"Algumas técnicas elevam os atributos secundários de um personagem que podem ser: CA, Iniciativa, Fortitude, Vontade, Reflexo, Perícia em específico ou Ataque.",
+    "data":[
+      { "rank":1, "dado de habilidade":"1" },
+      { "rank":2, "dado de habilidade":"3" },
+      { "rank":3, "dado de habilidade":"6" },
+      { "rank":4, "dado de habilidade":"9" },
+      { "rank":5, "dado de habilidade":"12" },
+      { "rank":6, "dado de habilidade":"15" },
+      { "rank":7, "dado de habilidade":"18" },
+      { "rank":8, "dado de habilidade":"21" },
+      { "rank":9, "dado de habilidade":"25" }
+    ]
+  },
+  {
+    "table":"Profundidade",
+    "description":"Capacidade de criar buracos ou crateras.",
+    "full_description":"A profundidade é definida em metros para saber o quão profundo uma cratera poder se abrir. E a largura máxima define o tamanho máximo do buraco.",
+    "data":[
+      { "rank":1, "largura": "1 m", "profundidade":"2 m" },
+      { "rank":2, "largura": "1.5 m", "profundidade":"4 m" },
+      { "rank":3, "largura": "2 m", "profundidade":"6 m" },
+      { "rank":4, "largura": "3 m", "profundidade":"10 m" },
+      { "rank":5, "largura": "4 m", "profundidade":"15 m" },
+      { "rank":6, "largura": "5 m", "profundidade":"20 m" },
+      { "rank":7, "largura": "10 m", "profundidade":"30 m" },
+      { "rank":8, "largura": "15 m", "profundidade":"40 m" },
+      { "rank":9, "largura": "20 m", "profundidade":"50 m" }
+    ]
+  },
+  {
     "table": "Reflexão de ataque",
     "description": "Percentual de dano refletido e aumento da dificuldade.",
     "full_description": "Define o bônus adicional na dificuldade para testes e define a porcentagem de dano que será refletida ao oponente.",
     "data": [
-      { "rank": 1, "porcentagem do dano refletido": 10, "bônus de dificuldade": 1 },
-      { "rank": 2, "porcentagem do dano refletido": 20, "bônus de dificuldade": 2 },
-      { "rank": 3, "porcentagem do dano refletido": 30, "bônus de dificuldade": 3 },
-      { "rank": 4, "porcentagem do dano refletido": 40, "bônus de dificuldade": 4 },
-      { "rank": 5, "porcentagem do dano refletido": 50, "bônus de dificuldade": 5 },
-      { "rank": 6, "porcentagem do dano refletido": 60, "bônus de dificuldade": 6 },
-      { "rank": 7, "porcentagem do dano refletido": 70, "bônus de dificuldade": 7 },
-      { "rank": 8, "porcentagem do dano refletido": 80, "bônus de dificuldade": 8 },
-      { "rank": 9, "porcentagem do dano refletido": 90, "bônus de dificuldade": 9 }
+      { "rank": 1, "porcentagem do dano refletido": "10%", "bônus de dificuldade": "+1" },
+      { "rank": 2, "porcentagem do dano refletido": "20%", "bônus de dificuldade": "+2" },
+      { "rank": 3, "porcentagem do dano refletido": "30%", "bônus de dificuldade": "+3" },
+      { "rank": 4, "porcentagem do dano refletido": "40%", "bônus de dificuldade": "+4" },
+      { "rank": 5, "porcentagem do dano refletido": "50%", "bônus de dificuldade": "+5" },
+      { "rank": 6, "porcentagem do dano refletido": "60%", "bônus de dificuldade": "+6" },
+      { "rank": 7, "porcentagem do dano refletido": "70%", "bônus de dificuldade": "+7" },
+      { "rank": 8, "porcentagem do dano refletido": "80%", "bônus de dificuldade": "+8" },
+      { "rank": 9, "porcentagem do dano refletido": "90%", "bônus de dificuldade": "+9" }
     ]
   }
 ];

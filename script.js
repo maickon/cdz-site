@@ -21,9 +21,16 @@ const pages = [
   {
     id: 'tecnicas',
     label: 'Técnicas',
-    icon: '♅',
+    icon: '✵',
     type: 'html',
     content: TECHNIQUES
+  },
+  {
+    id: 'talentos',
+    label: 'Talentos',
+    icon: '✩',
+    type: 'html',
+    content: TALENTS
   },
   {
     id: 'personagem',
@@ -45,6 +52,13 @@ const pages = [
     icon: '✺',
     type: 'html',
     content: COSMO
+  },
+  {
+    id: 'resumo',
+    label: 'Resumo',
+    icon: '⚜',
+    type: 'html',
+    content: RESUME
   },
   {
     id: 'glossario',
