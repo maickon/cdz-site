@@ -968,16 +968,16 @@ const TALENTS = `
     <div class="cosmos-card p-6 mb-6 pulse-glow">
       <div class="corner-ornament corner-tl"></div><div class="corner-ornament corner-tr"></div>
       <div class="corner-ornament corner-bl"></div><div class="corner-ornament corner-br"></div>
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); font-style:italic; text-align:center; margin-bottom:1.5rem;">
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); font-style:italic; text-align:center;">
         Estes são talentos novos e exclusivos para o RPG Greco Romano.
       </p>
-      
-      <div style="position: relative;">
+    </div>
+
+    <div style="position: sticky; top: 3.8rem; z-index: 100; margin-bottom: 1.5rem; padding: 0.5rem; background: rgba(10, 10, 10, 0.9); border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid rgba(255,215,0,0.3);">
         <input type="text" 
                placeholder="Pesquisar talento por nome..." 
-               style="width: 100%; padding: 0.75rem 1rem; background: rgba(0,0,0,0.3); border: 1px solid var(--gold-light); color: var(--silver); border-radius: 4px; font-family: 'Cinzel', serif; font-size: 1rem; outline: none; box-sizing: border-box;"
+               style="width: 100%; padding: 0.75rem 1rem; background: rgba(0,0,0,0.6); border: 1px solid var(--gold-light); color: var(--silver); border-radius: 4px; font-family: 'Cinzel', serif; font-size: 1rem; outline: none; box-sizing: border-box;"
                oninput="const q = this.value.toLowerCase(); document.querySelectorAll('.talent-item').forEach(el => el.style.display = el.querySelector('h3').innerText.toLowerCase().includes(q) ? 'block' : 'none');">
-      </div>
     </div>
 
     <div class="cosmos-card p-6">
