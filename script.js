@@ -6,10 +6,18 @@
 ══════════════════════════════════════ */
 const pages = [
   {
+    id: 'home',
+    label: 'Home',
+    icon: '⊞',
+    type: 'home',  // special: renders the database viewer
+    menu: false,
+    content: HOME
+  },
+  {
     id: 'tabelas',
     label: 'Tabelas',
     icon: '⊞',
-    type: 'database'  // special: renders the database viewer
+    type: 'database',  // special: renders the database viewe
   },
   {
     id: 'armaduras',
@@ -31,6 +39,13 @@ const pages = [
     icon: '✩',
     type: 'html',
     content: TALENTS
+  },
+  {
+    id: 'pericias',
+    label: 'Perícias',
+    icon: '✩',
+    type: 'html',
+    content: SKILLS
   },
   {
     id: 'personagem',
@@ -59,13 +74,6 @@ const pages = [
     icon: '⚜',
     type: 'html',
     content: RESUME
-  },
-  {
-    id: 'glossario',
-    label: 'Glossário',
-    icon: '⚜',
-    type: 'html',
-    content: GLOSSARY
   }
 ];
 
@@ -295,25 +303,37 @@ function bindDatabaseControls() {
    NAV BUILDER
 ══════════════════════════════════════ */
 function buildNav() {
+
   // Side nav (mobile)
-  const sideItems = pages.map(p => `
-    <div class="nav-item" data-page="${p.id}">
-      <span class="nav-icon">${p.icon}</span>
-      <span>${p.label}</span>
-    </div>
-  `).join('');
+  const sideItems = pages
+    .filter(p => p.menu !== false)
+    .map(p => `
+      <div class="nav-item" data-page="${p.id}">
+        <span class="nav-icon">${p.icon || ''}</span>
+        <span>${p.label}</span>
+      </div>
+    `).join('');
+
   $('#side-nav-items').html(sideItems);
 
+
   // Desktop nav
-  const desktopItems = pages.map(p => `
-    <div class="desktop-nav-item" data-page="${p.id}">${p.icon} ${p.label}</div>
-  `).join('');
+  const desktopItems = pages
+    .filter(p => p.menu !== false)
+    .map(p => `
+      <div class="desktop-nav-item" data-page="${p.id}">
+        ${p.icon || ''} ${p.label}
+      </div>
+    `).join('');
+
   $('#desktop-nav').html(desktopItems);
 
+
   // Click handlers
-  $(document).on('click', '.nav-item, .desktop-nav-item', function() {
+  $(document).on('click', '.nav-item, .desktop-nav-item, .site-logo', function() {
     navigateTo($(this).data('page'));
   });
+
 }
 
 function openNav() {

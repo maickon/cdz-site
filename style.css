@@ -1,7 +1,7 @@
 :root {
   /* Dourados – leves ajustes para mais presença */
   --gold: #d6b65a;
-  --gold-light: #f0d87f;
+  --gold-light: #eabf25;
   --gold-dim: #a3873a;
 
   /* Fundos principais – clareados */
@@ -87,6 +87,7 @@ body {
   letter-spacing: 0.05em;
   text-shadow: 0 0 20px rgba(200,168,75,0.5);
   line-height: 1.2;
+  cursor: pointer;
 }
 .site-logo span { display: block; font-size: 0.6rem; color: var(--silver-dim); font-family: 'Cinzel', serif; letter-spacing: 0.2em; text-transform: uppercase; }
 
@@ -206,6 +207,7 @@ body {
   border-radius: 4px;
   position: relative;
   overflow: hidden;
+  text-align: justify;
 }
 .cosmos-card::before {
   content: '';
