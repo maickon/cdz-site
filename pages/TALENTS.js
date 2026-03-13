@@ -268,6 +268,54 @@ const TALENTS = `
         <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> As criaturas conjuradas pelo seu personagem através da sua técnica escolhida recebem +4 de bônus de aprimoramento em Força e Constituição enquanto a técnica permanecer ativa.</p>
       </div>
 
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">MAXIMIZAR TÉCNICA [Efeito]</h3>
+
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;">
+          O cavaleiro é capaz de liberar sua técnica em sua forma mais poderosa possível.
+        </p>
+
+        <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+          <strong>Pré-requisito:</strong> Técnica que utilize rolagens de dados.
+        </p>
+
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.5rem;">
+          <strong>Benefício:</strong> Ao utilizar este talento em uma técnica baseada em rolagem de dados, todas as rolagens são consideradas como 
+          <strong>resultado máximo</strong>. Uma técnica maximizada passa a custar <strong>o dobro do custo total de Cosmo</strong>.
+        </p>
+
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+          Este aumento de custo pode <strong>acumular</strong> com outros talentos ou efeitos que também aumentem o custo de Cosmo. 
+          O cálculo sempre é feito a partir do <strong>custo base da técnica</strong>, aplicando cada modificador de custo de forma 
+          <strong>sequencial e cumulativa</strong> até chegar ao custo final de Cosmo.
+        </p>
+      </div>
+
+
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">POTENCIALIZAR TÉCNICA [Efeito]</h3>
+
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;">
+          O cavaleiro canaliza uma quantidade muito maior de Cosmo em sua técnica, ampliando drasticamente o poder do ataque.
+        </p>
+
+        <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+          <strong>Pré-requisito:</strong> Técnica que cause dano.
+        </p>
+
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.5rem;">
+          <strong>Benefício:</strong> O <strong>dano total da técnica é dobrado</strong>. Porém, o <strong>custo total de Cosmo</strong> para utilizar 
+          essa técnica também é <strong>dobrado</strong>.
+        </p>
+
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+          Caso esta técnica seja utilizada em conjunto com outros talentos ou efeitos que aumentem o custo de Cosmo (como 
+          <strong>Maximizar Técnica</strong>), os aumentos de custo são <strong>acumulativos</strong>. 
+          Primeiro calcula-se o <strong>custo base da técnica</strong> e, em seguida, cada modificador de custo é aplicado 
+          de forma <strong>sequencial</strong> até determinar o custo final de Cosmo.
+        </p>
+      </div>
+
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; letter-spacing:0.1em; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem; margin-top: 2.5rem; margin-bottom:1.5rem;">
         Talentos Modificados <span style="font-size:0.85rem; color:#aaa; text-transform:none; letter-spacing:normal;">(Ajustados para cavaleiros)</span>
       </h2>

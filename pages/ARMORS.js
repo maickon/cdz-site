@@ -229,7 +229,7 @@ const ARMORS = `
       </div>
     </div>
 
-    <div class="cosmos-card p-6">
+    <div class="cosmos-card p-6 mb-6">
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">A Memória de Sangue</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
         As armaduras sagradas são dotadas de vida própria. Quando um cavaleiro utiliza a <strong style="color:var(--gold-light);">Comunhão Cósmica</strong> ou repara seu traje com o próprio sangue, ocorre uma fusão de DNA cósmico entre o guerreiro e o metal.

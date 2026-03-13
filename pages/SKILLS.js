@@ -261,12 +261,16 @@ const SKILLS = `
 		Além das funções descritas no Livro do Jogador do sistema d20, a perícia Concentração possui uma função fundamental para os Cavaleiros: ela permite que o personagem execute suas <strong style="color:var(--gold-light);">Técnicas Cósmicas</strong>.
 		</p>
 
-		<p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
+		<p style="font-size:1.05rem; line-height:1.8; color:var(--silver);margin-bottom:0.9rem;">
 		Sempre que um Cavaleiro tentar utilizar uma técnica, ele deverá realizar um teste de Concentração. A Classe de Dificuldade mínima para esse teste é <strong style="color:var(--gold-light);">15 + o Rank da técnica + o dano sofrido pelo Cavaleiro na rodada</strong>, caso ele tenha sido atingido antes de executar o golpe.
 		</p>
 
-		<p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
+		<p style="font-size:1.05rem; line-height:1.8; color:var(--silver);margin-bottom:0.9rem;">
 		O Cavaleiro somente poderá escolher automaticamente um resultado 10 no teste de Concentração caso esteja executando sua técnica em um ambiente calmo, sem distrações ou ameaças imediatas.
+		</p>
+
+		<p style="font-size:1.05rem; line-height:1.8; color:var(--silver);margin-bottom:0.9rem;">
+		O cavaleiro com a perícia <strong style="color:var(--gold-light);">Manipular cosmo</strong> recebe +2 pontos de perícia em concentração por sinergia.
 		</p>
 		</div>
 
@@ -322,7 +326,11 @@ const SKILLS = `
 		<strong style="color:var(--gold-light);">Aumento de Dano:</strong><br>
 		O Cavaleiro também pode concentrar sua energia para aumentar o poder destrutivo de seu próximo golpe ou técnica. Se obtiver sucesso no teste de Manipular Cosmo, ele recebe um bônus de dano baseado no resultado do teste. Esse bônus se aplica apenas ao próximo ataque que cause dano.
 		</p>
-	</div>
+
+		<p style'="font-size:1.05rem; line-height:1.8; color:var(--silver);margin-bottom:0.9rem;">
+			O cavaleiro com a perícia <strong style="color:var(--gold-light);">Concentração</strong> recebe +2 pontos de perícia em manipular cosmo por sinergia.
+		</p>
+	</div>'
 
 
 	<div class="cosmos-card p-6 mb-6 pulse-glow">
