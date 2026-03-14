@@ -69,6 +69,13 @@ const pages = [
     content: COSMO
   },
   {
+    id: 'mercado',
+    label: 'Mercado',
+    icon: '⚒',
+    type: 'html',
+    content: MARKET
+  },
+  {
     id: 'resumo',
     label: 'Resumo',
     icon: '⚜',
