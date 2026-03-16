@@ -7,6 +7,7 @@ const SKILLS = `
 		<div class="gold-rule mb-6"></div>
 	</div>
 
+	<div class="page-search mb-4"></div>
 
 	<div class="cosmos-card p-6 mb-6 pulse-glow">
 		<div class="corner-ornament corner-tl"></div><div class="corner-ornament corner-tr"></div>

@@ -6,6 +6,8 @@ const CHARACTER_CREATE = `
       <div class="gold-rule mb-6"></div>
     </div>
 
+    <div class="page-search mb-4"></div>
+  
     <div class="cosmos-card p-6 mb-6">
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">
         Introdução: Criando um Cavaleiro

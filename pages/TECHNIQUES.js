@@ -6,6 +6,8 @@ const TECHNIQUES = `
       <div class="gold-rule mb-6"></div>
     </div>
 
+    <div class="page-search mb-4"></div>
+  
     <div class="cosmos-card p-6 mb-6">
       <div class="corner-ornament corner-tl"></div><div class="corner-ornament corner-tr"></div>
       <div class="corner-ornament corner-bl"></div><div class="corner-ornament corner-br"></div>

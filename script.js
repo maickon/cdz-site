@@ -231,20 +231,6 @@ function renderDatabasePage() {
 
       <div class="page-search"></div>
 
-      <div class="cosmos-card p-4 mb-6 sticky top-16 z-30">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div class="flex-1">
-            <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:0.3rem;text-transform:uppercase;">Buscar</div>
-            <input type="text" id="db-search" class="rpg-input" placeholder="Pesquisar em todas as tabelas..." />
-          </div>
-          <div class="sm:w-64">
-            <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:0.3rem;text-transform:uppercase;">Tabela</div>
-            <select id="db-select" class="rpg-input rpg-select">${selectOptions}</select>
-          </div>
-        </div>
-        <div id="db-results-info" style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:var(--silver-dim);margin-top:0.6rem;text-align:right;"></div>
-      </div>
-
       <div id="db-entries">${allEntries}</div>
       <div id="db-empty" style="display:none;text-align:center;padding:3rem 1rem;">
         <div style="font-size:2rem;margin-bottom:1rem;opacity:0.4;">⊕</div>
@@ -312,50 +298,7 @@ function updateNavActive(page) {
 }
 
 function afterPageRender(page) {
-  if (page.type === 'database') bindDatabaseControls();
   initPageSearch();
-}
-
-/* ══════════════════════════════════════
-   DATABASE CONTROLS
-══════════════════════════════════════ */
-function bindDatabaseControls() {
-  const $entries = $('#db-entries .db-entry');
-
-  function filterEntries() {
-    const searchVal = $('#db-search').val().toLowerCase().trim();
-    const selectVal = $('#db-select').val();
-    let visible = 0;
-
-    $entries.each(function(i) {
-      const $el          = $(this);
-      const matchesSelect = selectVal === '' || String(i) === selectVal;
-      const matchesSearch = searchVal === '' || ($el.data('search') || '').includes(searchVal);
-
-      if (matchesSelect && matchesSearch) { $el.show(); visible++; }
-      else $el.hide();
-    });
-
-    $('#db-empty').toggle(visible === 0);
-    $('#db-results-info').text(
-      searchVal || selectVal ? `${visible} de ${database.length} tabelas exibidas` : ''
-    );
-  }
-
-  let searchTimeout;
-  $('#db-search').on('input', function() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(filterEntries, 200);
-  });
-
-  $('#db-select').on('change', function() {
-    filterEntries();
-    const val = $(this).val();
-    if (val !== '') {
-      const $target = $(`#db-entry-${val}`);
-      if ($target.length) $('html,body').animate({ scrollTop: $target.offset().top - 130 }, 400);
-    }
-  });
 }
 
 /* ══════════════════════════════════════

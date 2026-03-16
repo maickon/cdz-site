@@ -156,7 +156,7 @@
 .page-search {
   position: relative;
   margin: 0 auto 1.5rem;
-  max-width: 520px;
+  width: 100%;
 }
 
 .psr-wrapper {
