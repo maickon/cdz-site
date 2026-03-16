@@ -14,6 +14,8 @@ const COSMO = `
       </p>
     </div>
 
+    <div class="page-search mb-4"></div>
+
     <div class="cosmos-card p-6 mb-6">
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">O que é a Cosmo Energia?</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
@@ -25,6 +27,7 @@ const COSMO = `
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
         No ápice de sua jornada, os Cavaleiros conseguem explodir o universo dentro de si. Essa fusão de energias transcende a mortalidade, permitindo convocar técnicas destrutivas, manipular elementos naturais e transcender os próprios limites físicos.
       </p>
+
     </div>
 
     <div class="cosmos-card p-6 mb-6">

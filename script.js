@@ -9,8 +9,9 @@
    Páginas com group: 'Nome' aparecem dentro do dropdown/acordeão daquele grupo.
    
    BUSCA INTELIGENTE:
-   Insira <div id="page-search"></div> em qualquer página para ativar
+   Insira <div class="page-search"></div> em qualquer página para ativar
    um campo de busca com índice automático e navegação por títulos.
+   Pode haver múltiplos em uma mesma página — cada um é independente.
 ══════════════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════════
@@ -83,6 +84,12 @@ const PAGE_GROUPS = [
     id: 'mercado', label: 'Mercado', icon: '⚒',
     type: 'html',
     get content() { return MARKET; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⊕',
+    id: 'artifacts', label: 'Artefatos', icon: '⚒',
+    type: 'html',
+    get content() { return ARTIFACTS; }
   },
   {
     group: 'Mundo', groupIcon: '⊕',
@@ -222,7 +229,7 @@ function renderDatabasePage() {
         </p>
       </div>
 
-      <div id="page-search"></div>
+      <div class="page-search"></div>
 
       <div class="cosmos-card p-4 mb-6 sticky top-16 z-30">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -353,11 +360,18 @@ function bindDatabaseControls() {
 
 /* ══════════════════════════════════════
    SMART PAGE SEARCH
-   Ativa quando a página contém <div id="page-search"></div>
+   Ativa para cada elemento com class="page-search" na página.
+   Cada instância é independente — pode usar em múltiplos lugares.
 ══════════════════════════════════════ */
 function initPageSearch() {
-  const $container = $('#page-search');
-  if (!$container.length) return;
+  $('.page-search').each(function() {
+    initPageSearchInstance($(this));
+  });
+}
+
+function initPageSearchInstance($container) {
+  if ($container.data('psr-init')) return; // já inicializado
+  $container.data('psr-init', true);
 
   $container.html(`
     <div class="psr-wrapper">
@@ -365,16 +379,16 @@ function initPageSearch() {
         <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.4"/>
         <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
-      <input type="text" id="psr-input" autocomplete="off" spellcheck="false"
+      <input type="text" class="psr-input" autocomplete="off" spellcheck="false"
         placeholder="Buscar nesta página… ou navegue pelo índice" />
       <span class="psr-kbd">/ para buscar</span>
     </div>
-    <div id="psr-dropdown"></div>
+    <div class="psr-dropdown"></div>
   `);
 
   const index    = buildPageIndex();
-  const $input   = $('#psr-input');
-  const $drop    = $('#psr-dropdown');
+  const $input   = $container.find('.psr-input');
+  const $drop    = $container.find('.psr-dropdown');
   let focusedIdx = -1;
   let allItems   = [];
 
@@ -399,13 +413,13 @@ function initPageSearch() {
   });
 
   $(document).on('click.psr', function(e) {
-    if (!$(e.target).closest('#page-search').length) closeDropdown();
+    if (!$(e.target).closest('.page-search').length) closeDropdown();
   });
 
   function buildPageIndex() {
     const items = [];
     $('#main-content').find('h2, h3, [data-search-title]').each(function() {
-      if ($(this).closest('#page-search').length) return;
+      if ($(this).closest('.page-search').length) return;
       const tag  = this.tagName ? this.tagName.toLowerCase() : 'custom';
       const text = $(this).data('search-title') || $(this).text().trim();
       const sub  = $(this).data('search-sub') || '';
@@ -457,7 +471,7 @@ function initPageSearch() {
   function searchPageText(query) {
     const results = [], q = query.toLowerCase(), seen = new Set();
     $('#main-content').find('p, td, li').each(function() {
-      if ($(this).closest('#page-search').length) return;
+      if ($(this).closest('.page-search').length) return;
       const text = $(this).text();
       if (!text.toLowerCase().includes(q)) return;
       const $heading   = $(this).prevAll('h2, h3').first();
