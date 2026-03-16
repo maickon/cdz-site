@@ -154,9 +154,14 @@
 ══════════════════════════════════════ */
 
 .page-search {
-  position: relative;
+  position: sticky;
+  top: 64px; /* altura do #app-header fixo */
+  z-index: 40;
   margin: 0 auto 1.5rem;
   width: 100%;
+  /* fundo para não transparentar o conteúdo por baixo ao rolar */
+  background: linear-gradient(180deg, var(--deep-navy) 75%, transparent 100%);
+  padding: 0.75rem 0 0.5rem;
 }
 
 .psr-wrapper {
