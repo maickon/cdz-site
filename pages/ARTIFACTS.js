@@ -924,5 +924,256 @@ const ARTIFACTS = `
             O grimório permanece com o portador após a leitura como objeto físico — outros que tentarem lê-lo passam pelo mesmo processo. O portador começa a receber memórias dos Preteiros durante o sono — não pesadelos, mas recordações de uma civilização que o portador não viveu mas que começa a sentir como própria. Após 60 dias o portador fala a língua dos Preteiros fluentemente. Nenhum portador documentado registrou o que acontece depois dos 60 dias.       
         </p>
     </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">🦁 MANTO DO LEÃO DE NEMÉIA</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Artefato Equipável — Manto
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Antes de Hércules ser Hércules, havia o Leão. Uma besta enviada pelos próprios deuses para devastar a região de Neméia — invulnerável a qualquer arma forjada por homem, seu couro resistia a ferro, bronze e aço como se fossem palha. O herói precisou estrangulá-lo com as próprias mãos. Depois, usou as garras do próprio animal para esfolá-lo. O manto resultante não é apenas símbolo de triunfo — é a armadura original dos heróis, anterior a qualquer armadura de constelação.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Bônus:</strong> +2 CA · RD 5/—</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Couro Invulnerável:</strong> Redução de Dano 5/— permanente enquanto o manto estiver equipado. Essa RD se aplica antes da RD da armadura do cavaleiro.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Bênção de Hércules:</strong> O portador tem vantagem em testes de Força para quebrar objetos, escapar de agarramentos e derrubar estruturas.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Presença Aterradora (Passivo — Cavaleiro de Leão):</strong> Se equipado pelo Cavaleiro de Ouro de Leão, o manto amplifica a aura cósmica da armadura. O cavaleiro pode ativar Presença Aterradora como ação livre uma vez por combate. Todos os inimigos em raio de 15m devem passar em Vontade CD 20 ou sofrer −4 em ataque e CA contra o Cavaleiro por toda a duração do combate. Em falha crítica (resultado 1), o inimigo fica paralisado de medo por 1 rodada. Para qualquer outro portador, inimigos que falham no teste recebem apenas −2.</li>
+        </ul>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">⚔ ESTANDARTE DE ARES</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Artefato Equipável — Uma Mão
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Não se sabe se Ares criou o estandarte ou se o estandarte criou Ares. O que os registros mais antigos descrevem é um pendão que aparece nos campos de batalha momentos antes das maiores carnificinas da história — sempre em mãos que não hesitam. O tecido não tem fio identificável. A haste não tem metal conhecido. E quem o empunha começa a achar que cada problema tem exatamente uma solução: ser resolvido na porrada.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Bônus:</strong> +2 ATK aliados · Resistência mental = 1/3 do nível</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Grito de Guerra:</strong> Todos os aliados que possam ver o estandarte recebem +2 nos ataques enquanto o portador estiver de pé e em combate.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Mente de Guerreiro:</strong> O portador tem resistência a técnicas de controle mental igual a 1/3 do seu nível (arredondado para baixo) como bônus nos testes de Vontade contra encantamentos, dominações e ilusões.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Voz do Deus da Guerra:</strong> O estandarte sussurra. Em qualquer situação de conflito ou tensão interpessoal, o portador deve passar em Vontade CD 20 para evitar escalar para violência física.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Servo de Ares — Fúria Abençoada:</strong> Um portador servo ou campeão declarado de Ares automaticamente falha no teste de Vontade contra a influência do estandarte — mas pode ativar Fúria gratuitamente uma vez por combate, recebendo +1 adicional no bônus de ataque e dano sobre a Fúria base.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Restrição:</strong> Ocupa a mão e impede o uso de escudo. O portador não pode se render — o estandarte destrói qualquer acordo de rendição antes que as palavras saiam.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">🐉 CHIFRE DE BAHAMUT</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Artefato Berrante — 2 usos/dia
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Bahamut não é apenas um dragão. É a ideia de dragão — o arquétipo de poder, sabedoria e julgamento que todos os outros dragões, em algum nível, imitam sem saber. Um de seus chifres quebrou durante o Grande Conflito antes dos conflitos, quando ele e Tiamat se encontraram pela última vez. O chifre sobreviveu. Nenhuma das divindades que o recuperou ao longo dos milênios conseguiu retirá-lo do mundo.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Uso:</strong> 2 usos por dia · Ação padrão para tocar</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Brado da Restauração:</strong> Cura 3d8 + ½ do nível do portador em todos os aliados num raio de 6m. Não cura mortos-vivos. Não requer concentração.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Presença do Rei Platina:</strong> Intimidação cósmica num raio de 30m. Criaturas hostis devem passar em Vontade CD 15 + Carisma do portador ou sofrer −2 em ataques e CA. Resultado natural 1: a criatura foge pelo número de rodadas igual ao modificador de Carisma do portador.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Rugido de Bahamut:</strong> Onda sonora cósmica em cone de 12m. Causa 10d8 de dano. Reflexos CD 20 + ½ do nível para metade. Destrói estruturas não-mágicas no cone. Gasta os 2 usos diários de uma vez.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Sabedoria do Dragão:</strong> O portador escolhe qual efeito usar ao tocar o berrante. Os 2 usos diários são compartilhados entre todos os efeitos.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">✦ SHAKITI</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Raro Artefato Dimensional — Palma da Mão
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Dizem que as primeiras armaduras não viviam em urnas — viviam em objetos menores ainda, cristais do tamanho de um punho que os primeiros ferreiros divinos distribuíram entre os cavaleiros antes de as tradições das urnas existirem. O Shakiti é um desses cristais originais: uma pedra semitranslúcida de cor indefinida que muda com a luz, fria ao toque, e que vibra levemente quando o cavaleiro que a possui está com o cosmo elevado.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Armadura Interior:</strong> O cavaleiro pode guardar sua armadura completa — junto com a urna — dentro do Shakiti. A armadura pode ser convocada ou dispensada como ação livre, instantaneamente, sem custo de cosmo.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Bolso Dimensional:</strong> Além da armadura, o Shakiti comporta até 3 objetos do tamanho de uma espada ou menores. Esses objetos não pesam e não são detectados por buscas físicas.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Vínculo de Cosmo:</strong> O Shakiti está vinculado a um único portador. Se usado por outro cavaleiro, permanece inerte. O vínculo só se transfere se o portador original morrer ou renunciar voluntariamente.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Retorno Garantido:</strong> Se o Shakiti for roubado, perdido ou destruído, ele se reconstitui na mão do portador vinculado após 24 horas — exceto se o portador estiver morto.</li>
+        </ul>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">✵ COSMO BLADE</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Épico Técnica Inerente — Aprendida via Artefato
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            O artefato em si é uma lâmina de metal branco que não reflete luz — a absorve. Não tem empunhadura. Não tem bainha. Existe suspensa no ar, girando lentamente, em qualquer lugar onde foi deixada. Tocá-la não faz nada. Segurá-la por mais de um minuto faz o metal derreter — não como metal derrete, mas como neve — e o cosmo do cavaleiro absorve o que sobrou. A lâmina some. A técnica fica.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Espada de Cosmo (Rank 4):</strong> O cavaleiro manifesta uma lâmina de cosmo puro com alcance de 2m. Causa 4d8 + Cosmo atual ÷ 4 de dano de força. A lâmina ignora armaduras não-mágicas.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Corte Dimensional (Rank 6):</strong> Ação padrão, custo 12 pontos de Cosmo. O corte ignora toda RD e resistências não-divinas.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Tempestade de Lâminas (Rank 8):</strong> Cone de 10m. Causa 8d10 de dano. Reflexos CD 22 para metade. Custo: 20 pontos de Cosmo.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Aprendizado:</strong> O artefato físico some após absorção. A técnica fica permanentemente. Não pode ser ensinada — só pode ser aprendida através de outro artefato igual.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">⚒ BIGORNA DE HEFESTO</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Artefato Estacionário — Ofícios
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Hefesto não tem uma forja. Hefesto é a forja. Esta bigorna em particular estava presente na criação do Égide de Atena, das sandálias de Hermes e do relâmpago de Zeus. Ela não faz milagres. Ela faz o que um ferreiro excepcional faria, se ele fosse também um deus do fogo que trabalhou por milênios sem parar.
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Requisito:</strong> O portador precisa ter ao menos 1 posto em Ofícios (armas brancas). Sem a perícia, a bigorna é apenas uma bigorna muito pesada.
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Forja Divina:</strong> Armas criadas na bigorna recebem bônus inerentes baseados no resultado do teste de Ofícios. Os bônus são permanentes e não se acumulam com encantamentos posteriores.
+        </p>
+        <div class="rpg-table-wrapper">
+            <table class="rpg-table">
+                <thead>
+                    <tr>
+                        <th>Resultado</th>
+                        <th>Bônus da Arma</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>10–14</td><td>Arma de qualidade superior — +1 em ataques</td></tr>
+                    <tr><td>15–19</td><td>+1 em ataques e dano. A arma conta como mágica para RD</td></tr>
+                    <tr><td>20–24</td><td>+2 em ataques e dano. Ignora RD 5/— ou menos</td></tr>
+                    <tr><td>25–29</td><td>+2 ataque/dano + 1 propriedade elemental (fogo, gelo ou trovão)</td></tr>
+                    <tr><td>30+</td><td>+3 ataque/dano + propriedade elemental + ignora toda RD não-divina</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-top:0.75rem;">
+            <strong style="color:var(--gold-light);">Tempo:</strong> Cada arma leva 8 horas ininterruptas na bigorna. Exige metal de qualidade — custo em materiais definido pelo Mestre.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">🍯 MEL DE XENAGOS</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Épico Consumível Eterno — Frasco Perfume
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Xenagos não é um deus popular nos templos. Não tem sacerdotes, não tem rituais formalizados, não tem guerras santas em seu nome. Tem festas. O frasco nunca foi fabricado. Ele aparece. Sempre em lugares onde a noite acabou de ficar interessante.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Perfume de Xenagos:</strong> O portador borrifa o perfume em um alvo a até 3m. O alvo deve passar em Vontade CD 40 ou ficar freneticamente apaixonado pelo portador por 24 horas — tentará estar próximo, defenderá ele de ataques e encontrará boas razões para qualquer coisa que ele faça, sem perder a capacidade de ação ou combate.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Frasco Eterno:</strong> O frasco nunca se esvazia. Porém, após um número de usos definido secretamente pelo Mestre, ele desaparece e reaparece em algum lugar do mundo onde há uma festa fora de controle.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Imunidade:</strong> O próprio portador é imune ao perfume. Construtos, certos mortos-vivos e elementais são imunes automaticamente.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Eco de Xenagos:</strong> Criaturas com Carisma 16+ têm vantagem no teste de Vontade. Criaturas com Carisma 8 ou menos têm desvantagem.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Restrição:</strong> O frasco não pode ser comprado, vendido ou roubado com sucesso por muito tempo — ele tem vontade própria e decide quando partir.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">🌐 OVOS DE AL-GUI</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Conjunto — 7 Esferas Artefato Maior
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            As lendas dizem ovos. Os sábios dizem condensadores de desejo cósmico. A verdade está entre as duas versões: as esferas são esverdeadas, têm estrelas dentro que não são reflexos de luz externa, e se reunidas na configuração correta evocam Al-Gui — a Grande Tartaruga, criatura anterior à maioria dos deuses, que honra um pacto antigo de conceder um desejo a quem a desperta.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Evocação de Al-Gui:</strong> Ao reunir as 7 esferas no padrão correto (Conhecimento CD 25), Al-Gui se manifesta após 1 hora de ritual e concede 1 desejo — sem restrições de palavreado, sem interpretações maliciosas.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Pós-Evocação:</strong> As 7 esferas são teleportadas para locais separados e aleatórios pelo mundo. O processo de reunificação começa novamente.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Sinal das Esferas:</strong> Uma esfera próxima a outra (até 1km) emite uma vibração que o portador pode sentir como instinto — não vê a direção, mas sabe que há outra esfera perto.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Limites do Desejo:</strong> Al-Gui pode conceder qualquer coisa dentro do plano mortal. Não pode ressuscitar alguém morto há mais de 1 ano, não pode criar divindades e não pode desfazer desejos anteriores concedidos por ela mesma.</li>
+        </ul>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">♪ LIRA DE ORFEU</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Artefato Instrumento — Duas Mãos · 3 usos/dia
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Orfeu desceu ao Submundo para recuperar Eurídice e quase conseguiu — não pela força, mas por fazer Hades chorar. A lira que tocou naquele dia nunca voltou ao mundo dos vivos com ele. Ficou no limiar entre os planos, onde músicas se transformam em algo que não é mais som. Quem a toca hoje toca em dois planos simultaneamente.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Melodia do Encantamento:</strong> Todos em raio de 20m devem passar em Vontade CD 18 + Carisma do portador ou ficarem fascinados por 1d4 rodadas, incapazes de atacar o portador.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Canção do Limiar:</strong> Abre uma passagem temporária (10 minutos) para o plano dos mortos. O portador pode falar com um espírito específico. Custo: 1 uso e 1d4 de Constituição temporária.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Requiem do Inimigo:</strong> Causa 6d6 de dano psíquico em um alvo, Vontade CD 20 para metade. Se falhar por 10 ou mais, fica atordoado por 1 rodada.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Maldição Latente:</strong> Após 7 dias de posse, mortos-vivos inteligentes reconhecem o portador como alguém que carrega algo que pertence ao mundo deles.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">⚡ SANDÁLIA DE HERMES</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Épico Artefato Equipável — Pés
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Hermes tem dois pares. Esta sandália — apenas uma, nunca se encontrou o par — veio do par de trabalho e carrega todas as viagens que o mensageiro dos deuses já fez. Curiosamente, é uma sandália esquerda. Ninguém sabe por quê só existe uma.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Bônus:</strong> +10m de deslocamento · Voo 12m/rodada</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Passo do Mensageiro:</strong> O portador pode Correr sem penalidade de CA por 3 rodadas consecutivas. Após isso, precisa de 1 rodada de pausa.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Voo de Hermes:</strong> Voo a 12m por rodada. Destreza CD 14 por rodada para manter altitude em combate até o portador se acostumar (após 7 dias de uso, o teste não é mais necessário).</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Passo entre Sombras:</strong> Uma vez por dia como ação de movimento, teleporta para qualquer lugar visível a até 30m.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Desequilíbrio:</strong> Em terrenos difíceis sem voar, −2 em Destreza. Ao voar ou correr, o bônus de deslocamento dobra para +20m.</li>
+        </ul>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">⚓ ÂNCORA DE POSEIDON</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Lendário Artefato Arma — Duas Mãos
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Poseidon tem o tridente. O que a maioria não sabe é que antes do tridente havia a âncora — o instrumento original pelo qual o deus dos mares fixava tempestades no lugar, segurava barcos no fundo do oceano com um gesto e ancorava continentes quando decidia que ficavam onde estavam.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Dano base:</strong> 2d10 · <strong style="color:var(--gold-light);">Bônus de ataque:</strong> +3</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Preso no Lugar:</strong> Em acerto crítico, o alvo é ancorado — não pode se mover por 1d4 rodadas (Fortitude CD 20 ao início de cada turno para se libertar).</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Domínio das Águas:</strong> Em ambiente com água, +4 em ataques e dano. O portador pode respirar debaixo d'água enquanto a empunha.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Maré de Cosmo:</strong> Uma vez por combate como ação padrão: cone de 9m, 5d8 de dano, empurra 6m. Reflexos CD 18 para metade e não ser empurrado.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Peso Divino:</strong> A âncora pesa o equivalente a um cavaleiro adulto para qualquer um com Força abaixo de 18. Cada turno empunhando causa 1 nível de fadiga.
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">👑 COROA DE DIONÍSIO</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Épico Artefato Equipável — Cabeça
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            Feita de videiras vivas que nunca secam, a coroa pertenceu ao deus que inventou o vinho, o teatro, o êxtase e a dissolução de si mesmo em algo maior. Dionísio é o único deus olímpico que morreu e voltou — e a coroa carrega essa memória.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Bônus:</strong> +4 Carisma · +2 Sabedoria</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Êxtase Dionisíaco:</strong> Uma vez por dia por 1 minuto: imunidade a medo e encantamentos, +2d6 de dano em todos os ataques, técnicas de cosmo sem gastar pontos. Ao fim fica exausto (−4 em tudo) por 10 minutos.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Profecia Embriagada:</strong> O portador pode fazer uma pergunta ao Mestre sobre o passado ou futuro imediato. A resposta é sempre verdadeira mas nem sempre clara.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Aura da Festa:</strong> Criaturas em raio de 10m com Sabedoria 12 ou menos ficam levemente desorientadas (−1 em ataques e percepção).</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Dissolução:</strong> Após 30 dias contínuos usando a coroa, Sabedoria −2 permanente (recuperável apenas com um Desejo ou intervenção divina de Apolo).
+        </p>
+    </div>
+
+    <div class="cosmos-card p-6 mb-6">
+        <h3 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.2rem; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 0.5rem;">🪞 ESPELHO DE NARCISO</h3>
+        <p style="font-size:0.95rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+            <strong style="color:var(--gold-light);">Tipo:</strong> Raro Artefato Utilitário — Ilusão
+        </p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem;">
+            O lago onde Narciso morreu foi drenado por um engenheiro romano que não sabia o que estava fazendo. O reflexo que ficou preso na água foi recolhido por Nêmesis e enclausurado num espelho como lembrete: beleza que se contempla demais torna-se armadilha.
+        </p>
+        <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:1rem; list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Reflexo Perfeito:</strong> O portador pode assumir a aparência visual de qualquer pessoa que já tenha visto. A ilusão é visual e olfativa — não muda voz sem um teste de Enganação separado.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Ilusão de Força:</strong> Uma vez por dia, projeta uma versão aterradora do portador. Todos que virem devem passar em Vontade CD 17 ou ficarem assustados por 1 rodada.</li>
+            <li style="margin-bottom:0.75rem; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 0.75rem;"><strong style="color:var(--gold-light);">Cópia do Inimigo:</strong> O portador pode copiar a aparência de um inimigo à vista. Inimigos que atacarem devem passar em Vontade CD 15 ou sofrer −2 no ataque.</li>
+        </ul>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+            <strong style="color:var(--gold-light);">Maldição de Nêmesis:</strong> A cada semana de uso, o portador prefere cada vez mais uma de suas aparências ilusórias à real. Após 1 mês sem usar a forma real, deve passar em Vontade CD 18 para se lembrar de qual é sua face verdadeira.
+        </p>
+    </div>
 </div>
 `;
