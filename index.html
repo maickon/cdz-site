@@ -9,80 +9,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="submenu-search.css">
+  <link rel="stylesheet" href="pwa.css">
   <link rel="icon" type="image/jpg" href="icon.jpg">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#000000">
 </head>
-<body>
+  <body>
 
-<!-- Starfield -->
-<div id="starfield"></div>
+    <!-- Starfield -->
+    <div id="starfield"></div>
 
-<!-- Nav Overlay -->
-<div id="nav-overlay"></div>
+    <!-- Nav Overlay -->
+    <div id="nav-overlay"></div>
 
-<!-- Side Nav (Mobile) -->
-<nav id="side-nav">
-  <div class="nav-header">
-    <div class="nav-title">Greco Romano RPG</div>
-    <div class="nav-subtitle">Grimório dos Cavaleiros</div>
-  </div>
-  <div class="nav-items" id="side-nav-items"></div>
-  <div class="gold-rule mx-5 mt-4"></div>
-  <div class="px-5 py-4" style="font-family:'Crimson Pro',serif; font-size:0.78rem; color: var(--silver-dim); line-height:1.6;">
-    Sistema de consulta para RPG<br/>Cavaleiros Greco Romano
-  </div>
-</nav>
+    <!-- Side Nav (Mobile) -->
+    <nav id="side-nav">
+      <div class="nav-header">
+        <div class="nav-title">Greco Romano RPG</div>
+        <div class="nav-subtitle">Grimório dos Cavaleiros</div>
+      </div>
+      <div class="nav-items" id="side-nav-items"></div>
+      <div class="gold-rule mx-5 mt-4"></div>
+      <div class="px-5 py-4" style="font-family:'Crimson Pro',serif; font-size:0.78rem; color: var(--silver-dim); line-height:1.6;">
+        Sistema de consulta para RPG<br/>Cavaleiros Greco Romano
+      </div>
+    </nav>
 
-<!-- Header -->
-<header id="app-header">
-  <div class="header-inner">
-    <div class="site-logo" data-page="home">
-      ✦ Greco Romano RPG
-      <span>Grimório dos Cavaleiros</span>
-    </div>
-    <nav id="desktop-nav"></nav>
-    <button id="menu-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+    <!-- Header -->
+    <header id="app-header">
+      <div class="header-inner">
+        <div class="site-logo" data-page="home">
+          ✦ Greco Romano RPG
+          <span>Grimório dos Cavaleiros</span>
+        </div>
+        <nav id="desktop-nav"></nav>
+        <button id="menu-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-<!-- Main -->
-<main id="main-content">
-  <!-- Pages rendered here by JS -->
-</main>
+    <!-- Main -->
+    <main id="main-content">
+      <!-- Pages rendered here by JS -->
+    </main>
 
-<!-- Footer -->
-<footer id="app-footer">
-  <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--silver-dim);">
-    Greco Romano RPG · GRIMÓRIO DOS CAVALEIROS · SISTEMA DE CONSULTA
-  </p>
-  <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--silver-dim);">v5.0</p>
-</footer>
+    <!-- Footer -->
+    <footer id="app-footer">
+      <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--silver-dim);">
+        Greco Romano RPG · GRIMÓRIO DOS CAVALEIROS · SISTEMA DE CONSULTA
+      </p>
+      <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--silver-dim);">v5.0</p>
+    </footer>
 
-<script src="database.js"></script>
-<script src="pages/HOME.js"></script>
-<script src="pages/ARMORS.js"></script>
-<script src="pages/CHARACTER_CREATE.js"></script>
-<script src="pages/COMBAT.js"></script>
-<script src="pages/COSMO.js"></script>
-<script src="pages/RESUME.js"></script>
-<script src="pages/TALENTS.js"></script>
-<script src="pages/TECHNIQUES.js"></script>
-<script src="pages/SKILLS.js"></script>
-<script src="pages/MARKET.js"></script>
-<script src="pages/ARTIFACTS.js"></script>
-<script src="script.js"></script>
-
-<script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registered'))
-        .catch(err => console.log('Service Worker error', err));
-    });
-}
-</script>
-</body>
+    <script src="database.js"></script>
+    <script src="pages/HOME.js"></script>
+    <script src="pages/ARMORS.js"></script>
+    <script src="pages/CHARACTER_CREATE.js"></script>
+    <script src="pages/COMBAT.js"></script>
+    <script src="pages/COSMO.js"></script>
+    <script src="pages/RESUME.js"></script>
+    <script src="pages/TALENTS.js"></script>
+    <script src="pages/TECHNIQUES.js"></script>
+    <script src="pages/SKILLS.js"></script>
+    <script src="pages/MARKET.js"></script>
+    <script src="pages/ARTIFACTS.js"></script>
+    <script src="script.js"></script>
+    <script src="pwa.js"></script>
+  </body>
 </html>

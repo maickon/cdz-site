@@ -1,0 +1,253 @@
+/* ══════════════════════════════════════
+   PWA — Botão de instalação, modal iOS,
+   banner de atualização
+══════════════════════════════════════ */
+
+/* ── Botão flutuante ── */
+.pwa-install-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: none; /* controlado via JS */
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: linear-gradient(135deg, rgba(11,18,48,0.97), rgba(18,28,58,0.97));
+  border: 1px solid rgba(200,168,75,0.45);
+  border-radius: 3px;
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,168,75,0.1);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.2s, box-shadow 0.2s;
+}
+.pwa-install-btn--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.pwa-install-btn:hover {
+  border-color: rgba(200,168,75,0.75);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 16px rgba(200,168,75,0.15);
+  color: var(--gold);
+}
+.pwa-install-btn svg {
+  flex-shrink: 0;
+}
+
+/* ── Modal overlay (iOS) ── */
+.pwa-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  display: none; /* controlado via JS */
+  align-items: flex-end;  /* sobe da base no mobile */
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pwa-modal-overlay--visible {
+  opacity: 1;
+}
+
+@media (min-width: 600px) {
+  .pwa-modal-overlay {
+    align-items: center;
+  }
+}
+
+.pwa-modal {
+  position: relative;
+  background: linear-gradient(160deg, #070d1e 0%, #0d1830 60%, #0a1228 100%);
+  border: 1px solid rgba(200,168,75,0.25);
+  border-radius: 6px;
+  padding: 2rem 1.5rem 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+.pwa-modal-overlay--visible .pwa-modal {
+  transform: translateY(0);
+}
+.pwa-modal::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.pwa-modal-close {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--silver-dim);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.pwa-modal-close:hover { opacity: 1; }
+
+.pwa-modal-icon {
+  font-size: 2rem;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(200,168,75,0.5);
+  margin-bottom: 0.75rem;
+}
+
+.pwa-modal-title {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.pwa-modal-subtitle {
+  font-family: 'Crimson Pro', serif;
+  color: var(--silver-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+/* Passos */
+.pwa-modal-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: rgba(200,168,75,0.04);
+  border: 1px solid rgba(200,168,75,0.1);
+  border-radius: 4px;
+}
+
+.pwa-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.pwa-step-num {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,168,75,0.4);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.pwa-step-text {
+  font-family: 'Crimson Pro', serif;
+  color: var(--silver);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.pwa-step-text strong { color: var(--gold-light); }
+
+.pwa-step-icon {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--gold-light);
+}
+
+.pwa-modal-note {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.82rem;
+  color: var(--silver-dim);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+.pwa-modal-note strong { color: var(--gold-light); font-style: normal; }
+
+.pwa-modal-dismiss {
+  width: 100%;
+  padding: 0.65rem;
+  background: rgba(200,168,75,0.1);
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: 3px;
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.pwa-modal-dismiss:hover {
+  background: rgba(200,168,75,0.18);
+  border-color: rgba(200,168,75,0.5);
+}
+
+/* ── Banner de atualização ── */
+.pwa-update-banner {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  z-index: 300;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(90deg, rgba(11,18,48,0.97), rgba(18,28,58,0.97));
+  border: 1px solid rgba(200,168,75,0.35);
+  border-radius: 3px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.pwa-update-banner--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.pwa-update-banner span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--silver);
+}
+
+.pwa-update-banner button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+}
+
+#pwa-update-btn {
+  border: 1px solid rgba(200,168,75,0.4);
+  border-radius: 2px;
+  color: var(--gold-light);
+  transition: background 0.2s;
+}
+#pwa-update-btn:hover { background: rgba(200,168,75,0.1); }
+
+#pwa-update-dismiss {
+  color: var(--silver-dim);
+  opacity: 0.6;
+}
+#pwa-update-dismiss:hover { opacity: 1; }

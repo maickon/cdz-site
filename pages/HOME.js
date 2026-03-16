@@ -105,6 +105,9 @@ text-align: justify;
 .map-container{
 text-align:center;
 margin-top:30px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .world-map{
@@ -191,8 +194,8 @@ e despertam o poder do Cosmo.
 
 <img id="worldMap" src="img/m2.jpg" class="world-map">
 
-<button class="map-switch-btn" onclick="toggleHomeMap()">
-Trocar versão do mapa
+<button class="toggle-map-btn" style="display: flex;" data-mode="native" onclick="toggleHomeMap()">
+	<span>Trocar versão do mapa</span>
 </button>
 
 </div>
