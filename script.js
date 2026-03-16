@@ -87,7 +87,7 @@ const PAGE_GROUPS = [
   },
   {
     group: 'Mundo', groupIcon: '⊕',
-    id: 'artifacts', label: 'Artefatos', icon: '⚒',
+    id: 'artifacts', label: 'Artefatos', icon: '✧',
     type: 'html',
     get content() { return ARTIFACTS; }
   },
@@ -323,7 +323,7 @@ function initPageSearchInstance($container) {
         <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
       <input type="text" class="psr-input" autocomplete="off" spellcheck="false"
-        placeholder="Buscar nesta página… ou navegue pelo índice" />
+        placeholder="Buscar… ou navegue por índice" />
       <span class="psr-kbd">/ para buscar</span>
     </div>
     <div class="psr-dropdown"></div>
