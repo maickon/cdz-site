@@ -659,6 +659,32 @@ const COMBAT = `
     <div style="margin-bottom:1.2rem;">
 
       <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">
+        Super Velocidade
+      </h3>
+
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Um personagem entra na condição de <strong style="color:var(--gold-light);">super velocidade</strong> quando, durante o combate, seu deslocamento base excede o de um oponente em pelo menos 
+        <strong style="color:var(--gold-light);">50 metros</strong>.
+      </p>
+
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Para cada <strong style="color:var(--gold-light);">50 metros completos de diferença</strong> entre o deslocamento do cavaleiro e o de um oponente, o cavaleiro recebe 
+        <strong style="color:var(--gold-light);">1 ação extra</strong> contra aquele alvo específico.
+      </p>
+
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Essas ações extras representam a capacidade do cavaleiro de agir várias vezes antes que o adversário consiga reagir, devido à enorme diferença de velocidade.
+      </p>
+
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        <strong>Exemplo:</strong> Um Cavaleiro de Ouro possui 200m de deslocamento base e enfrenta Cavaleiros de Bronze com 30m. A diferença é de 170m.  
+        Isso concede <strong style="color:var(--gold-light);">3 ações extras</strong> contra cada oponente (150m de diferença completa em blocos de 50m).
+      </p>
+    </div>
+  
+    <div style="margin-bottom:1.2rem;">
+
+      <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">
         Exaustão Cósmica
       </h3>
 
@@ -686,7 +712,6 @@ const COMBAT = `
       </p>
 
     </div>
-
 
 
     <div style="margin-bottom:1.2rem;">

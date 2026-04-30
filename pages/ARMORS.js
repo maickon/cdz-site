@@ -72,32 +72,45 @@ const ARMORS = `
           <thead>
             <tr style="border-bottom: 1px solid var(--gold-light); color: var(--gold-light);">
               <th style="padding: 0.5rem;">Armadura</th>
-              <th style="padding: 0.5rem;">Deslocamento Adicional</th>
-              <th style="padding: 0.5rem;">Ataques Adicionais (com o pior bônus)</th>
+              <th style="padding: 0.5rem;">Desl. Adicional</th>
+              <th style="padding: 0.5rem;">Atq. Extra (Melhor bônus)</th>
+              <th style="padding: 0.5rem;">Talento Adc.</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Bronze</td><td style="padding: 0.5rem;">+4 metros</td><td style="padding: 0.5rem; text-align: center;">0</td>
+              <td style="padding: 0.5rem;">Bronze</td><td style="padding: 0.5rem;">+4 metros</td><td style="padding: 0.5rem; text-align: center;">0</td><td style="padding: 0.5rem; text-align: center;">+1 Tal.</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Prata</td><td style="padding: 0.5rem;">+10 metros</td><td style="padding: 0.5rem; text-align: center;">1</td>
+              <td style="padding: 0.5rem;">Prata</td><td style="padding: 0.5rem;">+10 metros</td><td style="padding: 0.5rem; text-align: center;">1</td><td style="padding: 0.5rem; text-align: center;">+1 Tal.</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Ouro</td><td style="padding: 0.5rem;">+18 metros</td><td style="padding: 0.5rem; text-align: center;">2</td>
+              <td style="padding: 0.5rem;">Ouro</td><td style="padding: 0.5rem;">+18 metros</td><td style="padding: 0.5rem; text-align: center;">2</td><td style="padding: 0.5rem; text-align: center;">+1 Tal.</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Kamui</td><td style="padding: 0.5rem;">+30 metros</td><td style="padding: 0.5rem; text-align: center;">3</td>
+              <td style="padding: 0.5rem;">Kamui</td><td style="padding: 0.5rem;">+30 metros</td><td style="padding: 0.5rem; text-align: center;">3</td><td style="padding: 0.5rem; text-align: center;">+1 Tal.</td>
             </tr>
             <tr>
-              <td style="padding: 0.5rem;">Titan</td><td style="padding: 0.5rem;">+50 metros</td><td style="padding: 0.5rem; text-align: center;">4</td>
+              <td style="padding: 0.5rem;">Titan</td><td style="padding: 0.5rem;">+50 metros</td><td style="padding: 0.5rem; text-align: center;">4</td><td style="padding: 0.5rem; text-align: center;">+1 Tal.</td>
             </tr>
           </tbody>
         </table>
       </div>
+
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
         Todo cavaleiro que vestir sua devida armadura se beneficiará passivamente de seus poderes, ganhando deslocamento adicional e ataques extras conforme a hierarquia do traje.
       </p>
+      <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;margin-top:0.75rem;">Reserva de Cosmo</h2>
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
+        Cada armadura aumenta a reserva de cosmo total do seu portador com base no nível de poder da armadura. A reserva de cosmo de um cavaleiro normalmente é: <span style="color:var(--gold-light);"> Soma das habilidades</span> + <span style="color:var(--gold-light);">bônus de classe</span> + <span style="color:var(--gold-light);">bônus adicionais</span>.
+      </p>
+      <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-top:1rem; padding-left:1rem; list-style-type:square;">
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 1 (Bronze):</strong> Não afeta o cosmo total do cavaleiro.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 2 (Prata):</strong> Multiplica a reserva de por 2.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 3 (Ouro):</strong> Multiplica a reserva de por 3.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 4 (Kamui):</strong> Multiplica a reserva de por 4.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 5 (Kamui):</strong> Multiplica a reserva de por 5.</li>
+      </ul>
     </div>
 
     <div class="cosmos-card p-6 mb-6">
@@ -203,31 +216,91 @@ const ARMORS = `
               <th style="padding: 0.5rem;">Nível</th>
               <th style="padding: 0.5rem;">XP</th>
               <th style="padding: 0.5rem;">RD</th>
-              <th style="padding: 0.5rem;">Bônus CA</th>
-              <th style="padding: 0.5rem;">Escudo</th>
+              <th style="padding: 0.5rem;">CA (Arm/Esc)</th>
+              <th style="padding: 0.5rem;">Cosmo Adic.</th>
               <th style="padding: 0.5rem;">PV</th>
-              <th style="padding: 0.5rem;">Cosmo</th>
+              <th style="padding: 0.5rem;">Cosmo Recp.</th>
               <th style="padding: 0.5rem;">Mágico</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">1</td><td style="padding: 0.5rem;">0</td><td style="padding: 0.5rem;">-</td><td style="padding: 0.5rem;">-</td><td style="padding: 0.5rem;">-</td><td style="padding: 0.5rem;">-</td><td style="padding: 0.5rem;">-</td><td style="padding: 0.5rem;">-</td>
+                <td style="padding: 0.5rem;">1</td>
+                <td style="padding: 0.5rem;">0</td>
+                <td style="padding: 0.5rem;">-</td>
+                <td style="padding: 0.5rem;">-</td>
+                <td style="padding: 0.5rem;">-</td>
+                <td style="padding: 0.5rem;">-</td>
+                <td style="padding: 0.5rem;">-</td>
+                <td style="padding: 0.5rem;">-</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">2</td><td style="padding: 0.5rem;">500</td><td style="padding: 0.5rem;">+3</td><td style="padding: 0.5rem;">+3</td><td style="padding: 0.5rem;">+1</td><td style="padding: 0.5rem;">+25</td><td style="padding: 0.5rem;">+1</td><td style="padding: 0.5rem;">+1</td>
+                <td style="padding: 0.5rem;">2</td>
+                <td style="padding: 0.5rem;">500</td>
+                <td style="padding: 0.5rem;">+3</td>
+                <td style="padding: 0.5rem;">+3/+1</td>
+                <td style="padding: 0.5rem;">+5</td>
+                <td style="padding: 0.5rem;">+25</td>
+                <td style="padding: 0.5rem;">+1</td>
+                <td style="padding: 0.5rem;">+1</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">3</td><td style="padding: 0.5rem;">1000</td><td style="padding: 0.5rem;">+5</td><td style="padding: 0.5rem;">+5</td><td style="padding: 0.5rem;">+1</td><td style="padding: 0.5rem;">+50</td><td style="padding: 0.5rem;">+1</td><td style="padding: 0.5rem;">+1</td>
+                <td style="padding: 0.5rem;">3</td>
+                <td style="padding: 0.5rem;">1000</td>
+                <td style="padding: 0.5rem;">+5</td>
+                <td style="padding: 0.5rem;">+5/+2</td>
+                <td style="padding: 0.5rem;">+10</td>
+                <td style="padding: 0.5rem;">+50</td>
+                <td style="padding: 0.5rem;">+2</td>
+                <td style="padding: 0.5rem;">+2</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">4</td><td style="padding: 0.5rem;">2000</td><td style="padding: 0.5rem;">+7</td><td style="padding: 0.5rem;">+7</td><td style="padding: 0.5rem;">+1</td><td style="padding: 0.5rem;">+150</td><td style="padding: 0.5rem;">+1</td><td style="padding: 0.5rem;">+1</td>
+                <td style="padding: 0.5rem;">4</td>
+                <td style="padding: 0.5rem;">2000</td>
+                <td style="padding: 0.5rem;">+7</td>
+                <td style="padding: 0.5rem;">+7/+3</td>
+                <td style="padding: 0.5rem;">+15</td>
+                <td style="padding: 0.5rem;">+150</td>
+                <td style="padding: 0.5rem;">+3</td>
+                <td style="padding: 0.5rem;">+3</td>
             </tr>
             <tr>
-              <td style="padding: 0.5rem;">5</td><td style="padding: 0.5rem;">5000</td><td style="padding: 0.5rem;">+10</td><td style="padding: 0.5rem;">+10</td><td style="padding: 0.5rem;">+2</td><td style="padding: 0.5rem;">+275</td><td style="padding: 0.5rem;">+2</td><td style="padding: 0.5rem;">+2</td>
+                <td style="padding: 0.5rem;">5</td>
+                <td style="padding: 0.5rem;">5000</td>
+                <td style="padding: 0.5rem;">+10</td>
+                <td style="padding: 0.5rem;">+10/+4</td>
+                <td style="padding: 0.5rem;">+20</td>
+                <td style="padding: 0.5rem;">+275</td>
+                <td style="padding: 0.5rem;">+4</td>
+                <td style="padding: 0.5rem;">+4</td>
             </tr>
-          </tbody>
+        </tbody>
         </table>
+
+        <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;margin-top:1rem;">As habilidades</h2>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">XP</strong>: XP necesário para passar de nível.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">RD</strong>: Valor de Redução de Dano da armadura.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">CA (Arm/Esc)</strong>: Valor de bônus na CA para armadura e escudo (se houver).
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">Cosmo Adic.</strong>: Valor de comos adiciona na reserva total.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">PV</strong>: Pontos de vida da armadura.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">Cosmo Recp.</strong>: Valor de recuperação de comos por rodada em combate.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">Mágico</strong>: Bônus mágico da Armadura. Após passar o +5, os bônus excedentes podem ser convertidos em habilidades.
+        <p style="font-size:1.05rem; line-height:1; color:var(--silver); margin-bottom:0.75rem;">
+          <strong style="color:var(--gold-light);">OBSERVAÇÃO</strong>: TODOS OS BÕNUS CONCEDIDOS PELA TABELA, SUBSTIUEM OS BÔNUS ANTERIORES.
+        </p>
       </div>
     </div>
 
@@ -364,21 +437,69 @@ const ARMORS = `
             <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
               <th style="padding:0.5rem;">Resultado (1d20)</th>
               <th style="padding:0.5rem;">RD</th>
-              <th style="padding:0.5rem;">Bônus CA</th>
-              <th style="padding:0.5rem;">Escudo</th>
+              <th style="padding:0.5rem;">CA (Arm/Esc)</th>
+              <th style="padding:0.5rem;">Cosmo Adic.</th>
               <th style="padding:0.5rem;">PV</th>
-              <th style="padding:0.5rem;">Cosmo</th>
+              <th style="padding:0.5rem;">Cosmo Recp.</th>
               <th style="padding:0.5rem;">Mágico</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td style="padding:0.5rem;">1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-            <tr><td style="padding:0.5rem;">2–5</td><td>1d4</td><td>1d4</td><td>+1</td><td>+25</td><td>+1</td><td>+1</td></tr>
-            <tr><td style="padding:0.5rem;">6–10</td><td>1d6</td><td>1d6</td><td>+2</td><td>+50</td><td>+1</td><td>+1</td></tr>
-            <tr><td style="padding:0.5rem;">11–15</td><td>1d8</td><td>1d8</td><td>+3</td><td>+75</td><td>+1</td><td>+1</td></tr>
-            <tr><td style="padding:0.5rem;">16–19</td><td>1d10</td><td>1d10</td><td>+4</td><td>+100</td><td>+1</td><td>+1</td></tr>
-            <tr><td style="padding:0.5rem;">20</td><td>1d12</td><td>1d12</td><td>+5</td><td>+125</td><td>+2</td><td>+2</td></tr>
-          </tbody>
+            <tr>
+                <td style="padding:0.5rem;">1</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td style="padding:0.5rem;">2–5</td>
+                <td>1d4</td>
+                <td>1d4/+1</td>
+                <td>+1d4+1</td>
+                <td>+25</td>
+                <td>+1</td>
+                <td>+1</td>
+            </tr>
+            <tr>
+                <td style="padding:0.5rem;">6–10</td>
+                <td>1d6</td>
+                <td>1d6/+2</td>
+                <td>+1d6+2</td>
+                <td>+50</td>
+                <td>+1</td>
+                <td>+1</td>
+            </tr>
+            <tr>
+                <td style="padding:0.5rem;">11–15</td>
+                <td>1d8</td>
+                <td>1d8/+3</td>
+                <td>+1d8+3</td>
+                <td>+75</td>
+                <td>+1</td>
+                <td>+1</td>
+            </tr>
+            <tr>
+                <td style="padding:0.5rem;">16–19</td>
+                <td>1d10</td>
+                <td>1d10/+4</td>
+                <td>+1d10+4</td>
+                <td>+100</td>
+                <td>+2</td>
+                <td>+2</td>
+            </tr>
+            <tr>
+                <td style="padding:0.5rem;">20</td>
+                <td>1d12</td>
+                <td>1d12/+5</td>
+                <td>+1d12+5</td>
+                <td>+125</td>
+                <td>+3</td>
+                <td>+3</td>
+            </tr>
+        </tbody>
         </table>
       </div>
 
@@ -404,13 +525,13 @@ const ARMORS = `
             </tr>
             <tr>
               <td style="padding:0.5rem;">2</td>
-              <td style="padding:0.5rem;">Bônus na CA</td>
-              <td style="padding:0.5rem;">Eleva o bônus defensivo da armadura na Classe de Armadura.</td>
+              <td style="padding:0.5rem;">CA (Arm/Esc)</td>
+              <td style="padding:0.5rem;">Eleva o bônus defensivo da armadura/Escudo na Classe de Armadura.</td>
             </tr>
             <tr>
               <td style="padding:0.5rem;">3</td>
-              <td style="padding:0.5rem;">Escudo</td>
-              <td style="padding:0.5rem;">Aumenta a proteção adicional concedida pela armadura.</td>
+              <td style="padding:0.5rem;">Cosmo Adic.</td>
+              <td style="padding:0.5rem;">Aumenta a reserva de cosmo total do cavaleiro.</td>
             </tr>
             <tr>
               <td style="padding:0.5rem;">4</td>
@@ -419,13 +540,13 @@ const ARMORS = `
             </tr>
             <tr>
               <td style="padding:0.5rem;">5</td>
-              <td style="padding:0.5rem;">Cosmo</td>
-              <td style="padding:0.5rem;">Aumenta a recuperação ou capacidade de Cosmo concedida pela armadura.</td>
+              <td style="padding:0.5rem;">Cosmo Recp.</td>
+              <td style="padding:0.5rem;">Aumenta a  capacidade de recuperação de Cosmo por rodada concedida pela armadura.</td>
             </tr>
             <tr>
               <td style="padding:0.5rem;">6</td>
               <td style="padding:0.5rem;">Mágico</td>
-              <td style="padding:0.5rem;">Melhora o bônus mágico aplicado aos ataques e danos do cavaleiro.</td>
+              <td style="padding:0.5rem;">Melhora o bônus mágico aplicado aos ataques e danos do cavaleiro. Se o bônus for maior que cinco, o jogador pode converter os pontos restantes em habilidades para a sua armadura.</td>
             </tr>
           </tbody>
         </table>
@@ -472,10 +593,34 @@ const ARMORS = `
     <ul style="color:var(--silver); line-height:1.7;">
 
     <li>
-    <strong style="color:var(--gold-light);">Núcleo de Pó de Estrela (+1, +2, +3)</strong><br>
-    O núcleo da armadura passa a conter uma concentração pura de pó das estrelas, acelerando sua regeneração natural.  
-    A armadura recupera automaticamente <strong>PV por rodada</strong> igual ao bônus escolhido (+1, +2 ou +3).  
-    Esta regeneração ocorre durante combate e fora dele, representando o poder vital presente nos materiais sagrados da armadura.
+      <strong style="color:var(--gold-light);">Núcleo de Pó de Estrela (+1, +2, +3)</strong><br>
+      O núcleo da armadura passa a conter uma concentração pura de pó das estrelas, acelerando sua regeneração natural.  
+      Em condições normais, uma armadura recupera 10% do seu PV total a cada hora. Com esta habilidade, essa taxa de regeneração é aumentada de acordo com o bônus mágico da armadura.
+
+      <br><br>
+
+      <table style="width:100%; border-collapse:collapse; color:var(--silver); font-size:0.9rem;">
+        <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
+          <th>Bônus</th>
+          <th>Regeneração por Hora</th>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem;">+1</td>
+          <td style="padding:0.5rem;">20% do PV total</td>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem;">+2</td>
+          <td style="padding:0.5rem;">30% do PV total</td>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem;">+3</td>
+          <td style="padding:0.5rem;">40% do PV total</td>
+        </tr>
+      </table>
+
+      <br>
+
+      Essa regeneração ocorre automaticamente enquanto a armadura não estiver completamente destruída, representando o poder vital contínuo presente nos materiais sagrados que a compõem.
     </li>
 
     <li>
@@ -494,14 +639,14 @@ const ARMORS = `
     </li>
 
     <li>
-    <strong style="color:var(--gold-light);">Ressonância Cósmica (+2)</strong><br>
+    <strong style="color:var(--gold-light);">Ressonância Cósmica (+1, +2, +3, +4, +5)</strong><br>
     A armadura entra em perfeita sintonia com o Cosmo do cavaleiro.  
-    O custo de Cosmo de todas as técnicas de <strong>Rank 1 e Rank 2</strong> é reduzido em <strong>-1 ponto</strong> (mínimo 1).  
+    O custo de Cosmo de todas as técnicas de <strong>Rank 1 a Rank 3</strong> é reduzido em <strong>-2 ponto</strong> para cada bônus mágico desta habilidade. (mínimo 1).  
     Esse efeito permite ao cavaleiro utilizar golpes básicos com maior frequência durante o combate.
     </li>
 
     <li>
-    <strong style="color:var(--gold-light);">Capacitor de Cosmo (+1, +2, +3)</strong><br>
+    <strong style="color:var(--gold-light);">Capacitor de Cosmo (+1, +2, +3, +4, +5)</strong><br>
     Cristais internos armazenam energia cósmica adicional.  
     O Cosmo Máximo do cavaleiro aumenta em <strong>+5 por nível de bônus</strong>.  
     Essa habilidade aumenta o limite máximo de Cosmo disponível, permitindo que o cavaleiro acumule energia para técnicas mais poderosas.
@@ -517,20 +662,20 @@ const ARMORS = `
     <li>
     <strong style="color:var(--gold-light);">Refração de Cristal (+4)</strong><br>
     A estrutura da armadura se torna cristalina e capaz de refletir energia.  
-    Sempre que sofrer um ataque direto, existe <strong>1 chance em 1d6</strong> de refletir <strong>50% do dano</strong> de volta ao atacante.  
+    Sempre que sofrer um ataque direto (ataque em alvo - VOCÊ), existe <strong>1 ou 2 chance em 1d6</strong> de refletir <strong>50% do dano</strong> de volta ao atacante.  
     Essa reação é automática e não consome ações.
     </li>
 
     <li>
     <strong style="color:var(--gold-light);">Memória de Batalha (+1)</strong><br>
     A armadura registra padrões de ataques inimigos.  
-    Após ser atingida por uma técnica específica, o cavaleiro recebe <strong>+2 em testes de Reflexos ou Vontade</strong> contra aquela mesma técnica até o fim do combate.
+    Após ser atingida por uma técnica específica, o cavaleiro recebe <strong>+2 em testes de resistência</strong> contra aquela mesma técnica até o fim do combate.
     </li>
 
     <li>
     <strong style="color:var(--gold-light);">Anfíbia (+2)</strong><br>
     A armadura é adaptada para combate aquático.  
-    O cavaleiro não sofre penalidades de movimento na água e recebe <strong>+4 em testes de Natação</strong>.  
+    O cavaleiro não sofre penalidades de movimento na água e recebe. Adquire a perícia natação e recebe <strong>+4 em testes de Natação</strong>.  
     Muito comum entre os Marinas da Fenda do Biquíni.
     </li>
 
@@ -544,7 +689,7 @@ const ARMORS = `
     <li>
     <strong style="color:var(--gold-light);">Aura Intimidante (+2)</strong><br>
     A armadura emite uma presença cósmica esmagadora.  
-    Todos os inimigos e aliados dentro de <strong>12 metros</strong> sofrem:  
+    Todos os inimigos dentro de <strong>12 metros</strong> sofrem:  
     -2 em ataques contra o cavaleiro e -5 na iniciativa contra ele.  
     A aura funciona constantemente enquanto a armadura estiver ativa.
     </li>
@@ -552,7 +697,7 @@ const ARMORS = `
     <li>
     <strong style="color:var(--gold-light);">Sinfonia Protetora (+3)</strong><br>
     A armadura emite uma vibração cósmica protetora que estabiliza a mente do cavaleiro.  
-    O usuário recebe <strong>+4 em testes contra ilusões e controle mental</strong>.
+    O usuário recebe <strong>+4 de VONTADE em testes contra ilusões e controle mental</strong>.
     </li>
 
     <li>
@@ -596,7 +741,13 @@ const ARMORS = `
     <li>
     <strong style="color:var(--gold-light);">Impulso Cinético (+2)</strong><br>
     A armadura amplifica o movimento do cavaleiro.  
-    Seu deslocamento base aumenta em <strong>+6 metros</strong>.
+    Seu deslocamento base aumenta em <strong>+12 metros</strong>.
+    </li>
+
+    <li>
+    <strong style="color:var(--gold-light);">Impulso Cinético (+4)</strong><br>
+    A armadura amplifica o movimento do cavaleiro.  
+    Seu deslocamento base aumenta em <strong>+24 metros</strong>.
     </li>
 
     <li>
@@ -621,6 +772,26 @@ const ARMORS = `
     <strong style="color:var(--gold-light);">Núcleo Ígneo (+2)</strong><br>
     Quando o cavaleiro eleva seu Cosmo ao máximo, a armadura libera calor intenso.  
     Todos os inimigos em combate corpo-a-corpo sofrem dano de <strong>Fogo igual ao modificador de Constituição</strong> do cavaleiro.
+    </li>
+
+    <li>
+      <strong style="color:var(--gold-light);">Resistência (+1)</strong><br>
+      A armadura reforça a proteção do cavaleiro, elevando sua capacidade de suportar ataques e efeitos adversos.  
+      O cavaleiro recebe um bônus de +1 em todos os testes de resistência.
+    </li>
+
+    <li>
+      <strong style="color:var(--gold-light);">Ressurreição (+5)</strong><br>
+      A armadura protege a vida do cavaleiro como se fosse a sua própria.  
+      Sempre que o cavaleiro for reduzido a 0 PV ou morrer, na rodada seguinte a armadura canaliza seu Cosmo e invoca forças superiores para restaurá-lo.
+
+      <br>
+
+      Ao ativar este efeito, a armadura sacrifica permanentemente metade de seus PV máximos. Esse valor é convertido em cura direta para o cavaleiro, que retorna à vida com essa quantidade de PV e com seu Cosmo totalmente restaurado no máximo.
+
+      <br>
+
+      A perda de PV da armadura é irreversível. Caso esse sacrifício reduza seus PV a 0, a armadura é completamente destruída, sem possibilidade de recuperação.
     </li>
 
     </ul>
