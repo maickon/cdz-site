@@ -57,15 +57,15 @@ const database = [
     "full_description": "O custo em Cosmo para executar uma técnica é sempre igual ao dobro do Rank da técnica. Esse valor deve ser pago pelo personagem no momento em que a técnica é utilizada.",
     "formula": "rank * 2",
     "data": [
-      { "rank": 1, "custod de cosmo": 2 },
-      { "rank": 2, "custod de cosmo": 4 },
-      { "rank": 3, "custod de cosmo": 6 },
-      { "rank": 4, "custod de cosmo": 8 },
-      { "rank": 5, "custod de cosmo": 10 },
-      { "rank": 6, "custod de cosmo": 12 },
-      { "rank": 7, "custod de cosmo": 14 },
-      { "rank": 8, "custod de cosmo": 16 },
-      { "rank": 9, "custod de cosmo": 18 }
+      { "rank": 1, "custo de cosmo": 2 },
+      { "rank": 2, "custo de cosmo": 4 },
+      { "rank": 3, "custo de cosmo": 6 },
+      { "rank": 4, "custo de cosmo": 8 },
+      { "rank": 5, "custo de cosmo": 10 },
+      { "rank": 6, "custo de cosmo": 12 },
+      { "rank": 7, "custo de cosmo": 14 },
+      { "rank": 8, "custo de cosmo": 16 },
+      { "rank": 9, "custo de cosmo": 18 }
     ]
   },
   {
@@ -331,31 +331,21 @@ const database = [
     ]
   },
   {
-    "table":"Alcance de Teletransporte",
-    "description":"Distância máxima que o Cavaleiro pode se mover instantaneamente através do Cosmo.",
-    "full_description":"Algumas técnicas permitem ao Cavaleiro dobrar o espaço e mover-se instantaneamente através do Cosmo. O teletransporte é uma habilidade avançada e não deve ser utilizada em Ranks mais baixos devido à instabilidade e aos riscos envolvidos.",
-    "data":[
-      { "rank":"1 a 3", "alcance":"não recomendado (técnica instável / proibida)" },
-      { "rank":"4 a 6", "alcance":"200 m por nível" },
-      { "rank":"7 a 9", "alcance":"300 m por nível" }
+    "table": "Teletransporte",
+    "description": "Distância máxima que o Cavaleiro pode se mover instantaneamente através do Cosmo.",
+    "full_description": "Algumas técnicas permitem ao Cavaleiro dobrar o espaço e mover-se instantaneamente através do Cosmo. O alcance é definido por metros por nível, respeitando sempre um limite máximo absoluto de segurança. Ultrapassar esse limite pode causar falha cósmica, danos severos ou perda no vazio dimensional.",
+    "data": [
+      { "rank": 1, "alcance": "não recomendado (instável/proibido)", "alcance máximo": "não recomendável" },
+      { "rank": 2, "alcance": "não recomendado (instável/proibido)", "alcance máximo": "não recomendável" },
+      { "rank": 3, "alcance": "não recomendado (instável/proibido)", "alcance máximo": "não recomendável" },
+      { "rank": 4, "alcance": "200 m por nível", "alcance máximo": "1,2 km" },
+      { "rank": 5, "alcance": "200 m por nível", "alcance máximo": "1,6 km" },
+      { "rank": 6, "alcance": "200 m por nível", "alcance máximo": "2,2 km" },
+      { "rank": 7, "alcance": "300 m por nível", "alcance máximo": "2,8 km" },
+      { "rank": 8, "alcance": "300 m por nível", "alcance máximo": "3,5 km" },
+      { "rank": 9, "alcance": "300 m por nível", "alcance máximo": "5 km" }
     ]
-  },
-  {
-    "table":"Teletransporte — Alcance",
-    "description":"Limite máximo seguro para uso de técnicas de teletransporte.",
-    "full_description":"Mesmo quando o teletransporte é medido em metros por nível, existe um limite máximo absoluto de segurança. Ultrapassar esse limite pode causar falha cósmica, danos corporais severos ou a perda total do Cavaleiro no vazio entre dimensões.",
-    "data":[
-      { "rank":1, "alcance máximo":"não recomendável" },
-      { "rank":2, "alcance máximo":"não recomendável" },
-      { "rank":3, "alcance máximo":"não recomendável" },
-      { "rank":4, "alcance máximo":"1,2 km" },
-      { "rank":5, "alcance máximo":"1,6 km" },
-      { "rank":6, "alcance máximo":"2,2 km" },
-      { "rank":7, "alcance máximo":"2,8 km" },
-      { "rank":8, "alcance máximo":"3,5 km" },
-      { "rank":9, "alcance máximo":"5 km" }
-    ]
-  },
+  }
   {
     "table":"Detecção Cósmica",
     "description":"Distância máxima para percepção, detecção de outros seres através do Cosmo.",
@@ -599,7 +589,7 @@ const database = [
       { "rank": 6, "efeito": "Privação do Tato (Paralisia): O alvo perde a sensibilidade corporal e a capacidade motora, ficando Imobilizado (incapaz de agir ou se mover)." },
       { "rank": 7, "efeito": "Privação do Pensamento/Razão (6º Sentido): O alvo perde o controle sobre suas ações e o livre arbítrio, podendo ser comandado pelo usuário ou ficando em estado catatônico." },
       { "rank": 8, "efeito": "Privação do Cosmo (Atrofia Cósmica): O alvo é impedido de “Queimar o Cosmo”, não podendo usar técnicas especiais ou elevar sua energia acima da metade do valor máximo." },
-      { "rank": 8, "efeito": "Privação Espiritual (Aniquilação dos Sentidos): Remove simultaneamente todos os sentidos físicos e mentais, reduzindo o alvo a uma “casca vazia”." }
+      { "rank": 9, "efeito": "Privação Espiritual (Aniquilação dos Sentidos): Remove simultaneamente todos os sentidos físicos e mentais, reduzindo o alvo a uma “casca vazia”." }
     ]
   },
   {

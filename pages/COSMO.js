@@ -36,7 +36,7 @@ const COSMO = `
         O total de Cosmo da reserva de um cavaleiro é definido pela seguinte fórmula:
       </p>
       <div style="text-align:center; padding:1.25rem; background:rgba(255,215,0,0.05); border:1px solid var(--gold-light); border-radius:4px; color:var(--gold-light); font-size:1rem; font-family:'Cinzel',serif; letter-spacing:0.05em; margin-top:1rem;">
-        Cosmo Máximo = Bônus da Classe + Soma dos Modificadores (FOR + DES + CON + INT + SAB + CAR)
+        Cosmo Máximo = Bônus da Classe + Soma dos Modificadores (FOR + DES + CON + INT + SAB + CAR) * O nível da armadura
       </div>
     </div>
 
