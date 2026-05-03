@@ -73,15 +73,15 @@ const database = [
     "description": "Dado base associado ao Rank.",
     "full_description": "O dano causado por uma técnica é definido pelo dado base correspondente ao Rank, multiplicado pelo nível do personagem. Use o dado indicado para cada Rank ao calcular o dano total da técnica.",
     "data": [
-      { "rank": 1, "dado de dano": "d4" },
-      { "rank": 2, "dado de dano": "d6" },
-      { "rank": 3, "dado de dano": "d8" },
-      { "rank": 4, "dado de dano": "d6" },
-      { "rank": 5, "dado de dano": "d8" },
-      { "rank": 6, "dado de dano": "d10" },
-      { "rank": 7, "dado de dano": "d10" },
-      { "rank": 8, "dado de dano": "d12" },
-      { "rank": 9, "dado de dano": "d20" }
+      { "rank": 1, "dado de dano": "d4/mível (max: 4d4)" },
+      { "rank": 2, "dado de dano": "d6/mível (max: 4d6)" },
+      { "rank": 3, "dado de dano": "d6/mível (max: 8d6)" },
+      { "rank": 4, "dado de dano": "d8/mível (max: 10d8)" },
+      { "rank": 5, "dado de dano": "d8/mível (max: 14d8)" },
+      { "rank": 6, "dado de dano": "d10/mível (max: 16d10)" },
+      { "rank": 7, "dado de dano": "d10/mível (Sem limite)" },
+      { "rank": 8, "dado de dano": "d12/mível (Sem limite)" },
+      { "rank": 9, "dado de dano": "d20/mível (Sem limite)" }
     ]
   },
   {
