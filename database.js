@@ -345,7 +345,7 @@ const database = [
       { "rank": 8, "alcance": "300 m por nível", "alcance máximo": "3,5 km" },
       { "rank": 9, "alcance": "300 m por nível", "alcance máximo": "5 km" }
     ]
-  }
+  },
   {
     "table":"Detecção Cósmica",
     "description":"Distância máxima para percepção, detecção de outros seres através do Cosmo.",
