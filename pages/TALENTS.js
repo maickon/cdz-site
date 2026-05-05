@@ -34,7 +34,7 @@ const TALENTS = `
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">COSMO ADICIONAL [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Ter cosmo 20 ou maior e 5 graduações em Manipular cosmo.</p>
         <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;"><strong>Benefício:</strong> Adicione um bônus inerente de +2 ao seu cosmo.</p>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Especial:</strong> Este talento pode ser adquirido várias vezes, e a cada vez que for adquirido adiciona +1 a cada vez. Exemplo: quando adquirir pela segunda vez terá um bônus de +3, somados aos +2 pontos anteriores. Adquirir mais uma vez terá um bônus de +4, somados aos bônus anteriores de +2 e +3 com seus efeitos cumulativos.</p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Especial:</strong> Este talento pode ser adquirido várias vezes, e a cada vez que for adquirido some +2 a sua reserva de cosmo geral.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
@@ -208,20 +208,20 @@ const TALENTS = `
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">SEXTO SENTIDO [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 3° nível de cavaleiro, Sabedoria 12.</p>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;"><strong>Benefício:</strong> +2 nos testes e CD, +2 na CA (deflexão), coloca carisma na CA e nos testes de resistência (como bônus de sorte), +1 em manipular cosmo, ataque chi +2.</p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;"><strong>Benefício:</strong> +2 nos testes de resistência e CD (classe de dificuldade das técnicas), +2 na CA (deflexão), +2 no bônus de ataque, coloca carisma na CA e nos testes de resistência (como bônus de sorte), +1 em manipular cosmo.</p>
         <p style="font-size:0.9rem; line-height:1.6; color:#aaa;"><strong>Observação:</strong> Os benefícios dos talentos de sentido são acumulativos.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">SÉTIMO SENTIDO [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 9° nível de cavaleiro, Sabedoria 14.</p>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> +3 nos testes e CD, + 3 na CA (deflexão), +3 em manipular cosmo e mantém o carisma na CA e testes de resistência, inteligência na iniciativa, cura pelas mão como uma ação padrão (modificador de carisma x nível de cavaleiro = cura). Capacidade de se concentrar para sentir e ouvir criaturas no plano astral. Ataque chi +3.</p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> +3 nos testes de resistência e CD (classe de dificuldade das técnicas), + 3 na CA (deflexão), +3 no bônus de ataque, +3 em manipular cosmo e mantém o carisma na CA e testes de resistência, inteligência na iniciativa, cura pelas mão como uma ação padrão (modificador de carisma x nível de cavaleiro = cura). Capacidade de se concentrar para sentir e ouvir criaturas no plano astral.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">OITAVO SENTIDO [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 15° nível de cavaleiro, Sabedoria 16.</p>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> +4 nos teste e CD, + 4 na CA (deflexão), +4 em manipular cosmo, capacidade de interagir no plano astral, não precisa dos 5 sentidos e esquiva sobrenatural (não ser flanqueado, destreza na CA, não pode ser surpreendido), lutar às cegas, coloca o dobro da sabedoria na perícia manipular cosmo. O personagem com oitavo sentido atinge um nível tão alto que ele é capaz de sair do corpo e interagir no mundo astral, ele é capaz de observar e se comunicar com criaturas astrais. Além de ser capaz de ver o plano astral com o seu próprio corpo físico. Ataque chi +4.</p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> +4 nos teste de resistência e CD (classe de dificuldade das técnicas), + 4 na CA (deflexão), +4 no bônus de ataque, +4 em manipular cosmo, capacidade de interagir no plano astral, não precisa dos 5 sentidos e esquiva sobrenatural (não ser flanqueado, destreza na CA, não pode ser surpreendido), lutar às cegas, coloca o dobro da sabedoria na perícia manipular cosmo. O personagem com oitavo sentido atinge um nível tão alto que ele é capaz de sair do corpo e interagir no mundo astral, ele é capaz de observar e se comunicar com criaturas astrais. Além de ser capaz de ver o plano astral com o seu próprio corpo físico.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
@@ -240,14 +240,14 @@ const TALENTS = `
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">ATAQUE EM TODOS [Geral]</h3>
         <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;">A velocidade do personagem é tão grande que ele é capaz de golpear os oponentes que estão dentro de seu alcance (deslocamento) usando incríveis golpes.</p>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Des 16, Int 13, Acrobacia 9 graduações, Especialização em Combate, Esquiva, Mobilidade, bônus base de ataque +12.</p>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> Quando seu personagem usar a ação de ataque total, ele poderá desferir um número de ataques corporais em cada oponente dentro de seu deslocamento padrão (sem sofrer ataques de oportunidade), utilizando cada um de seus ataques contra cada oponente dentro do seu alcance. Quando utiliza um Ataque em todos, o personagem perde qualquer bônus ou ataques adicionais concedidos por outros talentos ou habilidades (como o talento Trespassar ou a técnicas de velocidade).</p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> Complementando a manobra de ação [Ação de Ataque Geral]. Quando seu personagem usar esta ação combinado com este talento, ele poderá desferir um número de ataques adicionais em cada oponente equivalento ao seu modificador de destreza usando o seu pior bônus. O personagem não pode percorrer mais do que o seu deslocamento padrão. Além disso ele não sofre ataques de oportunidade ao sair da área ameaçada de um oponente para atacar outro oponente. O bônus adicional de ataques concedido pela destreza é somado a quantidade de ataques que o personagem é capaz de fazer no turno. Então se ele consegue realizar 2 ataque e tem +3 de modificador de destreza, ele consegue realizar até 5 ataque neste turno usando esta manobra. <br> OBSERVAÇÃO: Quando utiliza um Ataque em todos, o personagem perde qualquer bônus ou ataques adicionais concedidos por outros talentos ou habilidades (como o talento Trespassar ou a técnicas de velocidade).</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">ATAQUE EM TODOS APRIMORADO [Geral]</h3>
         <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;">Os seus golpes agora são tão precisos que você praticamente nunca erra.</p>
-        <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Des 18, Int 14, Ataque em todos.</p>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> Quando seu personagem utilizar este talento, todos os seus ataque terão o melhor bônus. Este bônus é fixo e nunca cairá, além de poder ser combinado com rajada de golpes.</p>
+        <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Des 20, Int 14, Ataque em todos.</p>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> Quando seu personagem utilizar este talento, todos os seus ataque terão o melhor bônus. Este bônus é fixo e nunca cairá. Além disso ele não é mais limitado pelo seu deslocamento, podendo realizar ataques a qualquer oponente que esteja dentro de seu raio de visão dentro do campo de batalha.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
