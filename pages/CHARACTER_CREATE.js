@@ -134,7 +134,7 @@ const CHARACTER_CREATE = `
       <div class="corner-ornament corner-bl"></div><div class="corner-ornament corner-br"></div>
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">Passos 2: Atributos</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
-        Em nosso RPG, todos os personagens criados pelos jogadores são humanos. O jogador deve apenas descrever a aparência do seu personagem, sua história e rolar os dados de habilidades.
+          Em nosso RPG, todos os personagens criados pelos jogadores são humanos. O jogador deve apenas descrever a aparência do seu personagem, sua história e rolar os dados de habilidades.
       </p>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
         Os jogadores rolam <strong style="color:var(--gold-light);">4d6</strong> para cada habilidade (Força, Destreza, Constituição, Inteligência, Sabedoria e Carisma). Descarte o dado de menor valor e some os outros três.
@@ -239,10 +239,22 @@ const CHARACTER_CREATE = `
     </div>
 
     <div class="cosmos-card p-6 mb-6">
-      <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">Passo 6: Detalhes Finais</h2>
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
-        Agora, junte tudo. Dê ao seu Cavaleiro um nome (provavelmente ridículo, como manda a tradição), uma descrição física e pense em sua história. Por que ele se tornou um cavaleiro? Qual seu objetivo? Ele quer salvar o mundo ou apenas pagar as contas?
+      <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1.1rem; letter-spacing:0.15em; margin-bottom:1rem; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 0.5rem;">
+        PASSO 6: A ASCENSÃO DO COSMO
+      </h2>
+      
+      <p style="font-size:1.05rem; line-height:1.7; color:var(--silver); margin-bottom:1rem;">
+        <strong style="color:var(--gold-light);">Elevação de Atributos</strong>: Ao transcender seus limites e avançar de nível, o Cavaleiro refina sua essência. Você recebe <strong style="color:#fff;">+1 ponto</strong> para distribuir permanentemente em qualquer um de seus Atributos Base, refletindo o amadurecimento físico e mental de seu treinamento.
+      </p>
+      
+      <p style="font-size:1.05rem; line-height:1.7; color:var(--silver); margin-bottom:1rem;">
+        <strong style="color:var(--gold-light);">Desenvolvimento de Técnicas</strong>: A experiência adquirida em batalha permite o despertar de novos milagres. O XP excedente — aquele que ultrapassa o necessário para subir de nível — é convertido em uma <strong style="color:#fff;">Reserva de Cosmo-XP</strong>. Estes pontos devem ser investidos para desbloquear, aprimorar ou dominar novas Técnicas de Combate.
+      </p>
+      
+      <p style="font-size:1.05rem; line-height:1.7; color:var(--silver);">
+        <strong style="color:var(--gold-light);">Progressão de Classe</strong>: Consulte a <strong style="color:#fff;">Tabela de Classe do Cavaleiro</strong> para atualizar seus novos bônus de combate. Certifique-se de ajustar seus valores de Cosmo Máximo, Bônus Base de Ataque (BBA), Testes de Resistência e Deslocamento, garantindo que sua ficha reflita seu novo patamar de poder.
       </p>
     </div>
+
 </div>
 `;
