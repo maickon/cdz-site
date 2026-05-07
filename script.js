@@ -32,6 +32,62 @@ const PAGE_GROUPS = [
     get content() { return HOME; }
   },
 
+  /* ── Grupo: Fundamentos ── */
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'base', label: 'A base', icon: '℧',
+    type: 'html',
+    get content() { return BASE; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'mecanica', label: 'Mecânica', icon: '⚙',
+    type: 'html',
+    get content() { return MECANIC; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'atributos', label: 'Atributos', icon: '⚚',
+    type: 'html',
+    get content() { return ATTRIBUTES; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'vida', label: 'Vida', icon: '❤',
+    type: 'html',
+    get content() { return LIFE; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'defesa', label: 'Defesa', icon: '❖',
+    type: 'html',
+    get content() { return DEFENSE; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'ataque', label: 'Ataque', icon: '⚒',
+    type: 'html',
+    get content() { return ATTACK; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'testes', label: 'Testes de Resistência', icon: '✴',
+    type: 'html',
+    get content() { return TESTS; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'pericias', label: 'Perícias', icon: '✥',
+    type: 'html',
+    get content() { return EXPERTISE; }
+  },
+  {
+    group: 'Fundamentos', groupIcon: '♟',
+    id: 'turnos', label: 'Turnos e Ações', icon: '♾',
+    type: 'html',
+    get content() { return TURNS; }
+  },
+
   /* ── Grupo: Personagem ── */
   {
     group: 'Personagem', groupIcon: '♟',

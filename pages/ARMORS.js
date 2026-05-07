@@ -59,7 +59,7 @@ const ARMORS = `
         <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Escudo:</strong> O bônus extra na CA concedido caso a armadura forneça algum tipo de proteção específica como escudo, broquel, etc.</li>
         <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">PV Base:</strong> São os pontos de vida estruturais da própria armadura.</li>
         <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Recuperação de Cosmo:</strong> O bônus de energia cósmica que o cavaleiro recupera naturalmente a cada rodada de combate.</li>
-        <li><strong style="color:var(--gold-light);">Mágico:</strong> Bônus adicional somado ao ataque e ao dano causado pelo cavaleiro (em ataques corpo-a-corpo ou técnicas de dano).</li>
+        <li><strong style="color:var(--gold-light);">Mágico:</strong> Bônus adicional nos testes de resistência e também somado ao ataque e ao dano causado pelo cavaleiro (em ataques corpo-a-corpo ou técnicas de dano).</li>
         <li><strong style="color:var(--gold-light);">Talento adicional:</strong> Toda armadura quando conquistada concede ao seu portador 1 talento adicional.</li>
       </ul>
     </div>
