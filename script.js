@@ -83,7 +83,7 @@ const PAGE_GROUPS = [
   },
   {
     group: 'Fundamentos', groupIcon: '♟',
-    id: 'turnos', label: 'Turnos e Ações', icon: '♾',
+    id: 'turnos', label: 'Turnos e Ações', icon: '⚖',
     type: 'html',
     get content() { return TURNS; }
   },
