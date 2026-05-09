@@ -1,0 +1,339 @@
+/* ═══════════════════════════════════════
+   GERADOR DE INVOCAÇÕES — TELA PRINCIPAL
+═══════════════════════════════════════ */
+.generator-container * {
+    box-sizing: border-box;
+}
+
+.generator-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Painel de Configuração */
+.config-panel {
+    background: rgba(6, 11, 24, 0.8);
+    border: 1px solid rgba(200, 168, 75, 0.3);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.input-group select, .input-group input {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(200, 168, 75, 0.2);
+    color: var(--silver);
+    padding: 8px;
+    border-radius: 2px;
+    font-family: 'Crimson Pro', serif;
+}
+
+.btn-generate {
+    background: linear-gradient(135deg, rgba(200,168,75,0.2), rgba(200,168,75,0.05));
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.1em;
+}
+
+.btn-generate:hover {
+    background: rgba(200,168,75,0.25);
+    box-shadow: 0 0 15px rgba(200,168,75,0.2);
+    color: var(--gold);
+}
+
+/* Grid de Cards Menores (Resultados) */
+.creatures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.creature-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.creature-header {
+    border-bottom: 1px solid rgba(200,168,75,0.2);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    border-bottom: 1px dotted rgba(255,255,255,0.05);
+}
+
+.stat-label { color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: 0.75rem; }
+.stat-value { color: var(--silver); font-family: 'Crimson Pro', serif; }
+
+.ability-tag {
+    display: inline-block;
+    background: rgba(200,168,75,0.1);
+    border: 1px solid rgba(200,168,75,0.2);
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════
+   TELA DA FICHA DE RPG (RESOLVIDO O CORTE)
+═══════════════════════════════════════ */
+.rpg-sheet-screen, .rpg-sheet-container, .sheet-inner * {
+    box-sizing: border-box;
+}
+
+/* O fundo absoluto que cobre o site inteiro */
+.rpg-sheet-screen {
+    position: fixed !important;
+    inset: 0 !important; /* Fixa nos 4 cantos da tela ignorando barras */
+    background: linear-gradient(135deg, #060b18 0%, #0b1230 100%) !important;
+    z-index: 999999 !important;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0; /* Tiramos o padding externo no mobile */
+}
+
+/* O Container Principal da Ficha */
+.rpg-sheet-container {
+    width: 100%;
+    height: 100%; /* No mobile, ocupa a tela exata, ponta a ponta */
+    max-width: 600px;
+    background: rgba(6, 11, 24, 0.95);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Proteção para iPhones (Notch e Barra inferior) */
+    padding-top: max(15px, env(safe-area-inset-top));
+    padding-bottom: max(15px, env(safe-area-inset-bottom));
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* No desktop, ela volta a ser um "Card" centralizado */
+@media (min-width: 768px) {
+    .rpg-sheet-container {
+        height: 90vh; /* Respiro em cima e embaixo */
+        border: 1px solid rgba(200, 168, 75, 0.4);
+        border-radius: 6px;
+        box-shadow: 0 0 60px rgba(0,0,0,0.8), inset 0 0 30px rgba(200,168,75,0.05);
+    }
+}
+
+/* Botão Fechar (Fixo e Isolado) */
+.sheet-close-btn {
+    position: absolute;
+    top: max(15px, env(safe-area-inset-top));
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(200, 168, 75, 0.1);
+    border: 1px solid rgba(200, 168, 75, 0.3);
+    color: var(--gold-light);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100; 
+    border-radius: 4px;
+    line-height: 1;
+}
+
+/* ── MIOLO ROLÁVEL (A MÁGICA QUE EVITA O CORTE) ── */
+.sheet-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px; /* Afasta do botão de fechar */
+    padding-bottom: 20px; /* Respiro no final do scroll */
+    overflow-y: auto; /* SE A TELA FOR PEQUENA, ELE ROLA APENAS AQUI DENTRO */
+    -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
+}
+
+/* Esconde a barra de rolagem feia, mantendo a função */
+.sheet-inner::-webkit-scrollbar { width: 0px; background: transparent; }
+
+/* ── BLOCOS INTERNOS (MUITO MAIS SEGUROS) ── */
+.sheet-block {
+    border: 1px solid rgba(200,168,75,0.2);
+    background: rgba(200,168,75,0.03);
+    padding: 10px 12px;
+    border-radius: 3px;
+    flex-shrink: 0; /* Impede que o flexbox amasse esses blocos */
+}
+.sheet-block-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(200,168,75,0.1);
+    padding-bottom: 4px;
+}
+
+/* Vitais */
+.vital-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; text-align: center; }
+@media (min-width: 480px) { .vital-grid { grid-template-columns: repeat(6, 1fr); } }
+.vital-label { font-family: 'Cinzel', serif; font-size: 0.6rem; color: var(--gold-dim); display: block; }
+.vital-value { font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--silver); font-weight: bold; display: block; }
+
+/* Atributos */
+.attr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; text-align: center; flex-shrink: 0; }
+@media (min-width: 480px) { .attr-grid { grid-template-columns: repeat(6, 1fr); } }
+.attr-box { background: rgba(0,0,0,0.4); border: 1px solid rgba(200,168,75,0.15); padding: 6px 0; border-radius: 2px; }
+.attr-name { font-family: 'Cinzel', serif; font-size: 0.6rem; color: var(--gold-dim); display: block; }
+.attr-score { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--silver); display: block; }
+.attr-mod { font-family: 'Crimson Pro', serif; font-size: 0.7rem; color: var(--gold-light); display: block; }
+
+/* Combate */
+.combat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.combat-item { font-family: 'Crimson Pro', serif; font-size: 0.9rem; color: var(--silver); }
+.combat-item strong { color: var(--gold-dim); font-family: 'Cinzel', serif; font-size: 0.7rem; }
+
+/* ── BLOCOS DE HABILIDADE ── */
+.abilities-blocks { display: flex; flex-direction: column; gap: 8px; }
+
+.ability-block {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(200,168,75,0.15);
+    border-radius: 3px;
+    padding: 8px 10px;
+}
+
+.ability-inerente {
+    border-color: rgba(150,200,255,0.25);
+    background: rgba(100,150,255,0.04);
+}
+
+.ability-block-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.ability-block-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    flex: 1;
+    min-width: 0;
+}
+
+.ability-inerente-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    color: #8ab4f8;
+    border: 1px solid rgba(138,180,248,0.4);
+    padding: 1px 5px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.ability-block-desc {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    color: var(--silver-dim);
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+/* Tags de efeitos */
+.ability-efeitos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.efeito-tag {
+    display: flex;
+    align-items: center;
+    background: rgba(200,168,75,0.06);
+    border: 1px solid rgba(200,168,75,0.18);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.72rem;
+}
+
+.efeito-key {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-dim);
+    padding: 2px 5px;
+    background: rgba(200,168,75,0.08);
+    font-size: 0.6rem;
+    white-space: nowrap;
+}
+
+.efeito-val {
+    font-family: 'Crimson Pro', serif;
+    color: var(--silver);
+    padding: 2px 6px;
+    white-space: nowrap;
+}
+
+/* Badges de tipo de habilidade */
+.ability-tipo-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    padding: 1px 6px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+.tipo-ataque    { color: #ff8080; border-color: rgba(255,80,80,0.4);   background: rgba(255,80,80,0.08); }
+.tipo-defesa    { color: #80c8ff; border-color: rgba(80,180,255,0.4);  background: rgba(80,180,255,0.08); }
+.tipo-controle  { color: #c080ff; border-color: rgba(180,80,255,0.4);  background: rgba(180,80,255,0.08); }
+.tipo-suporte   { color: #80ffb0; border-color: rgba(80,255,140,0.4);  background: rgba(80,255,140,0.08); }
+.tipo-cura      { color: #80ffd0; border-color: rgba(80,255,200,0.4);  background: rgba(80,255,200,0.08); }
+.tipo-debuff    { color: #ffb060; border-color: rgba(255,150,60,0.4);  background: rgba(255,150,60,0.08); }
+.tipo-mobilidade{ color: #ffe080; border-color: rgba(255,220,80,0.4);  background: rgba(255,220,80,0.08); }
+.tipo-reacao    { color: #ff80c0; border-color: rgba(255,80,180,0.4);  background: rgba(255,80,180,0.08); }
+.tipo-passiva   { color: var(--gold-dim); border-color: rgba(200,168,75,0.3); background: rgba(200,168,75,0.06); }
+.tipo-utilidade { color: #a0d0ff; border-color: rgba(140,190,255,0.4); background: rgba(140,190,255,0.08); }

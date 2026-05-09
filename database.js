@@ -54,7 +54,7 @@ const database = [
   {
     "table": "Custo de Cosmo da Técnica",
     "description": "Custo de Cosmo para execução da técnica.",
-    "full_description": "O custo em Cosmo para executar uma técnica é sempre igual ao dobro do Rank da técnica. Esse valor deve ser pago pelo personagem no momento em que a técnica é utilizada.",
+    "full_description": "O custo em Cosmo para executar uma técnica é sempre igual ao dobro do Rank da técnica. Esse valor deve ser pago pelo personagem no momento em que a técnica é utilizada. Se este custo pertencer a uma habilidade secundário, o custo será igual ao RANK da ténica.",
     "formula": "rank * 2",
     "data": [
       { "rank": 1, "custo de cosmo": 2 },
@@ -73,31 +73,51 @@ const database = [
     "description": "Dado base associado ao Rank.",
     "full_description": "O dano causado por uma técnica é definido pelo dado base correspondente ao Rank, multiplicado pelo nível do personagem. Use o dado indicado para cada Rank ao calcular o dano total da técnica.",
     "data": [
-      { "rank": 1, "dado de dano": "d4/mível (max: 4d4)" },
-      { "rank": 2, "dado de dano": "d6/mível (max: 4d6)" },
-      { "rank": 3, "dado de dano": "d6/mível (max: 8d6)" },
-      { "rank": 4, "dado de dano": "d8/mível (max: 10d8)" },
-      { "rank": 5, "dado de dano": "d8/mível (max: 14d8)" },
-      { "rank": 6, "dado de dano": "d10/mível (max: 16d10)" },
-      { "rank": 7, "dado de dano": "d10/mível (Sem limite)" },
-      { "rank": 8, "dado de dano": "d12/mível (Sem limite)" },
-      { "rank": 9, "dado de dano": "d20/mível (Sem limite)" }
+      { "rank": 1, "dado de dano": "d4/nível" },
+      { "rank": 2, "dado de dano": "d6/nível" },
+      { "rank": 3, "dado de dano": "d8/nível" },
+      { "rank": 4, "dado de dano": "d10/nível" },
+      { "rank": 5, "dado de dano": "d12/nível" },
+      { "rank": 6, "dado de dano": "d12 + d4/nível" },
+      { "rank": 7, "dado de dano": "d12 + d6/nível" },
+      { "rank": 8, "dado de dano": "d12 + d8/nível" },
+      { "rank": 9, "dado de dano": "d12 + d10/nível" }
     ]
   },
   {
-    "table":"Dano Direto (Ignora Redução de Armadura)",
-    "description":"Dano direto que ignora qualquer forma de redução concedida por armaduras ou efeitos semelhantes.",
-    "full_description":"Este tipo de técnica causa dano direto ao alvo, ignorando qualquer forma de redução de dano concedida por armaduras ou efeitos semelhantes. O dano é baseado no nível do personagem e limitado por um valor máximo conforme o Rank da técnica, quando aplicável.",
-    "data":[
-      { "rank":1, "dano base":"1d4 por nível", "dano máximo":"até 5d4" },
-      { "rank":2, "dano base":"1d6 por nível", "dano máximo":"até 5d6" },
-      { "rank":3, "dano base":"1d6 por nível", "dano máximo":"até 5d6" },
-      { "rank":4, "dano base":"1d8 por nível", "dano máximo":"até 7d8" },
-      { "rank":5, "dano base":"1d8 por nível", "dano máximo":"até 7d8" },
-      { "rank":6, "dano base":"1d10 por nível", "dano máximo":"até 7d10" },
-      { "rank":7, "dano base":"1d10 a cada 2 níveis", "dano máximo":"sem limite fixo" },
-      { "rank":8, "dano base":"1d12 a cada 2 níveis", "dano máximo":"sem limite fixo" },
-      { "rank":9, "dano base":"1d20 a cada 2 níveis", "dano máximo":"sem limite fixo" }
+    "table": "Dano Direto (Ignora Redução de Armadura)",
+    "description": "Dano que ignora completamente a divisão com armadura, atingindo diretamente os pontos de vida.",
+    "full_description": "Este tipo de técnica causa dano direto ao alvo, ignorando qualquer forma de mitigação por armadura ou efeitos equivalentes. O dano escala com o nível do personagem, representando maior domínio da técnica, mas possui um limite máximo baseado no Rank para evitar crescimento descontrolado.",
+    "data": [
+      { "rank": 1, "dano base": "1d4 por nível",  "dano máximo": "até 4d4" },
+      { "rank": 2, "dano base": "1d6 por nível",  "dano máximo": "até 6d6" },
+      { "rank": 3, "dano base": "1d8 por nível",  "dano máximo": "até 8d8" },
+      { "rank": 4, "dano base": "1d10 por nível", "dano máximo": "até 10d10" },
+      { "rank": 5, "dano base": "1d12 por nível", "dano máximo": "até 12d12" },
+      { "rank": 6, "dano base": "1d12 por nível", "dano máximo": "até 14d12" },
+      { "rank": 7, "dano base": "1d12 por nível", "dano máximo": "sem limite" },
+      { "rank": 8, "dano base": "2d8 por nível",  "dano máximo": "sem limite" },
+      { "rank": 9, "dano base": "2d10 por nível", "dano máximo": "sem limite" }
+    ]
+  },
+  {
+    "table": "Dano Direto na Armadura",
+    "description": "Dano que afeta diretamente os pontos de vida da armadura, ignorando o usuário.",
+    "full_description": "Esta técnica causa dano diretamente à armadura do alvo, ignorando completamente o personagem. É especialmente eficaz para destruir defesas, reduzindo rapidamente a durabilidade do equipamento. O dano escala com o nível do usuário, mas possui um limite máximo baseado no Rank, acompanhando a progressão natural dos pontos de vida das armaduras.",
+    "data": [
+      { "rank": 1, "dano base": "1d6 por nível",   "dano máximo": "até 40" },
+      { "rank": 2, "dano base": "1d8 por nível",   "dano máximo": "até 60" },
+
+      { "rank": 3, "dano base": "1d10 por nível",  "dano máximo": "até 100" },
+      { "rank": 4, "dano base": "1d12 por nível",  "dano máximo": "até 140" },
+
+      { "rank": 5, "dano base": "2d8 por nível",   "dano máximo": "até 200" },
+      { "rank": 6, "dano base": "2d10 por nível",  "dano máximo": "até 260" },
+
+      { "rank": 7, "dano base": "2d12 por nível",  "dano máximo": "até 360" },
+      { "rank": 8, "dano base": "3d10 por nível",  "dano máximo": "até 450" },
+
+      { "rank": 9, "dano base": "3d12 por nível",  "dano máximo": "até 550" }
     ]
   },
   {
@@ -117,76 +137,43 @@ const database = [
     ]
   },
   {
-    "table": "Quantidade Máxima de Dados de Dano",
-    "description": "Limite máximo de dados de dano.",
-    "full_description": "Cada técnica possui um limite de dados de dano que pode atingir, independente do nível do personagem. Siga os valores abaixo conforme o Rank da técnica.",
+    "table": "Cura por Rank",
+    "description": "Recuperação de pontos de vida proporcional ao domínio da técnica.",
+    "full_description": "Técnicas de cura restauram pontos de vida ao canalizar energia vital ou espiritual. A eficácia da cura depende diretamente do Rank da técnica, refletindo maior controle e intensidade. A cura é calculada pela fórmula Cura = (Rank × 12) + Dado do Rank. Diferente de efeitos regenerativos passivos, essa cura é imediata e escalável, sendo mais eficiente em ranks elevados devido ao aumento do dado associado.",
+    "formula": "Cura = (Rank × 12) + Dado do Rank",
     "data": [
-      { "rank": 1, "dano máximo": "10d4" },
-      { "rank": 2, "dano máximo": "10d6" },
-      { "rank": 3, "dano máximo": "10d8" },
-      { "rank": 4, "dano máximo": "15d6" },
-      { "rank": 5, "dano máximo": "15d8" },
-      { "rank": 6, "dano máximo": "15d10" },
-      { "rank": 7, "dano máximo": "sem limite" },
-      { "rank": 8, "dano máximo": "sem limite" },
-      { "rank": 9, "dano máximo": "sem limite" }
+      { "rank": 1, "rank do dado": "d4",  "fórmula de cura": "(1 × 12) + d4",  "total de cura": "12 + d4" },
+      { "rank": 2, "rank do dado": "d6",  "fórmula de cura": "(2 × 12) + d6",  "total de cura": "24 + d6" },
+      { "rank": 3, "rank do dado": "d8",  "fórmula de cura": "(3 × 12) + d8",  "total de cura": "36 + d8" },
+      { "rank": 4, "rank do dado": "d10", "fórmula de cura": "(4 × 12) + d10", "total de cura": "48 + d10" },
+      { "rank": 5, "rank do dado": "d12", "fórmula de cura": "(5 × 12) + d12", "total de cura": "60 + d12" },
+      { "rank": 6, "rank do dado": "d12", "fórmula de cura": "(6 × 12) + d12", "total de cura": "72 + d12" },
+      { "rank": 7, "rank do dado": "d20", "fórmula de cura": "(7 × 12) + d20", "total de cura": "84 + d20" },
+      { "rank": 8, "rank do dado": "d20", "fórmula de cura": "(8 × 12) + d20", "total de cura": "96 + d20" },
+      { "rank": 9, "rank do dado": "d20", "fórmula de cura": "(9 × 12) + d20", "total de cura": "108 + d20" }
     ]
   },
   {
-    "table":"Classe de Dificuldade (CD) da Técnica",
-    "description":"Valor de dificuldade para resistir aos efeitos de uma técnica.",
-    "full_description":"A Classe de Dificuldade (CD) para resistir a uma técnica é sempre calculada pela fórmula base CD = 10 + modificador de Sabedoria (SAB) + Rank da técnica. A Sabedoria representa o controle espiritual e a compreensão cósmica do Cavaleiro, enquanto o Rank define a intensidade da técnica utilizada.",
-    "formula":"CD = 10 + Mod. SAB + Rank da técnica",
-    "data":[
-      { "rank":1, "cd":"10 + Mod. SAB + 1" },
-      { "rank":2, "cd":"10 + Mod. SAB + 2" },
-      { "rank":3, "cd":"10 + Mod. SAB + 3" },
-      { "rank":4, "cd":"10 + Mod. SAB + 4" },
-      { "rank":5, "cd":"10 + Mod. SAB + 5" },
-      { "rank":6, "cd":"10 + Mod. SAB + 6" },
-      { "rank":7, "cd":"10 + Mod. SAB + 7" },
-      { "rank":8, "cd":"10 + Mod. SAB + 8" },
-      { "rank":9, "cd":"10 + Mod. SAB + 9" }
-    ]
-  },
-  {
-    "table":"Cura por Rank",
-    "description":"Recuperação de pontos de vida baseada no Rank da técnica.",
-    "full_description":"Algumas técnicas permitem recuperar pontos de vida. A cura total é calculada pela fórmula Cura = (Rank × 15) + Dado do Rank, utilizando o dado correspondente ao Rank da técnica conforme a tabela de Dado do Rank.",
-    "formula":"Cura = (Rank × 15) + Dado do Rank",
-    "data":[
-      { "rank":1, "rank do dado":"d4", "fórmula de cura":"(1 × 15) + d4", "total de cura":"15 + d4" },
-      { "rank":2, "rank do dado":"d6", "fórmula de cura":"(2 × 15) + d6", "total de cura":"30 + d6" },
-      { "rank":3, "rank do dado":"d8", "fórmula de cura":"(3 × 15) + d8", "total de cura":"45 + d8" },
-      { "rank":4, "rank do dado":"d6", "fórmula de cura":"(4 × 15) + d6", "total de cura":"60 + d6" },
-      { "rank":5, "rank do dado":"d8", "fórmula de cura":"(5 × 15) + d8", "total de cura":"75 + d8" },
-      { "rank":6, "rank do dado":"d10", "fórmula de cura":"(6 × 15) + d10", "total de cura":"90 + d10" },
-      { "rank":7, "rank do dado":"d10", "fórmula de cura":"(7 × 15) + d10", "total de cura":"105 + d10" },
-      { "rank":8, "rank do dado":"d12", "fórmula de cura":"(8 × 15) + d12", "total de cura":"120 + d12" },
-      { "rank":9, "rank do dado":"d20", "fórmula de cura":"(9 × 15) + d20", "total de cura":"135 + d20" }
-    ]
-  },
-  {
-    "table":"Dano por Toque",
-    "description":"Dano causado por contato direto com o alvo.",
-    "full_description":"Algumas técnicas causam dano apenas ao tocar o alvo, representando queimaduras cósmicas, corrosão espiritual ou descargas de energia concentrada. O dano é calculado pela fórmula Dano por Toque = (Rank × 8) + Dado do Rank, utilizando o dado correspondente ao Rank da técnica.",
-    "formula":"Dano por Toque = (Rank × 8) + Dado do Rank",
-    "data":[
-      { "rank":1, "dado do rank":"d4", "formula do dano":"(1 × 8) + d4", "dano total":"8 + d4" },
-      { "rank":2, "dado do rank":"d6", "formula do dano":"(2 × 8) + d6", "dano total":"16 + d6" },
-      { "rank":3, "dado do rank":"d8", "formula do dano":"(3 × 8) + d8", "dano total":"24 + d8" },
-      { "rank":4, "dado do rank":"d6", "formula do dano":"(4 × 8) + d6", "dano total":"32 + d6" },
-      { "rank":5, "dado do rank":"d8", "formula do dano":"(5 × 8) + d8", "dano total":"40 + d8" },
-      { "rank":6, "dado do rank":"d10", "formula do dano":"(6 × 8) + d10", "dano total":"48 + d10" },
-      { "rank":7, "dado do rank":"d10", "formula do dano":"(7 × 8) + d10", "dano total":"56 + d10" },
-      { "rank":8, "dado do rank":"d12", "formula do dano":"(8 × 8) + d12", "dano total":"64 + d12" },
-      { "rank":9, "dado do rank":"d20", "formula do dano":"(9 × 8) + d20", "dano total":"72 + d20" }
+    "table": "Dano de Aniquilação Espiritual",
+    "description": "Dano que transcende o físico, atingindo diretamente a essência e a alma do alvo.",
+    "full_description": "Certas técnicas não causam apenas dano físico, mas afetam diretamente a essência espiritual do alvo. Esse tipo de dano ignora processos naturais de regeneração rápida, exigindo dias ou até mais tempo para recuperação completa. Ferimentos desse tipo representam corrosão da alma, queimaduras existenciais ou ruptura energética profunda. Caso o alvo seja derrotado por esse dano, sua essência é completamente desintegrada, impossibilitando qualquer forma de ressurreição ou retorno. O dano é calculado pela fórmula Dano de Aniquilação Espiritual = (Rank × 8) + Dado do Rank, utilizando o dado correspondente ao Rank da técnica. A quantidade de dias para se recuperar por completo deste tipo de dano é o RANK da técnica.",
+    "formula": "Dano de Aniquilação Espiritual = (Rank × 8) + Dado do Rank",
+    "data": [
+      { "rank": 1, "regeneração": "1 dia", "formula do dano": "(1 × 8) + d4",  "dano total": "8 + d4" },
+      { "rank": 2, "regeneração": "2 dias", "formula do dano": "(2 × 8) + d6",  "dano total": "16 + d6" },
+      { "rank": 3, "regeneração": "3 dias", "formula do dano": "(3 × 8) + d8",  "dano total": "24 + d8" },
+      { "rank": 4, "regeneração": "4 dias", "formula do dano": "(4 × 9) + d10", "dano total": "36 + d10" },
+      { "rank": 5, "regeneração": "5 dias", "formula do dano": "(5 × 9) + d12", "dano total": "45 + d12" },
+      { "rank": 6, "regeneração": "6 dias", "formula do dano": "(6 × 9) + d20", "dano total": "54 + d20" },
+      { "rank": 7, "regeneração": "7 dias", "formula do dano": "(7 × 10) + d20","dano total": "70 + d20" },
+      { "rank": 8, "regeneração": "8 dias", "formula do dano": "(8 × 11) + d20","dano total": "88 + d20" },
+      { "rank": 9, "regeneração": "9 dias", "formula do dano": "(9 × 12) + d20","dano total": "108 + d20" }
     ]
   },
   {
     "table": "Dureza",
-    "description": "Dureza Cósmica de barreiras e objetos.",
-    "full_description": "A Dureza representa a resistência absoluta de um objeto, barreira ou manifestação criada pela técnica. Ela reduz diretamente o dano recebido, funcionando como uma proteção sólida causada pela condensação do Cosmo.",
+    "description": "Valor estrutural que define a resistência de criações, barreiras e objetos gerados por técnicas.",
+    "full_description": "Dureza não é uma técnica independente, mas um atributo aplicado a qualquer objeto, barreira ou estrutura criada por uma técnica. Ela representa a resistência absoluta da matéria ou energia condensada, reduzindo diretamente o dano recebido antes de afetar seus pontos de vida. A Dureza só se aplica a elementos físicos ou energéticos criados (como escudos, paredes, armas conjuradas ou invocações estruturais), não tendo efeito direto sobre personagens. Sempre que uma criação receber dano, subtraia o valor de Dureza do dano total antes de aplicar ao seu PV. Caso o dano restante seja zero ou negativo, a estrutura não sofre dano.",
     "data": [
       { "rank": 1, "dureza": 10 },
       { "rank": 2, "dureza": 15 },
@@ -200,108 +187,93 @@ const database = [
     ]
   },
   {
-    "table":"Duração em Rodadas",
-    "description":"Tempo máximo de manutenção de técnicas de efeito contínuo.",
-    "full_description":"A duração de uma técnica de efeito contínuo é medida em rodadas de combate. Quanto maior o Rank da técnica, mais tempo o Cavaleiro consegue manter o fluxo de Cosmo ativo sem perder o controle. A duração é calculada pela fórmula Duração = 1 rodada por Rank da técnica.",
-    "formula":"Duração = 1 rodada por Rank da técnica",
-    "data":[
-      { "rank":1, "duração máxima":"1 rodada" },
-      { "rank":2, "duração máxima":"2 rodadas" },
-      { "rank":3, "duração máxima":"3 rodadas" },
-      { "rank":4, "duração máxima":"4 rodadas" },
-      { "rank":5, "duração máxima":"5 rodadas" },
-      { "rank":6, "duração máxima":"6 rodadas" },
-      { "rank":7, "duração máxima":"7 rodadas" },
-      { "rank":8, "duração máxima":"8 rodadas" },
-      { "rank":9, "duração máxima":"9 rodadas" }
+    "table": "Duração em Rodadas",
+    "description": "Duração de técnicas contínuas aplicadas em combate direto.",
+    "full_description": "Esta categoria deve ser usada para técnicas com impacto direto em combate, como dano contínuo, controle, debuffs ou efeitos que influenciam ações turno a turno. Essas técnicas exigem alta concentração e consumo constante de Cosmo, limitando sua duração a poucas rodadas para manter o equilíbrio do combate. A duração é determinada pelo Rank da técnica e não deve ser convertida para outras unidades.",
+    "formula": "Duração = 1 rodada por Rank da técnica",
+    "data": [
+      { "rank": 1, "duração máxima": "1 rodada" },
+      { "rank": 2, "duração máxima": "2 rodadas" },
+      { "rank": 3, "duração máxima": "3 rodadas" },
+      { "rank": 4, "duração máxima": "4 rodadas" },
+      { "rank": 5, "duração máxima": "5 rodadas" },
+      { "rank": 6, "duração máxima": "6 rodadas" },
+      { "rank": 7, "duração máxima": "7 rodadas" },
+      { "rank": 8, "duração máxima": "8 rodadas" },
+      { "rank": 9, "duração máxima": "9 rodadas" }
     ]
   },
   {
-    "table":"Duração em Minutos",
-    "description":"Tempo máximo de manutenção de técnicas de efeito contínuo fora de combate.",
-    "full_description":"A duração de uma técnica de efeito contínuo pode ser medida em minutos quando utilizada fora de combate ou em efeitos prolongados. Quanto maior o Rank da técnica, mais tempo o Cavaleiro consegue sustentar o fluxo de Cosmo. A duração é calculada pela fórmula Duração = 1 minuto por Rank da técnica.",
-    "formula":"Duração = 1 minuto por Rank da técnica",
-    "data":[
-      { "rank":1, "duração máxima":"1 minuto" },
-      { "rank":2, "duração máxima":"2 minutos" },
-      { "rank":3, "duração máxima":"3 minutos" },
-      { "rank":4, "duração máxima":"4 minutos" },
-      { "rank":5, "duração máxima":"5 minutos" },
-      { "rank":6, "duração máxima":"6 minutos" },
-      { "rank":7, "duração máxima":"7 minutos" },
-      { "rank":8, "duração máxima":"8 minutos" },
-      { "rank":9, "duração máxima":"9 minutos" }
+    "table": "Duração em Minutos",
+    "description": "Duração de técnicas contínuas de efeito moderado ou situacional.",
+    "full_description": "Utilizada para técnicas que não afetam diretamente o fluxo de combate turno a turno, mas ainda exigem manutenção ativa de Cosmo, como buffs leves, detecção, manipulação ambiental ou efeitos utilitários. Essas técnicas podem coexistir com combate, mas não devem gerar impacto direto contínuo equivalente a dano ou controle pesado.",
+    "formula": "Duração = 1 minuto por Rank da técnica",
+    "data": [
+      { "rank": 1, "duração máxima": "1 minuto" },
+      { "rank": 2, "duração máxima": "2 minutos" },
+      { "rank": 3, "duração máxima": "3 minutos" },
+      { "rank": 4, "duração máxima": "4 minutos" },
+      { "rank": 5, "duração máxima": "5 minutos" },
+      { "rank": 6, "duração máxima": "6 minutos" },
+      { "rank": 7, "duração máxima": "7 minutos" },
+      { "rank": 8, "duração máxima": "8 minutos" },
+      { "rank": 9, "duração máxima": "9 minutos" }
     ]
   },
   {
-  "table":"Duração em Horas",
-    "description":"Tempo máximo de manutenção de técnicas de efeito prolongado.",
-    "full_description":"Algumas técnicas não são criadas para o combate imediato, mas para efeitos prolongados como proteção espiritual, fortalecimento corporal, bênçãos divinas, rastreamento de energia cósmica ou manutenção de selos místicos. Nesses casos, a duração é medida em horas e depende do Rank da técnica.",
-    "data":[
-      { "rank":1, "duração máxima":"1 h por nível (máx. 4 h)" },
-      { "rank":2, "duração máxima":"1 h por nível (máx. 6 h)" },
-      { "rank":3, "duração máxima":"1 h por nível (máx. 8 h)" },
-      { "rank":4, "duração máxima":"1 h por nível (máx. 11 h)" },
-      { "rank":5, "duração máxima":"1 h por nível (máx. 14 h)" },
-      { "rank":6, "duração máxima":"1 h por nível (máx. 17 h)" },
-      { "rank":7, "duração máxima":"1 h por nível (máx. 21 h)" },
-      { "rank":8, "duração máxima":"1 h por nível (máx. 24 h)" },
-      { "rank":9, "duração máxima":"1 h por nível (sem limite)" }
+    "table": "Duração em Horas",
+    "description": "Duração de técnicas de longa manutenção e baixo impacto direto.",
+    "full_description": "Aplicada a técnicas de efeito prolongado que não exigem atenção constante em combate, como proteções passivas, encantamentos, selos, rastreamento ou melhorias contínuas. Essas técnicas representam um investimento estável de Cosmo e não devem causar dano contínuo ou controle direto de combate. A duração escala com o nível do personagem, respeitando um limite máximo por Rank.",
+    "formula": "Duração = 1 hora por nível (limitado pelo Rank)",
+    "data": [
+      { "rank": 1, "duração máxima": "1 h por nível (máx. 4 h)" },
+      { "rank": 2, "duração máxima": "1 h por nível (máx. 6 h)" },
+      { "rank": 3, "duração máxima": "1 h por nível (máx. 8 h)" },
+      { "rank": 4, "duração máxima": "1 h por nível (máx. 11 h)" },
+      { "rank": 5, "duração máxima": "1 h por nível (máx. 14 h)" },
+      { "rank": 6, "duração máxima": "1 h por nível (máx. 17 h)" },
+      { "rank": 7, "duração máxima": "1 h por nível (máx. 21 h)" },
+      { "rank": 8, "duração máxima": "1 h por nível (máx. 24 h)" },
+      { "rank": 9, "duração máxima": "1 h por nível (sem limite)" }
     ]
   },
   {
-    "table":"ND Total da Invocação",
-    "description":"Nível de Desafio máximo permitido para criaturas invocadas por técnicas.",
-    "full_description":"Quando uma técnica permite invocar uma criatura, avatar divino, espírito guardião ou construto de Cosmo, o Nível de Desafio (ND) máximo da entidade invocada é limitado pelo Rank da técnica utilizada. O cálculo segue a fórmula ND Máximo da Criatura Invocada = Rank × 2.",
-    "formula":"ND Máximo da Criatura Invocada = Rank × 2",
-    "data":[
-      { "rank":1, "nd máximo":"ND 2" },
-      { "rank":2, "nd máximo":"ND 4" },
-      { "rank":3, "nd máximo":"ND 6" },
-      { "rank":4, "nd máximo":"ND 8" },
-      { "rank":5, "nd máximo":"ND 10" },
-      { "rank":6, "nd máximo":"ND 12" },
-      { "rank":7, "nd máximo":"ND 14" },
-      { "rank":8, "nd máximo":"ND 16" },
-      { "rank":9, "nd máximo":"ND 18" }
+    "table": "Invocação",
+    "description": "Permite invocar criaturas com poder limitado pelo Rank da técnica.",
+    "full_description": "Esta técnica permite invocar uma ou mais entidades (criaturas, espíritos, construtos ou avatares). O poder total das invocações é limitado por um valor de ND (Nível de Desafio), que pode ser distribuído livremente entre as criaturas invocadas. O usuário pode escolher invocar uma única entidade poderosa ou várias mais fracas, desde que a soma total do ND não ultrapasse o limite definido pelo Rank. As características completas das criaturas devem ser definidas separadamente, utilizando as regras de criação de invocações.",
+    "formula": "ND Total = Rank × 2",
+    "data": [
+      { "rank": 1, "nd total": "2",  "quantidade máxima": "1" },
+      { "rank": 2, "nd total": "4",  "quantidade máxima": "2" },
+      { "rank": 3, "nd total": "6",  "quantidade máxima": "2" },
+      { "rank": 4, "nd total": "8",  "quantidade máxima": "3" },
+      { "rank": 5, "nd total": "10", "quantidade máxima": "3" },
+      { "rank": 6, "nd total": "12", "quantidade máxima": "4" },
+      { "rank": 7, "nd total": "14", "quantidade máxima": "4" },
+      { "rank": 8, "nd total": "16", "quantidade máxima": "5" },
+      { "rank": 9, "nd total": "18", "quantidade máxima": "6" }
     ]
   },
   {
-    "table":"Tamanho da Forma Criada ou Invocada",
-    "description":"Tamanho máximo permitido para formas alteradas ou entidades invocadas.",
-    "full_description":"Algumas técnicas permitem alterar o corpo do próprio Cavaleiro ou criar e invocar entidades cósmicas. O tamanho influencia alcance físico, força, peso e as manobras possíveis em combate. O tamanho máximo permitido é determinado pelo Rank da técnica.",
-    "data":[
-      { "rank":1, "tamanho máximo":"Pequeno" },
-      { "rank":2, "tamanho máximo":"Pequeno" },
-      { "rank":3, "tamanho máximo":"Pequeno" },
-      { "rank":4, "tamanho máximo":"Médio" },
-      { "rank":5, "tamanho máximo":"Médio" },
-      { "rank":6, "tamanho máximo":"Grande" },
-      { "rank":7, "tamanho máximo":"Enorme" },
-      { "rank":8, "tamanho máximo":"Imenso" },
-      { "rank":9, "tamanho máximo":"Colossal" }
-    ]
-  },
-  {
-    "table":"Aumentar tamanho",
-    "description":"Aumenta o tamanho do cavaleiro o tornando mais poderoso.",
-    "full_description":"Esta característica permite que o cavaleiro aumente o seu tamanho e se beneficie dos ajustes concedidos pelo seu novo tamanho conforme a tabela de tamanhos de criaturas. A tabela a seguir apenas indica até quantas categorias você é capaz de aumentar baseado no seu tamanho atual.",
-    "data":[
-      { "rank":1, "tamanho máximo":"+1 categoria" },
-      { "rank":2, "tamanho máximo":"+2 categoria" },
-      { "rank":3, "tamanho máximo":"+2 categoria" },
-      { "rank":4, "tamanho máximo":"+3 categoria" },
-      { "rank":5, "tamanho máximo":"+3 categoria" },
-      { "rank":6, "tamanho máximo":"+4 categoria" },
-      { "rank":7, "tamanho máximo":"+4 categoria" },
-      { "rank":8, "tamanho máximo":"+5 categoria" },
-      { "rank":9, "tamanho máximo":"+6 categoria" }
+    "table": "Aumentar Tamanho",
+    "description": "Permite ao cavaleiro expandir seu corpo, aumentando poder físico ao custo de mobilidade, precisão e controle.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>Esta característica permite que o cavaleiro aumente progressivamente seu tamanho, recebendo bônus cumulativos em força e impacto físico, enquanto sofre penalidades em agilidade, defesa e precisão. A partir do limite físico (+6 categorias), os ranks passam a evoluir controle e eficiência.</p><div style='margin-top:1rem;'><p style='color:var(--gold-light);'><strong>Rank 1 – +1 Categoria</strong></p><p style='color:var(--silver);'>FOR +2, CON +2, DES -2. CA -1, Ataque -1. Alcance +1,5m. Área 2x2. Deslocamento -1,5m. +2 em Agarrar. Dano corpo a corpo +2.</p><p style='color:var(--gold-light);'><strong>Rank 2 – +2 Categorias</strong></p><p style='color:var(--silver);'>FOR +4, CON +4, DES -4. CA -2, Ataque -2. Alcance +3m. Área 3x3. Deslocamento -3m. +4 em Agarrar. Dano corpo a corpo +4.</p><p style='color:var(--gold-light);'><strong>Rank 3 – +3 Categorias</strong></p><p style='color:var(--silver);'>FOR +6, CON +6, DES -6. CA -3, Ataque -3. Alcance +4,5m. Área 4x4. Deslocamento -4,5m. +6 em Agarrar. Dano corpo a corpo +6.</p><p style='color:var(--gold-light);'><strong>Rank 4 – +4 Categorias</strong></p><p style='color:var(--silver);'>FOR +8, CON +8, DES -8. CA -4, Ataque -4. Alcance +6m. Área 5x5. Deslocamento -6m. +8 em Agarrar. Dano corpo a corpo +8.</p><p style='color:var(--gold-light);'><strong>Rank 5 – +5 Categorias</strong></p><p style='color:var(--silver);'>FOR +10, CON +10, DES -10. CA -5, Ataque -5. Alcance +7,5m. Área 6x6. Deslocamento -7,5m. +10 em Agarrar. Dano corpo a corpo +10.</p><p style='color:var(--gold-light);'><strong>Rank 6 – +6 Categorias (Forma Colossal)</strong></p><p style='color:var(--silver);'>FOR +12, CON +12, DES -12. CA -6, Ataque -6. Alcance +9m. Área 8x8. Deslocamento -9m. +12 em Agarrar. Dano corpo a corpo +12.</p><p style='color:var(--gold-light);'><strong>Rank 7 – Domínio Estável</strong></p><p style='color:var(--silver);'>FOR +12, CON +12, DES -10. CA -4, Ataque -4. Deslocamento -6m. +12 em Agarrar. Dano corpo a corpo +12.</p><p style='color:var(--gold-light);'><strong>Rank 8 – Controle Avançado</strong></p><p style='color:var(--silver);'>FOR +12, CON +12, DES -8. CA -2, Ataque -2. Deslocamento -3m. +14 em Agarrar. Dano corpo a corpo +12.</p><p style='color:var(--gold-light);'><strong>Rank 9 – Forma Perfeita</strong></p><p style='color:var(--silver);'>FOR +12, CON +12, DES sem penalidade. CA normal. Ataque normal. Sem penalidade de deslocamento. +16 em Agarrar. Dano corpo a corpo +12.</p></div><div style='border-left:3px solid var(--gold-light); padding-left:1rem; margin-top:1rem;'><p style='color:var(--silver);'>O bônus de dano listado é adicional ao aumento natural do dado de dano por tamanho do sistema d20.</p></div>",
+    "data": [
+      { "rank":1, "tamanho máximo":"+1 categoria", "bônus de dano":"+2" },
+      { "rank":2, "tamanho máximo":"+2 categorias", "bônus de dano":"+4" },
+      { "rank":3, "tamanho máximo":"+3 categorias", "bônus de dano":"+6" },
+      { "rank":4, "tamanho máximo":"+4 categorias", "bônus de dano":"+8" },
+      { "rank":5, "tamanho máximo":"+5 categorias", "bônus de dano":"+10" },
+      { "rank":6, "tamanho máximo":"+6 categorias", "bônus de dano":"+12" },
+      { "rank":7, "tamanho máximo":"+6 categorias (domínio estável)", "bônus de dano":"+12" },
+      { "rank":8, "tamanho máximo":"+6 categorias (controle avançado)", "bônus de dano":"+12" },
+      { "rank":9, "tamanho máximo":"+6 categorias (forma perfeita)", "bônus de dano":"+12" }
     ]
   },
   {
     "table":"Alcance da Técnica",
-    "description":"Distância máxima em que uma técnica pode ser executada.",
-    "full_description":"O alcance determina a distância máxima na qual o Cavaleiro pode executar sua técnica contra um alvo ou ponto no espaço. Técnicas de Rank mais alto representam maior domínio do Cosmo, permitindo atingir oponentes a grandes distâncias.",
+    "description":"Distância máxima para executar a técnica.",
+    "full_description":"<p style='color:var(--silver); line-height:1.8;'>O alcance define até onde a técnica pode ser usada.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Quando baseado em nível, multiplique o valor indicado pelo nível do personagem, respeitando o limite máximo.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>O alcance não altera dano, precisão ou área de efeito. Apenas limita a distância da execução.</p>",
     "data":[
       { "rank":1, "alcance":"9 m (fixo)" },
       { "rank":2, "alcance":"3 m por nível (máx. 18 m)" },
@@ -348,44 +320,166 @@ const database = [
   },
   {
     "table":"Detecção Cósmica",
-    "description":"Distância máxima para percepção, detecção de outros seres através do Cosmo.",
-    "full_description":"Algumas técnicas permitem ao Cavaleiro sentir presenças, emoções ou intenções hostis à distância. O alcance dessa percepção é determinado pelo Rank da técnica e calculado por quilômetros por nível.",
+    "description":"Permite perceber presenças, intenções e energia através do Cosmo.",
+    "full_description":"<p style='color:var(--silver); line-height:1.8;'>A Detecção Cósmica permite ao Cavaleiro expandir sua percepção além dos sentidos físicos, identificando presenças, intenções e níveis de poder à distância. Quanto maior o Rank, maior o alcance e a precisão da leitura do Cosmo.</p>",
     "data":[
-      { "rank":"1 a 3", "alcance por nível":"1 km por nível" },
-      { "rank":"4 a 6", "alcance por nível":"2 km por nível" },
-      { "rank":"7 a 9", "alcance por nível":"3 km por nível" }
+      {
+        "rank":1,
+        "alcance":"1 km/nível",
+        "detecção":"Percebe presenças dentro do alcance. Distingue aliado de inimigo, sem identificar força ou intenção."
+      },
+      {
+        "rank":2,
+        "alcance":"2 km/nível",
+        "detecção":"Percebe emoções básicas (hostilidade, medo, calma). Diferencia múltiplas presenças próximas."
+      },
+      {
+        "rank":3,
+        "alcance":"3 km/nível",
+        "detecção":"Identifica intenções hostis claras. Consegue contar quantas presenças existem na área."
+      },
+      {
+        "rank":4,
+        "alcance":"5 km/nível",
+        "detecção":"Determina nível geral de poder (fraco, médio, forte). Identifica direção exata da origem."
+      },
+      {
+        "rank":5,
+        "alcance":"7 km/nível",
+        "detecção":"Diferencia indivíduos dentro de grupos. Detecta presenças ocultas sem técnicas de bloqueio."
+      },
+      {
+        "rank":6,
+        "alcance":"10 km/nível",
+        "detecção":"Percebe flutuações de Cosmo (uso de técnicas, aumento de energia). Consegue rastrear movimento contínuo."
+      },
+      {
+        "rank":7,
+        "alcance":"15 km/nível",
+        "detecção":"Detecta sem linha de visão. Identifica nível de poder aproximado com boa precisão."
+      },
+      {
+        "rank":8,
+        "alcance":"20 km/nível",
+        "detecção":"Ignora ocultação comum. Percebe intenção antes da ação (antecipação leve de combate)."
+      },
+      {
+        "rank":9,
+        "alcance":"30 km/nível",
+        "detecção":"Leitura completa: presença, intenção, nível exato de poder e variações em tempo real. Detecta seres ocultos ou com energia suprimida, exceto contra técnicas equivalentes ou superiores."
+      }
     ]
   },
   {
     "table":"Telepatia",
     "description":"Limite máximo de alcance seguro para telepatia.",
-    "full_description":"Capacidade de se comunicar mentalmente a distância com outros seres que possuem a mesma capacidade. Um ser sem telepatia pode apenas ouvir sua voz em sua mente. A telepatia funciona como um sistema de ondas de rádio onde quem o ouvir pode responder de volta se for capaz. E as pessoas que o ouvirem podeem te responder sem problemas de distância desde que elas tenham sido alcançadas por você.",
+    "full_description":"Capacidade de se comunicar mentalmente a distância com outros seres que possuem a mesma capacidade. Um ser sem telepatia pode apenas ouvir sua voz em sua mente. A telepatia funciona como um sistema de ondas de rádio onde quem o ouvir pode responder de volta se for capaz. E as pessoas que o ouvirem podem te responder sem problemas de distância desde que tenham sido alcançadas por você.",
     "data":[
-      { "rank":1, "alcance máximo":"4 km" },
-      { "rank":2, "alcance máximo":"6 km" },
-      { "rank":3, "alcance máximo":"8 km" },
-      { "rank":4, "alcance máximo":"12 km" },
-      { "rank":5, "alcance máximo":"16 km" },
-      { "rank":6, "alcance máximo":"22 km" },
-      { "rank":7, "alcance máximo":"28 km" },
-      { "rank":8, "alcance máximo":"35 km" },
-      { "rank":9, "alcance máximo":"48 km" }
+      { "rank":1, "alcance":"2 km/nível" },
+      { "rank":2, "alcance":"4 km/nível" },
+      { "rank":3, "alcance":"6 km/nível" },
+      { "rank":4, "alcance":"10 km/nível" },
+      { "rank":5, "alcance":"15 km/nível" },
+      { "rank":6, "alcance":"20 km/nível" },
+      { "rank":7, "alcance":"30 km/nível" },
+      { "rank":8, "alcance":"45 km/nível" },
+      { "rank":9, "alcance":"60 km/nível" }
     ]
   },
   {
     "table":"Raio de Efeito",
-    "description":"Área circular afetada por uma técnica.",
-    "full_description":"O raio de efeito determina a área de influência de uma técnica, afetando todos que estiverem dentro de uma zona circular. Em Ranks mais baixos essa capacidade não existe, manifestando-se a partir do Rank 2 conforme o domínio do Cosmo do Cavaleiro.",
+    "description":"Define a área circular afetada por uma técnica.",
+    "full_description":"<p style='color:var(--silver); line-height:1.8;'>O Raio de Efeito determina uma área circular que afeta todos os seres dentro dela, sem distinção entre aliados e inimigos.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>O ponto de origem pode ser o próprio Cavaleiro ou qualquer ponto dentro do alcance da técnica. A partir desse ponto, o efeito se expande igualmente em todas as direções.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Toda técnica que afeta múltiplos alvos dentro de um raio deve permitir um teste de resistência.</p>\n\n<div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'>\n<p style='color:var(--gold-light); text-align:center;'>CD = 10 + Modificador de Sabedoria (SAB) + Rank da técnica</p>\n</div>\n\n<p style='color:var(--silver); line-height:1.8;'>O tipo de teste de resistência (Fortitude, Reflexos ou Vontade) depende da natureza da técnica. Em caso de sucesso, o efeito pode ser reduzido ou negado, conforme descrito na técnica.</p>",
     "data":[
       { "rank":1, "raio de efeito":"não possui área" },
-      { "rank":2, "raio de efeito":"0,5 m por nível (máx. 3 m)" },
-      { "rank":3, "raio de efeito":"0,5 m por nível (máx. 4,5 m)" },
-      { "rank":4, "raio de efeito":"1 m por nível (máx. 12 m)" },
-      { "rank":5, "raio de efeito":"1 m por nível (máx. 15 m)" },
-      { "rank":6, "raio de efeito":"1 m por nível (máx. 18 m)" },
-      { "rank":7, "raio de efeito":"2 m por nível (sem limite)" },
-      { "rank":8, "raio de efeito":"5 m por nível (sem limite)" },
-      { "rank":9, "raio de efeito":"10 m por nível (sem limite)" }
+      { "rank":2, "raio de efeito":"1 m/nível (máx. 4 m)" },
+      { "rank":3, "raio de efeito":"1,5 m/nível (máx. 6 m)" },
+      { "rank":4, "raio de efeito":"2 m/nível (máx. 10 m)" },
+      { "rank":5, "raio de efeito":"3 m/nível (máx. 15 m)" },
+      { "rank":6, "raio de efeito":"4 m/nível (máx. 20 m)" },
+      { "rank":7, "raio de efeito":"6 m/nível" },
+      { "rank":8, "raio de efeito":"8 m/nível" },
+      { "rank":9, "raio de efeito":"12 m/nível" }
+    ]
+  },
+  {
+    "table":"Cone de Efeito",
+    "description":"Área em formato de leque frontal que se projeta a partir do personagem.",
+    "full_description":"<p style='color:var(--silver); line-height:1.8;'>O Cone de Efeito é uma projeção direcional de Cosmo em formato de leque, originada no usuário e expandida em linha frontal.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>A técnica afeta todos os alvos dentro da área, sem seleção individual. O cone é definido por dois parâmetros: alcance (profundidade) e abertura angular.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>O alcance segue progressão base + incremento por nível da técnica, garantindo escalonamento constante de potência e alcance tático.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>A abertura do cone é escolhida pelo jogador no momento da execução da técnica, permitindo ajuste tático da dispersão do ataque. Essa abertura não pode ultrapassar o limite máximo definido pelo Rank da técnica.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Todos os alvos atingidos dentro da área devem realizar teste de resistência conforme as regras gerais de técnicas de área.</p>\n\n<div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'>\n<p style='color:var(--gold-light); text-align:center;'>CD = 10 + Modificador de Sabedoria (SAB) + Rank da técnica</p>\n</div>",
+    "data":[
+      { "level":1, "cone":"3 m + 0.5 m/nível / abertura máxima 20°" },
+      { "level":2, "cone":"4 m + 1 m/nível / abertura máxima 25°" },
+      { "level":3, "cone":"6 m + 1.5 m/nível / abertura máxima 30°" },
+      { "level":4, "cone":"8 m + 2 m/nível / abertura máxima 35°" },
+      { "level":5, "cone":"10 m + 3 m/nível / abertura máxima 40°" },
+      { "level":6, "cone":"12 m + 4 m/nível / abertura máxima 45°" },
+      { "level":7, "cone":"15 m + 6 m/nível / abertura máxima 50°" },
+      { "level":8, "cone":"18 m + 8 m/nível / abertura máxima 60°" },
+      { "level":9, "cone":"22 m + 10 m/nível / abertura máxima 75°" }
+    ]
+  },
+  {
+    "table":"Linha de Efeito",
+    "description":"Ataque em trajetória reta que atravessa tudo em seu caminho.",
+    "full_description":"<p style='color:var(--silver); line-height:1.8;'>A Linha de Efeito representa uma liberação de Cosmo em trajetória retilínea e concentrada, avançando diretamente do ponto de origem até seu limite de alcance.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Todos os alvos na trajetória são atingidos em sequência, sem dispersão lateral. É uma forma altamente precisa, mas dependente de alinhamento direto com o alvo.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>A largura da linha aumenta levemente com o nível da técnica, representando maior estabilidade energética, mas sem perder sua natureza perfurante.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Técnicas em linha podem atravessar múltiplos alvos dependendo da potência do efeito.</p>",
+    "data":[
+      { "level":1, "linha":"4 m + 1 m/nível" },
+      { "level":2, "linha":"6 m + 1,2 m/nível" },
+      { "level":3, "linha":"8 m + 1,5 m/nível" },
+      { "level":4, "linha":"10 m + 2 m/nível" },
+      { "level":5, "linha":"12 m + 2,5 m/nível" },
+      { "level":6, "linha":"15 m + 3 m/nível" },
+      { "level":7, "linha":"18 m + 3,5 m/nível" },
+      { "level":8, "linha":"22 m + 4 m/nível" },
+      { "level":9, "linha":"28 m + 5 m/nível" }
+    ]
+  },
+  {
+    "table":"Cilindro de Efeito",
+    "description":"Área tridimensional em forma de coluna que se expande verticalmente a partir de um ponto de origem.",
+    "full_description":"<p style='color:var(--silver); line-height:1.8;'>O Cilindro de Efeito é uma projeção de Cosmo em formato de coluna tridimensional que se expande verticalmente e horizontalmente a partir de um ponto de origem definido.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Essa forma de área é especialmente eficaz para atingir múltiplos alvos distribuídos em diferentes alturas, permitindo afetar simultaneamente inimigos no solo, em estruturas elevadas ou em voo dentro do volume do cilindro.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>O ponto de origem pode ser o próprio Cavaleiro ou um ponto no espaço. Quando a técnica é originada no Cavaleiro, ela naturalmente cobre áreas acima e abaixo dele dentro do volume definido. Quando o ponto de origem está fora do corpo do usuário, é obrigatório que a técnica possua a característica de alcance para posicionar corretamente o cilindro no campo de batalha.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>O efeito do cilindro atinge todos os seres dentro do volume tridimensional, independentemente de estarem no solo, suspensos ou em movimento vertical.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Todos os alvos afetados devem realizar teste de resistência conforme as regras gerais de técnicas de área.</p>\n\n<div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'>\n<p style='color:var(--gold-light); text-align:center;'>CD = 10 + Modificador de Sabedoria (SAB) + Rank da técnica</p>\n</div>",
+    "data":[
+      { "level":1, "cilindro":"altura 3 m + 0,5 m/nível / raio 1 m" },
+      { "level":2, "cilindro":"altura 4 m + 0,7 m/nível / raio 1,2 m" },
+      { "level":3, "cilindro":"altura 5 m + 1 m/nível / raio 1,5 m" },
+      { "level":4, "cilindro":"altura 6 m + 1,5 m/nível / raio 2 m" },
+      { "level":5, "cilindro":"altura 8 m + 2 m/nível / raio 2,5 m" },
+      { "level":6, "cilindro":"altura 10 m + 2,5 m/nível / raio 3 m" },
+      { "level":7, "cilindro":"altura 12 m + 3 m/nível / raio 3,5 m" },
+      { "level":8, "cilindro":"altura 15 m + 3,5 m/nível / raio 4 m" },
+      { "level":9, "cilindro":"altura 18 m + 4 m/nível / raio 5 m" }
+    ]
+  },
+  {
+    "table": "Emanação de Efeito",
+    "description": "Área que se expande a partir de um epicentro como uma aura contínua de Cosmo.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>A Emanação representa uma liberação constante de Cosmo que se manifesta como uma área ativa de influência contínua.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>O epicentro da Emanação pode estar no próprio Cavaleiro ou em um ponto externo, desde que a técnica possua a característica de alcance suficiente para definir esse ponto de origem.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Uma vez definido o epicentro, a Emanação se expande a partir dele e seus efeitos persistem na área ao redor desse ponto, mesmo após a ação inicial de execução da técnica, mantendo influência contínua enquanto durar sua duração.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Esse tipo de técnica é utilizado para controle de área, efeitos persistentes e imposição de condições nocivas ou limitantes, como dano contínuo, debuffs, restrições de movimento ou interferência sensorial.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Sempre que a Emanação aplicar efeitos que não sejam dano direto imediato, as criaturas dentro da área devem realizar teste de resistência.</p>\n\n<div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'>\n<p style='color:var(--gold-light); text-align:center;'>CD do Teste de Resistência = 10 + Modificador de Sabedoria (SAB) + Rank da técnica</p>\n</div>\n\n<p style='color:var(--silver); line-height:1.8;'>Falha no teste faz com que o alvo sofra integralmente os efeitos enquanto permanecer na área ou enquanto durar a técnica, conforme sua descrição específica.</p>",
+    "data": [
+      { "level": 1, "emanação": "1 m + 0,3 m/nível" },
+      { "level": 2, "emanação": "1,5 m + 0,5 m/nível" },
+      { "level": 3, "emanação": "2 m + 0,7 m/nível" },
+      { "level": 4, "emanação": "3 m + 1 m/nível" },
+      { "level": 5, "emanação": "4 m + 1,3 m/nível" },
+      { "level": 6, "emanação": "5 m + 1,6 m/nível" },
+      { "level": 7, "emanação": "6 m + 2 m/nível" },
+      { "level": 8, "emanação": "8 m + 2,5 m/nível" },
+      { "level": 9, "emanação": "10 m + 3 m/nível" }
+    ]
+  },
+  {
+    "table": "Zona de Efeito",
+    "description": "Área fixa ou móvel que aplica efeitos contínuos definidos pelo usuário.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>A Zona de Efeito cria uma área delimitada no campo de batalha onde seus efeitos são aplicados de forma imediata e constante durante toda a sua duração.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>A zona pode ter dois tipos de origem: um <strong>epicentro fixo</strong>, definido em um ponto do espaço, ou um <strong>epicentro móvel</strong>, centrado no próprio Cavaleiro. No caso de origem móvel, a área acompanha seus movimentos, mantendo sua extensão ao redor dele.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Em ambos os casos, qualquer criatura dentro da área é afetada sem distinção entre aliados ou inimigos. Os efeitos são aplicados automaticamente a todos os alvos presentes ou que entrem na zona durante sua duração.</p>\n\n<p style='color:var(--silver); line-height:1.8;'>Os efeitos da Zona são definidos pelo usuário no momento da ativação e devem ser baseados em características do sistema, como penalidades, bônus, redução de deslocamento, dano contínuo ou outras condições de controle e suporte.</p>\n\n<div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'>\n<p style='color:var(--gold-light); text-align:center;'>CD = 10 + Modificador de Sabedoria (SAB) + Rank da técnica</p>\n</div>",
+    "data": [
+      { "level": 1, "zona": "2 m + 0,5 m/nível" },
+      { "level": 2, "zona": "3 m + 0,7 m/nível" },
+      { "level": 3, "zona": "4 m + 1 m/nível" },
+      { "level": 4, "zona": "5 m + 1,3 m/nível" },
+      { "level": 5, "zona": "6 m + 1,7 m/nível" },
+      { "level": 6, "zona": "8 m + 2 m/nível" },
+      { "level": 7, "zona": "10 m + 2,5 m/nível" },
+      { "level": 8, "zona": "12 m + 3 m/nível" },
+      { "level": 9, "zona": "15 m + 4 m/nível" }
     ]
   },
   {
@@ -421,99 +515,80 @@ const database = [
     ]
   },
   {
-    "table":"Quantidade de Peso Manipulável (Kg)",
-    "description":"Peso máximo de objetos físicos que podem ser manipulados por força cósmica.",
-    "full_description":"Algumas técnicas permitem levantar, empurrar, arremessar ou manipular objetos físicos utilizando uma força cósmica invisível (o cavaleiro nem toca no objeto levantado). O peso máximo manipulável depende do Rank da técnica e é calculado em quilogramas por nível, respeitando um limite máximo quando aplicável.",
-    "data":[
-      { "rank":1, "peso máximo":"10 Kg por nível (máx. 80 Kg)" },
-      { "rank":2, "peso máximo":"20 Kg por nível (máx. 120 Kg)" },
-      { "rank":3, "peso máximo":"30 Kg por nível (máx. 240 Kg)" },
-      { "rank":4, "peso máximo":"50 Kg por nível (máx. 480 Kg)" },
-      { "rank":5, "peso máximo":"70 Kg por nível (máx. 960 Kg)" },
-      { "rank":6, "peso máximo":"90 Kg por nível (máx. 1920 Kg)" },
-      { "rank":7, "peso máximo":"120 Kg por nível (sem limite)" },
-      { "rank":8, "peso máximo":"240 Kg por nível (sem limite)" },
-      { "rank":9, "peso máximo":"480 Kg por nível (sem limite)" }
+    "table": "Quantidade de Peso Manipulável (Kg)",
+    "description": "Capacidade de manipular matéria física com força cósmica sem contato direto, permitindo levantar, deslocar ou arremessar objetos do campo de batalha medieval.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>Algumas técnicas permitem a manipulação de objetos físicos por meio de <strong style='color:var(--gold-light);'>força cósmica</strong>, sem necessidade de contato direto. O Cavaleiro pode <strong style='color:var(--gold-light);'>levantar</strong>, <strong style='color:var(--gold-light);'>deslocar</strong> ou <strong style='color:var(--gold-light);'>arremessar</strong> estruturas inteiras durante o combate.</p><p style='color:var(--silver); line-height:1.8;'>No contexto medieval, isso inclui pedras de muralha, blocos de rocha, colunas de templos, troncos de árvores antigas, carruagens e partes de fortificações.</p><p style='color:var(--silver); line-height:1.8;'>O impacto de objetos arremessados causa dano baseado no peso e velocidade do lançamento, podendo atingir múltiplos alvos em linha ou área de impacto.</p><div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'><p style='color:var(--gold-light); text-align:center;'>Referência de impacto: objetos mais pesados aumentam o dano base de ataques de arremesso e colisão estrutural</p></div>",
+    "data": [
+      { "rank": 1, "peso máximo": "10 Kg por nível (máx. 80 Kg)", "dano estimado": "1d6 (pedras pequenas, tijolos, armas arremessadas)" },
+      { "rank": 2, "peso máximo": "20 Kg por nível (máx. 120 Kg)", "dano estimado": "1d8 (escudos de madeira, blocos de pedra, baús)" },
+      { "rank": 3, "peso máximo": "30 Kg por nível (máx. 240 Kg)", "dano estimado": "2d6 (troncos grossos, portas reforçadas, rodas de carroça)" },
+      { "rank": 4, "peso máximo": "50 Kg por nível (máx. 480 Kg)", "dano estimado": "2d8 (estátuas pequenas, pilares de madeira, partes de muralha leve)" },
+      { "rank": 5, "peso máximo": "70 Kg por nível (máx. 960 Kg)", "dano estimado": "3d6 (colunas de pedra, carroças completas, blocos de fortificação)" },
+      { "rank": 6, "peso máximo": "90 Kg por nível (máx. 1920 Kg)", "dano estimado": "3d8 (portões de madeira maciça, rochas de penhasco, torres pequenas em colapso)" },
+      { "rank": 7, "peso máximo": "120 Kg por nível (sem limite)", "dano estimado": "4d6 (colunas de templo, muralhas parciais, fragmentos de castelo)" },
+      { "rank": 8, "peso máximo": "240 Kg por nível (sem limite)", "dano estimado": "4d8 (torres de vigia, seções de muralha, rochas gigantes de montanha)" },
+      { "rank": 9, "peso máximo": "480 Kg por nível (sem limite)", "dano estimado": "6d8 (estruturas massivas, portões de castelo, blocos de fortaleza e formação rochosa)" }
     ]
   },
   {
-    "table":"Habilidades da Criatura Invocada",
-    "description":"Quantidade máxima de habilidades especiais concedidas a criaturas invocadas.",
-    "full_description":"Criaturas invocadas através do Cosmo podem receber habilidades extras, como sentidos aprimorados, resistências elementais ou ataques especiais. A quantidade total de habilidades disponíveis é determinada diretamente pelo Rank da técnica utilizada na invocação.",
-    "data":[
-      { "rank":1, "máximo de habilidades":"2 habilidades" },
-      { "rank":2, "máximo de habilidades":"4 habilidades" },
-      { "rank":3, "máximo de habilidades":"6 habilidades" },
-      { "rank":4, "máximo de habilidades":"8 habilidades" },
-      { "rank":5, "máximo de habilidades":"10 habilidades" },
-      { "rank":6, "máximo de habilidades":"12 habilidades" },
-      { "rank":7, "máximo de habilidades":"14 habilidades" },
-      { "rank":8, "máximo de habilidades":"16 habilidades" },
-      { "rank":9, "máximo de habilidades":"18 habilidades" }
-    ]
-  },
-  {
-    "table":"Armadura Natural da Criatura Invocada",
-    "description":"Valor de Armadura Natural concedido a criaturas invocadas ou alteradas pelo Cosmo.",
-    "full_description":"Algumas criaturas formadas, alteradas ou invocadas através do Cosmo possuem uma proteção física sobrenatural representada por Armadura Natural. Esse valor se soma a outras defesas da criatura, aumentando sua resistência em combate conforme o Rank da técnica utilizada.",
-    "data":[
-      { "rank":1, "armadura natural":1 },
-      { "rank":2, "armadura natural":1 },
-      { "rank":3, "armadura natural":3 },
-      { "rank":4, "armadura natural":6 },
-      { "rank":5, "armadura natural":10 },
-      { "rank":6, "armadura natural":15 },
-      { "rank":7, "armadura natural":21 },
-      { "rank":8, "armadura natural":28 },
-      { "rank":9, "armadura natural":34 }
-    ]
-  },
-  {
-    "table":"Altura e Largura de Objetos Inanimados Criados/Alterados",
-    "description":"Dimensões máximas permitidas para objetos inanimados criados ou moldados por técnicas.",
-    "full_description":"Técnicas capazes de criar, moldar ou convocar objetos inanimados através do Cosmo seguem limites dimensionais definidos pelo Rank da técnica. As medidas representam a altura x largura máximas possíveis, podendo assumir qualquer forma equivalente dentro do volume permitido.",
-    "data":[
-      { "rank":1, "dimensão máxima":"1 × 1 m (máximo)" },
-      { "rank":2, "dimensão máxima":"2 × 2 m (máximo)" },
-      { "rank":3, "dimensão máxima":"3 × 3 m (máximo)" },
-      { "rank":4, "dimensão máxima":"6 × 6 m (máximo)" },
-      { "rank":5, "dimensão máxima":"9 × 9 m (máximo)" },
-      { "rank":6, "dimensão máxima":"12 × 12 m (máximo)" },
-      { "rank":7, "dimensão máxima":"16 × 16 m (máximo)" },
-      { "rank":8, "dimensão máxima":"20 × 20 m (máximo)" },
-      { "rank":9, "dimensão máxima":"1 × 1 m por nível (sem limite fixo)" }
-    ]
-  },
-  {
-    "table":"Deslocamento (Levitação)",
-    "description":"Altura máxima de levitação permitida por Rank.",
-    "full_description":"O deslocamento por levitação define a altura máxima que um Cavaleiro ou objeto pode se manter suspenso acima do solo utilizando sustentação cósmica. A altura é calculada em metros por nível, respeitando um limite máximo conforme o Rank da técnica.",
-    "data":[
-      { "rank":1, "deslocamento":"1 m por nível (máx. 4 m)" },
-      { "rank":2, "deslocamento":"1 m por nível (máx. 6 m)" },
-      { "rank":3, "deslocamento":"1 m por nível (máx. 8 m)" },
-      { "rank":4, "deslocamento":"1 m por nível (máx. 12 m)" },
-      { "rank":5, "deslocamento":"1 m por nível (máx. 16 m)" },
-      { "rank":6, "deslocamento":"1 m por nível (máx. 20 m)" },
-      { "rank":7, "deslocamento":"1 m por nível (máx. 26 m)" },
-      { "rank":8, "deslocamento":"1 m por nível (máx. 32 m)" },
-      { "rank":9, "deslocamento":"1 m por nível" }
-    ]
-  },
-  {
-    "table":"Quantidade Máxima (Levitação)",
-    "description":"Número máximo de objetos que podem ser levitados simultaneamente.",
-    "full_description":"Define a quantidade máxima de objetos que um Cavaleiro pode manter levitando ao mesmo tempo por meio de sustentação cósmica. O valor é calculado em objetos por nível, respeitando um limite máximo conforme o Rank.",
-    "data":[
-      { "rank":1, "máximo de objetos":"1 objeto por nível (máx. 4)" },
-      { "rank":2, "máximo de objetos":"1 objeto por nível (máx. 6)" },
-      { "rank":3, "máximo de objetos":"1 objeto por nível (máx. 8)" },
-      { "rank":4, "máximo de objetos":"1 objeto por nível (máx. 12)" },
-      { "rank":5, "máximo de objetos":"1 objeto por nível (máx. 16)" },
-      { "rank":6, "máximo de objetos":"1 objeto por nível (máx. 20)" },
-      { "rank":7, "máximo de objetos":"1 objeto por nível (máx. 26)" },
-      { "rank":8, "máximo de objetos":"1 objeto por nível (máx. 32)" },
-      { "rank":9, "máximo de objetos":"1 objeto por nível" }
+    "table": "Telecinese (Deslocamento e Controle de Massa)",
+    "description": "Capacidade de levitar, deslocar e sustentar objetos ou criaturas através de força cósmica, controlando simultaneamente altura, quantidade de alvos e massa manipulada.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>A <strong style='color:var(--gold-light);'>Telecinese</strong> permite ao Cavaleiro manipular matéria sem contato físico, utilizando o Cosmo para exercer força direta sobre objetos, estruturas e criaturas.</p><p style='color:var(--silver); line-height:1.8;'>Essa técnica combina três parâmetros fundamentais: <strong style='color:var(--gold-light);'>altura de levitação</strong>, <strong style='color:var(--gold-light);'>quantidade simultânea de alvos</strong> e <strong style='color:var(--gold-light);'>peso máximo manipulável</strong>. O equilíbrio entre esses fatores define o nível real de domínio telecinético.</p><p style='color:var(--silver); line-height:1.8;'>No contexto de combate medieval, isso permite erguer pedras de muralhas, colunas de templos, troncos, carruagens e até múltiplos inimigos simultaneamente, desde que dentro dos limites estruturais do Cosmo.</p><p style='color:var(--silver); line-height:1.8;'>A telecinese pode ser usada tanto para controle tático quanto ofensivo direto, incluindo arremessos de alta energia cinética, esmagamento por compressão e deslocamento de campo de batalha.</p><div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'><p style='color:var(--gold-light); text-align:center;'>Exceder o limite de peso ou concentração pode causar perda de controle e colapso da técnica</p></div>",
+    "data": [
+      {
+        "rank": 1,
+        "altura": "1 m por nível (máx. 4 m)",
+        "objetos simultâneos": "1 por nível (máx. 4)",
+        "peso máximo": "10 Kg por nível (máx. 80 Kg)"
+      },
+      {
+        "rank": 2,
+        "altura": "1 m por nível (máx. 6 m)",
+        "objetos simultâneos": "1 por nível (máx. 6)",
+        "peso máximo": "20 Kg por nível (máx. 120 Kg)"
+      },
+      {
+        "rank": 3,
+        "altura": "1 m por nível (máx. 8 m)",
+        "objetos simultâneos": "1 por nível (máx. 8)",
+        "peso máximo": "30 Kg por nível (máx. 240 Kg)"
+      },
+      {
+        "rank": 4,
+        "altura": "1 m por nível (máx. 12 m)",
+        "objetos simultâneos": "1 por nível (máx. 12)",
+        "peso máximo": "50 Kg por nível (máx. 480 Kg)"
+      },
+      {
+        "rank": 5,
+        "altura": "1 m por nível (máx. 16 m)",
+        "objetos simultâneos": "1 por nível (máx. 16)",
+        "peso máximo": "70 Kg por nível (máx. 960 Kg)"
+      },
+      {
+        "rank": 6,
+        "altura": "1 m por nível (máx. 20 m)",
+        "objetos simultâneos": "1 por nível (máx. 20)",
+        "peso máximo": "90 Kg por nível (máx. 1920 Kg)"
+      },
+      {
+        "rank": 7,
+        "altura": "1 m por nível (máx. 26 m)",
+        "objetos simultâneos": "1 por nível (máx. 26)",
+        "peso máximo": "120 Kg por nível"
+      },
+      {
+        "rank": 8,
+        "altura": "1 m por nível (máx. 32 m)",
+        "objetos simultâneos": "1 por nível (máx. 32)",
+        "peso máximo": "240 Kg por nível"
+      },
+      {
+        "rank": 9,
+        "altura": "1 m por nível",
+        "objetos simultâneos": "1 por nível",
+        "peso máximo": "480 Kg por nível"
+      }
     ]
   },
   {
@@ -548,34 +623,7 @@ const database = [
       { "rank":9, "carga máxima":"180 Kg por nível" }
     ]
   },
-  {
-    "table":"Redução de Dano (RD) – Criatura Invocada",
-    "description":"Quantidade de dano reduzido por criaturas invocadas conforme o Rank da técnica.",
-    "full_description":"A Redução de Dano (RD) define quanto dano uma criatura invocada consegue absorver ou anular passivamente graças à sua estrutura cósmica. O valor da RD é determinado diretamente pelo Rank da técnica utilizada para a invocação.",
-    "data":[
-      { "rank":1, "redução de dano":0 },
-      { "rank":2, "redução de dano":1 },
-      { "rank":3, "redução de dano":2 },
-      { "rank":4, "redução de dano":4 },
-      { "rank":5, "redução de dano":6 },
-      { "rank":6, "redução de dano":8 },
-      { "rank":7, "redução de dano":10 },
-      { "rank":8, "redução de dano":12 },
-      { "rank":9, "redução de dano":14 }
-    ]
-  },
-  {
-    "table":"Subtipo da Criatura Invocada",
-    "description":"Categorias disponíveis de criaturas invocadas conforme o Rank da técnica.",
-    "full_description":"O subtipo define a categoria ou tipo específico da criatura invocada, afetando habilidades, resistências e interações no jogo. O jogador deve escolher entre os subtipos permitidos de acordo com o Rank da técnica utilizada, respeitando o contexto do RPG de cavaleiros greco-romanos.",
-    "data":[
-      { "rank":"1-2", "tipos disponíveis":"Humanoide, Bestial, Elemental (menor), Morto-vivo (menor)" },
-      { "rank":"3-4", "tipos disponíveis":"Humanoide, Bestial, Elemental, Morto-vivo, Fada/Espírito, Monstruoso (pequeno/médio)" },
-      { "rank":"5-6", "tipos disponíveis":"Bestial (grande), Elemental (grande), Morto-vivo (forte), Monstruoso, Celestial (menor), Infernal (menor)" },
-      { "rank":"7-8", "tipos disponíveis":"Celestial, Infernal, Monstruoso (grande), Dragão (menor), Divino (menor), Elemental (gigante)" },
-      { "rank":"9", "tipos disponíveis":"Divino, Dragão (grande), Celestial (poderoso), Infernal (poderoso), Monstruoso Colossal" }
-    ]
-  },
+
   {
     "table": "Privação",
     "description": "Efeitos de privação aplicados por técnicas.",
@@ -593,19 +641,19 @@ const database = [
     ]
   },
   {
-    "table":"Dano/cura por Rodada de Manutenção",
-    "description":"Dano/Cura contínua causado por técnicas mantidas ativas.",
-    "full_description":"Algumas técnicas geram dano ou cura contínua enquanto permanecem ativas. O dano/cura por rodada é calculado com base no nível do personagem que executa a técnica, respeitando um valor máximo por rodada definido pelo Rank da técnica. O dano nunca pode exceder o limite máximo indicado para o Rank correspondente, independentemente do nível do personagem.",
-    "data":[
-      { "rank":1, "dano/cura por rodada":"1/nível", "máximo por rodada":"até 4"},
-      { "rank":2, "dano/cura por rodada":"1/nível", "máximo por rodada":"até 6"},
-      { "rank":3, "dano/cura por rodada":"1/nível", "máximo por rodada":"até 8"},
-      { "rank":4, "dano/cura por rodada":"2/nível", "máximo por rodada":"até 13" },
-      { "rank":5, "dano/cura por rodada":"2/nível", "máximo por rodada":"até 16" },
-      { "rank":6, "dano/cura por rodada":"2/nível", "máximo por rodada":"até 19" },
-      { "rank":7, "dano/cura por rodada":"3/nível", "máximo por rodada":"até 23" },
-      { "rank":8, "dano/cura por rodada":"3/nível", "máximo por rodada":"até 27" },
-      { "rank":9, "dano/cura por rodada":"3/nível", "máximo por rodada":"até 31" }
+    "table": "Dano/Cura por Rodada de Manutenção",
+    "description": "Define o valor de dano ou cura contínua gerado por técnicas sustentadas enquanto permanecem ativas no campo de batalha.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>Algumas técnicas possuem efeito de <strong style='color:var(--gold-light);'>manutenção contínua</strong>, permanecendo ativas por múltiplas rodadas e aplicando efeitos repetidos a cada turno.</p><p style='color:var(--silver); line-height:1.8;'>Esse efeito pode causar <strong style='color:var(--gold-light);'>dano contínuo</strong> (como queimaduras cósmicas, corrosão espiritual ou esmagamento progressivo) ou <strong style='color:var(--gold-light);'>cura contínua</strong> (regeneração de energia vital ou restauração cósmica).</p><p style='color:var(--silver); line-height:1.8;'>O valor aplicado a cada rodada é baseado no nível do personagem, mas sempre limitado pelo Rank da técnica para evitar escalonamento excessivo.</p><p style='color:var(--silver); line-height:1.8;'>Esses efeitos são aplicados automaticamente no início ou final de cada rodada, enquanto a técnica permanecer ativa e o alvo estiver dentro da área ou condição definida.</p><div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'><p style='color:var(--gold-light); text-align:center;'>Efeitos contínuos podem ser interrompidos por dissipação de Cosmo, quebra de concentração ou saída da área de efeito</p></div>",
+    "data": [
+      { "rank": 1, "dano/cura por rodada": "1 por nível", "limite por rodada": "até 4" },
+      { "rank": 2, "dano/cura por rodada": "1 por nível", "limite por rodada": "até 6" },
+      { "rank": 3, "dano/cura por rodada": "1 por nível", "limite por rodada": "até 8" },
+      { "rank": 4, "dano/cura por rodada": "2 por nível", "limite por rodada": "até 13" },
+      { "rank": 5, "dano/cura por rodada": "2 por nível", "limite por rodada": "até 16" },
+      { "rank": 6, "dano/cura por rodada": "2 por nível", "limite por rodada": "até 19" },
+      { "rank": 7, "dano/cura por rodada": "3 por nível", "limite por rodada": "até 23" },
+      { "rank": 8, "dano/cura por rodada": "3 por nível", "limite por rodada": "até 27" },
+      { "rank": 9, "dano/cura por rodada": "3 por nível", "limite por rodada": "até 31" }
     ]
   },
   {
@@ -657,9 +705,9 @@ const database = [
     ]
   },
   {
-    "table": "Reflexão de ataque",
-    "description": "Percentual de dano refletido e aumento da dificuldade.",
-    "full_description": "Define o bônus adicional na dificuldade para testes e define a porcentagem de dano que será refletida ao oponente.",
+    "table": "Reflexão de Ataque",
+    "description": "Técnica defensiva que permite refletir parte do dano recebido e dificultar a precisão dos ataques inimigos por meio de um teste resistido contra a execução ofensiva.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>A <strong style='color:var(--gold-light);'>Reflexão de Ataque</strong> funciona como uma resposta ativa à ofensiva inimiga, convertendo parte da energia recebida em retorno direto contra o atacante.</p><p style='color:var(--silver); line-height:1.8;'>Para que a reflexão ocorra de forma eficaz, o sistema exige um <strong style='color:var(--gold-light);'>teste resistido</strong> contra o atacante no momento em que o dano é calculado.</p><p style='color:var(--silver); line-height:1.8;'>O atacante deve realizar um teste contra a seguinte <strong style='color:var(--gold-light);'>CD de resistência</strong>: <strong>10 + Rank da técnica + Modificador de Sabedoria (SAB) + Bônus de Dificuldade da Reflexão</strong>.</p><p style='color:var(--silver); line-height:1.8;'>Se o atacante falhar no teste, a reflexão é ativada com sucesso e uma porcentagem do dano recebido é devolvida imediatamente ao agressor. Se o teste for bem-sucedido, a reflexão não se manifesta e o dano é aplicado normalmente.</p><p style='color:var(--silver); line-height:1.8;'>O <strong style='color:var(--gold-light);'>Bônus de Dificuldade</strong> representa a instabilidade gerada no fluxo ofensivo do inimigo, tornando mais difícil manter precisão e controle durante ataques repetidos contra o alvo protegido.</p><p style='color:var(--silver); line-height:1.8;'>Essa mecânica transforma a defesa em um sistema de risco: quanto mais forte a técnica de reflexão, maior a chance de punição direta ao atacante ao insistir no combate.</p><div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'><p style='color:var(--gold-light); text-align:center;'>CD de Reflexão = 10 + Rank da técnica + SAB + Bônus de Dificuldade</p></div>",
     "data": [
       { "rank": 1, "porcentagem do dano refletido": "10%", "bônus de dificuldade": "+1" },
       { "rank": 2, "porcentagem do dano refletido": "20%", "bônus de dificuldade": "+2" },
@@ -670,6 +718,38 @@ const database = [
       { "rank": 7, "porcentagem do dano refletido": "70%", "bônus de dificuldade": "+7" },
       { "rank": 8, "porcentagem do dano refletido": "80%", "bônus de dificuldade": "+8" },
       { "rank": 9, "porcentagem do dano refletido": "90%", "bônus de dificuldade": "+9" }
+    ]
+  },
+  {
+    "table": "Absorção de Energia",
+    "description": "Conversão de parte do dano sofrido em recuperação imediata de Cosmo.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>Absorção de Energia é uma técnica de retroalimentação cósmica onde o corpo do Cavaleiro converte parte da energia destrutiva recebida em reserva de Cosmo utilizável.</p><p style='color:var(--silver); line-height:1.8;'>Sempre que o personagem sofre dano, uma quantidade fixa de Cosmo é recuperada imediatamente após a aplicação do dano. Essa recuperação ocorre independentemente da redução de dano, resistência ou mitigação, sendo calculada apenas com base no dano final efetivamente sofrido.</p><p style='color:var(--silver); line-height:1.8;'>A energia absorvida não pode ultrapassar o limite máximo de Cosmo do personagem. Excedentes são perdidos. Técnicas de maior Rank aumentam a eficiência da conversão e estabilizam a absorção contra diferentes tipos de dano (físico, energético ou cósmico).</p><div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'><p style='color:var(--gold-light); text-align:center;'>A conversão ocorre após o dano final e não interfere em testes de resistência ou mitigação</p></div>",
+    "data": [
+      { "rank": 1, "cosmo recuperado": "2 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 2, "cosmo recuperado": "3 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 3, "cosmo recuperado": "4 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 4, "cosmo recuperado": "5 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 5, "cosmo recuperado": "6 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 6, "cosmo recuperado": "7 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 7, "cosmo recuperado": "9 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 8, "cosmo recuperado": "11 pontos de Cosmo por 5 de dano sofrido" },
+      { "rank": 9, "cosmo recuperado": "14 pontos de Cosmo por 5 de dano sofrido" }
+    ]
+  },
+  {
+    "table": "Selo de Técnica",
+    "description": "Bloqueio temporário do uso de uma técnica específica já observada pelo usuário.",
+    "full_description": "<p style='color:var(--silver); line-height:1.8;'>Selo de Técnica é uma forma de interferência cósmica direcionada que atua diretamente na estrutura energética responsável pela execução de uma habilidade específica do alvo.</p><p style='color:var(--silver); line-height:1.8;'>Para aplicar o selo, o Cavaleiro deve obrigatoriamente escolher uma técnica que já tenha visto ser utilizada anteriormente. Não é possível selar técnicas desconhecidas ou nunca testemunhadas, pois o processo depende da leitura e ancoragem do padrão energético já manifestado.</p><p style='color:var(--silver); line-height:1.8;'>Uma vez aplicado com sucesso, o alvo fica impedido de utilizar a técnica selada pelo período determinado, podendo continuar usando normalmente outras habilidades. O selo não bloqueia o Cosmo geral do alvo, apenas a técnica específica escolhida.</p><p style='color:var(--silver); line-height:1.8;'>A aplicação exige resistência do alvo contra uma CD baseada em 10 + Rank da técnica + modificador de Sabedoria (SAB) do usuário. Bônus de controle cósmico podem aumentar a dificuldade do bloqueio.</p><p style='color:var(--silver); line-height:1.8;'>Técnicas de maior Rank permitem selar habilidades mais complexas e aumentam a estabilidade do bloqueio, dificultando sua remoção antecipada.</p><div style='background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin:1rem 0;'><p style='color:var(--gold-light); text-align:center;'>Somente técnicas previamente observadas podem ser selecionadas para aplicação do selo</p></div>",
+    "data": [
+      { "rank": 1, "duração": "1 rodada" },
+      { "rank": 2, "duração": "1d2 rodadas" },
+      { "rank": 3, "duração": "1d3 rodadas" },
+      { "rank": 4, "duração": "1d4 rodadas" },
+      { "rank": 5, "duração": "1d6 rodadas" },
+      { "rank": 6, "duração": "1d8 rodadas" },
+      { "rank": 7, "duração": "1d10 rodadas" },
+      { "rank": 8, "duração": "1d12 rodadas" },
+      { "rank": 9, "duração": "2d6 rodadas" }
     ]
   }
 ];

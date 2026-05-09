@@ -97,6 +97,12 @@ const PAGE_GROUPS = [
   },
   {
     group: 'Personagem', groupIcon: '♟',
+    id: 'criaturas', label: 'Criaturas', icon: '♆',
+    type: 'html',
+    get content() { return SUMMON_GENERATOR; }
+  },
+  {
+    group: 'Personagem', groupIcon: '♟',
     id: 'armaduras', label: 'Armaduras', icon: '✦',
     type: 'html',
     get content() { return ARMORS; }
@@ -109,7 +115,7 @@ const PAGE_GROUPS = [
   },
   {
     group: 'Personagem', groupIcon: '♟',
-    id: 'pericias', label: 'Perícias', icon: '✩',
+    id: 'pericias', label: 'Perícias', icon: '✵',
     type: 'html',
     get content() { return SKILLS; }
   },
@@ -129,7 +135,7 @@ const PAGE_GROUPS = [
   },
   {
     group: 'Sistema', groupIcon: '⚙',
-    id: 'tecnicas', label: 'Técnicas', icon: '✵',
+    id: 'tecnicas', label: 'Técnicas', icon: '✸',
     type: 'html',
     get content() { return TECHNIQUES; }
   },
