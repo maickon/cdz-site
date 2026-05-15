@@ -1,7 +1,7 @@
 {
   "name": "Greco Romano",
   "short_name": "Greco Romano",
-  "start_url": "/index.html",
+  "start_url": "/index.html#home",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",

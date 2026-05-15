@@ -34,55 +34,55 @@ const PAGE_GROUPS = [
 
   /* ── Grupo: Fundamentos ── */
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'base', label: 'A base', icon: '℧',
     type: 'html',
     get content() { return BASE; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'mecanica', label: 'Mecânica', icon: '⚙',
     type: 'html',
     get content() { return MECANIC; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'atributos', label: 'Atributos', icon: '⚚',
     type: 'html',
     get content() { return ATTRIBUTES; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'vida', label: 'Vida', icon: '❤',
     type: 'html',
     get content() { return LIFE; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'defesa', label: 'Defesa', icon: '❖',
     type: 'html',
     get content() { return DEFENSE; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'ataque', label: 'Ataque', icon: '⚒',
     type: 'html',
     get content() { return ATTACK; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'testes', label: 'Testes de Resistência', icon: '✴',
     type: 'html',
     get content() { return TESTS; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'pericias', label: 'Perícias', icon: '✥',
     type: 'html',
     get content() { return EXPERTISE; }
   },
   {
-    group: 'Fundamentos', groupIcon: '♟',
+    group: 'Fundamentos', groupIcon: '♅',
     id: 'turnos', label: 'Turnos e Ações', icon: '⚖',
     type: 'html',
     get content() { return TURNS; }
@@ -140,23 +140,85 @@ const PAGE_GROUPS = [
     get content() { return TECHNIQUES; }
   },
 
-  /* ── Grupo: Mundo ── */
+  /* ── Grupo: Referências ── */
   {
-    group: 'Mundo', groupIcon: '⊕',
+    group: 'Referências', groupIcon: '⊕',
     id: 'mercado', label: 'Mercado', icon: '⚒',
     type: 'html',
     get content() { return MARKET; }
   },
   {
-    group: 'Mundo', groupIcon: '⊕',
+    group: 'Referências', groupIcon: '⊕',
     id: 'artifacts', label: 'Artefatos', icon: '✧',
     type: 'html',
     get content() { return ARTIFACTS; }
   },
   {
-    group: 'Mundo', groupIcon: '⊕',
+    group: 'Referências', groupIcon: '⊕',
     id: 'tabelas', label: 'Tabelas', icon: '⊞',
     type: 'database'
+  },
+
+  /* ── Grupo: Mundo ── */
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'refugio_do_mal', label: 'Refúgio do Mal', icon: '⚐',
+    type: 'html',
+    get content() { return REFUGIO_DO_MAL; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'zona_oculta', label: 'Zona Oculta', icon: '⚐',
+    type: 'html',
+    get content() { return ZONA_OCULTA; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'tartaruga_invertida', label: 'Tartaruga Invertida', icon: '⚐',
+    type: 'html',
+    get content() { return TARTARUGA_INVERTIDA; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'fenda_biquini', label: 'Fenda do Biquini', icon: '⚐',
+    type: 'html',
+    get content() { return FENDA_BIQUINI; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'continente_greco', label: 'Continente Greco', icon: '⚐',
+    type: 'html',
+    get content() { return CONTINENTE_GRECO; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'continente_romano', label: 'Continente Romano', icon: '⚐',
+    type: 'html',
+    get content() { return CONTINENTE_ROMANO; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'ilha_do_sol_vermelho', label: 'Ilha do Sol Vermelho', icon: '⚐',
+    type: 'html',
+    get content() { return ILHA_DO_SOL_VERMELHO; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'velho_oeste', label: 'Velho Oeste', icon: '⚐',
+    type: 'html',
+    get content() { return VELHO_OESTE; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'boca_do_papacru', label: 'Boca do Papacru', icon: '⚐',
+    type: 'html',
+    get content() { return BOCA_DO_PAPACRU; }
+  },
+  {
+    group: 'Mundo', groupIcon: '⚐',
+    id: 'ku', label: 'KU', icon: '⚐',
+    type: 'html',
+    get content() { return KU; }
   },
 
   /* ── Grupo: Guias ── */

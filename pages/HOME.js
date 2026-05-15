@@ -117,12 +117,14 @@ const HOME = `
 
 .home-hero-eyebrow {
   font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold-dim);
+  color: var(--gold-light);
   margin-bottom: 1.25rem;
   opacity: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
   animation: heroFadeUp 0.8s ease 0.2s forwards;
 }
 
