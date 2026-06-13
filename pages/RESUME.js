@@ -58,16 +58,13 @@ const RESUME = `
       
       <ul style="font-size:1rem; line-height:1.6; color:var(--silver); padding-left:1rem; list-style-type:square;">
         <li style="margin-bottom:0.75rem;">
-          <strong style="color:var(--gold-light);">Cosmo Máximo:</strong> Soma do bônus de Cosmo da Tabela de Classe + soma de TODOS os modificadores de atributos (FOR + DES + CON + INT + SAB + CAR).
+          <strong style="color:var(--gold-light);">Cosmo Máximo:</strong> Soma do nível do cavaleiro + bônus de Cosmo da Tabela de Classe + soma de TODOS os modificadores de atributos (FOR + DES + CON + INT + SAB + CAR) vezes o multiplicador da armadura.
         </li>
         <li style="margin-bottom:0.75rem;">
           <strong style="color:var(--gold-light);">Cosmo no Combate:</strong> Ao iniciar uma luta, a reserva começa sempre pela <strong style="color:var(--gold-light);">metade</strong> do valor total.
         </li>
         <li style="margin-bottom:0.75rem;">
           <strong style="color:var(--gold-light);">Recuperação:</strong> Em combate, aumenta a cada rodada baseado na armadura (Bronze +1, Prata +2, Ouro +3). Após a batalha, diminui 1 ponto por minuto até estabilizar na metade.
-        </li>
-        <li>
-          <strong style="color:var(--gold-light);">Bônus de Dano Passivo:</strong> Metade do seu Cosmo Atual é somado automaticamente como dano extra no seu <strong style="color:var(--gold-light);">primeiro ataque físico ou técnica</strong> de cada turno.
         </li>
       </ul>
     </div>

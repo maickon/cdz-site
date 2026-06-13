@@ -36,7 +36,7 @@ const COSMO = `
         O total de Cosmo da reserva de um cavaleiro é definido pela seguinte fórmula:
       </p>
       <div style="text-align:center; padding:1.25rem; background:rgba(255,215,0,0.05); border:1px solid var(--gold-light); border-radius:4px; color:var(--gold-light); font-size:1rem; font-family:'Cinzel',serif; letter-spacing:0.05em; margin-top:1rem;">
-        Cosmo Máximo = Bônus da Classe + Soma dos Modificadores (FOR + DES + CON + INT + SAB + CAR) * O nível da armadura
+        Cosmo Máximo = Nível do personagem + Bônus da Classe + Soma dos Modificadores (FOR + DES + CON + INT + SAB + CAR) * O nível da armadura
       </div>
     </div>
 
@@ -45,13 +45,6 @@ const COSMO = `
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1.5rem;">
         A cosmo energia de um cavaleiro sempre tende a estar com a sua reserva na <strong style="color:var(--gold-light);">metade do seu valor total</strong>. Quando um cavaleiro entra em combate, sua energia começa pela metade e tende a aumentar no decorrer dos turnos (de acordo com nível, armadura e talentos).
       </p>
-
-      <div style="border-left: 3px solid var(--gold-light); padding-left: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Bônus de Dano Passivo</h3>
-        <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-          Em combate, a cosmo energia soma-se ao dano causado. Este bônus é igual à <strong style="color:var(--gold-light);">metade dos pontos de cosmo atuais</strong> na reserva do personagem. <em>(Exemplo: se o cosmo atual é 10, ele tem +5 de dano adicional)</em>. Este bônus aplica-se <strong>apenas ao primeiro ataque</strong> em caso de ataques múltiplos.
-        </p>
-      </div>
 
       <div style="border-left: 3px solid var(--gold-light); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Usando Técnicas</h3>

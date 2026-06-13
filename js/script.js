@@ -297,7 +297,13 @@ function renderTable(entry) {
 
   const headers = allKeys.map(k => `<th>${formatKey(k)}</th>`).join('');
   const rows = entry.data.map(row => {
-    const cells = allKeys.map(k => `<td>${formatValue(row[k])}</td>`).join('');
+    const cells = allKeys.map((k, i) => {
+    let level = i === 0 ? ` - Lv: 1` : '';;
+    if(row[k] > 1) {
+      level = i === 0 ? ` - Lv: ${row[k] * 2}` : '';
+    }
+    return `<td>${formatValue(row[k])}${level}</td>`;
+  }).join('');
     return `<tr>${cells}</tr>`;
   }).join('');
 

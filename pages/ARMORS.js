@@ -165,50 +165,43 @@ const ARMORS = `
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">O Processo de Evolução</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
         As armaduras se dividem em 5 classificações de hierarquia: <strong style="color:var(--gold-light);">Bronze, Prata, Ouro, Titan e Kamui</strong>. 
-        Sempre que uma armadura sofrer mais que a metade dos seus pontos de vida totais e for 100% restaurada, ela passará por um processo de evolução. Quanto mais perto da destruição chegar, maior será o seu poder após a regeneração.
+        Sempre que uma armadura perder metade dos seus pontos de vida totais e for 100% restaurada, ela passará por um processo de evolução. Quanto mais perto da destruição chegar, maior será o seu poder após a regeneração.
       </p>
-      
-      <div style="overflow-x: auto; margin-bottom: 1rem;">
-        <table style="width: 100%; text-align: left; border-collapse: collapse; color: var(--silver); font-size: 0.95rem;">
-          <thead>
-            <tr style="border-bottom: 1px solid var(--gold-light); color: var(--gold-light);">
-              <th style="padding: 0.5rem;">Armadura</th>
-              <th style="padding: 0.5rem;">PV base</th>
-              <th style="padding: 0.5rem;">PV perdido</th>
-              <th style="padding: 0.5rem;">XP Recebido</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Bronze</td><td style="padding: 0.5rem;">50</td><td style="padding: 0.5rem;">25</td><td style="padding: 0.5rem;">100 xp</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Prata</td><td style="padding: 0.5rem;">100</td><td style="padding: 0.5rem;">50</td><td style="padding: 0.5rem;">200 xp</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Ouro</td><td style="padding: 0.5rem;">200</td><td style="padding: 0.5rem;">100</td><td style="padding: 0.5rem;">400 xp</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <td style="padding: 0.5rem;">Titan</td><td style="padding: 0.5rem;">400</td><td style="padding: 0.5rem;">200</td><td style="padding: 0.5rem;">800 xp</td>
-            </tr>
-            <tr>
-              <td style="padding: 0.5rem;">Kamui</td><td style="padding: 0.5rem;">500</td><td style="padding: 0.5rem;">250</td><td style="padding: 0.5rem;">1000 xp</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
-        Durante um combate, para cada incremento de dano tomado (ex: 25 PV para Bronze), a armadura recebe XP proporcional. 
-        Se o dano ultrapassar os pontos de vida máximos daquele nível, a armadura será destruída.
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
+        O processo de evolução das armaduras passa por um teste de evolução onde o jogador sempre precisárá gastar o seu XP para ter a chance de evoluir a sua armadura e torna-la mais poderosa.
       </p>
     </div>
 
     <div class="cosmos-card p-6 mb-6">
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">Níveis e Benefícios</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-        Toda armadura começa no nível 1 dentro da sua categoria. Para uma armadura subir de nível ela precisa seguir a tabela de experiência abaixo. Todos os bônus recebidos são acumulativos.
+        Toda armadura começa no nível 1 dentro da sua categoria. Para uma armadura subir de nível ela precisa seguir a tabela de experiência abaixo. A coluna XP define o quanto o cavaleiro precisa gastar de XP para evoluir a sua armadura.
       </p>
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
+        As armadruas só podem evoluir em circunstâncias especiais como:
+      </p>
+      <ul style="font-size:1rem; line-height:1.6; color:var(--silver); padding-left:1.5rem; list-style-type:square;">
+        <li style="margin-bottom:0.6rem;">
+          Perder metade dos seus pontos de vida atuais e depois ser 100 restaurado o PV.
+        </li>
+
+        <li style="margin-bottom:0.6rem;">
+          A armadura ser banhada pelo sangue de uma criatura mistica poderosa.
+        </li>
+
+        <li style="margin-bottom:0.6rem;">
+          Ser reparada pelo poder de um Deus.
+        </li>
+
+        <li style="margin-bottom:0.6rem;">
+          Ser banhada pelo sangue do próprio cavaleiro para a sua reconstrução.
+        </li>
+      </ul>
       
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
+        Quando uma condição como essa acontecer, o jogador poderá gastar o seu XP para evoluir a sua armadura. A tabela abaixo mostra os benefícios recebidos pela armadura sempre que avançar um nível.
+      </p>
+
       <div style="overflow-x: auto;">
         <table style="width: 100%; text-align: left; border-collapse: collapse; color: var(--silver); font-size: 0.95rem; white-space: nowrap;">
           <thead>
@@ -224,62 +217,68 @@ const ARMORS = `
             </tr>
           </thead>
           <tbody>
+
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <td style="padding: 0.5rem;">1</td>
-                <td style="padding: 0.5rem;">0</td>
-                <td style="padding: 0.5rem;">-</td>
-                <td style="padding: 0.5rem;">-</td>
-                <td style="padding: 0.5rem;">-</td>
-                <td style="padding: 0.5rem;">-</td>
-                <td style="padding: 0.5rem;">-</td>
-                <td style="padding: 0.5rem;">-</td>
+              <td style="padding: 0.5rem;">1</td>
+              <td style="padding: 0.5rem;">0</td>
+              <td style="padding: 0.5rem;">-</td>
+              <td style="padding: 0.5rem;">-</td>
+              <td style="padding: 0.5rem;">-</td>
+              <td style="padding: 0.5rem;">-</td>
+              <td style="padding: 0.5rem;">-</td>
+              <td style="padding: 0.5rem;">-</td>
             </tr>
+
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <td style="padding: 0.5rem;">2</td>
-                <td style="padding: 0.5rem;">500</td>
-                <td style="padding: 0.5rem;">+3</td>
-                <td style="padding: 0.5rem;">+3/+1</td>
-                <td style="padding: 0.5rem;">+5</td>
-                <td style="padding: 0.5rem;">+25</td>
-                <td style="padding: 0.5rem;">+1</td>
-                <td style="padding: 0.5rem;">+1</td>
+              <td>2</td><td>500</td><td>+2</td><td>+2/+1</td><td>+5</td><td>+25</td><td>+1</td><td>+1</td>
             </tr>
+
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <td style="padding: 0.5rem;">3</td>
-                <td style="padding: 0.5rem;">1000</td>
-                <td style="padding: 0.5rem;">+5</td>
-                <td style="padding: 0.5rem;">+5/+2</td>
-                <td style="padding: 0.5rem;">+10</td>
-                <td style="padding: 0.5rem;">+50</td>
-                <td style="padding: 0.5rem;">+2</td>
-                <td style="padding: 0.5rem;">+2</td>
+              <td>3</td><td>1000</td><td>+3</td><td>+3/+1</td><td>+10</td><td>+50</td><td>+1</td><td>+2</td>
             </tr>
+
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <td style="padding: 0.5rem;">4</td>
-                <td style="padding: 0.5rem;">2000</td>
-                <td style="padding: 0.5rem;">+7</td>
-                <td style="padding: 0.5rem;">+7/+3</td>
-                <td style="padding: 0.5rem;">+15</td>
-                <td style="padding: 0.5rem;">+150</td>
-                <td style="padding: 0.5rem;">+3</td>
-                <td style="padding: 0.5rem;">+3</td>
+              <td>4</td><td>1500</td><td>+4</td><td>+4/+2</td><td>+15</td><td>+75</td><td>+2</td><td>+3</td>
             </tr>
+
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td>5</td><td>2000</td><td>+5</td><td>+5/+2</td><td>+20</td><td>+100</td><td>+2</td><td>+4</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td>6</td><td>2500</td><td>+6</td><td>+6/+3</td><td>+25</td><td>+125</td><td>+3</td><td>+5</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td>7</td><td>3000</td><td>+7</td><td>+7/+3</td><td>+30</td><td>+150</td><td>+3</td><td>+6</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td>8</td><td>3500</td><td>+8</td><td>+8/+4</td><td>+35</td><td>+175</td><td>+4</td><td>+7</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td>9</td><td>4000</td><td>+9</td><td>+9/+4</td><td>+40</td><td>+200</td><td>+4</td><td>+8</td>
+            </tr>
+
             <tr>
-                <td style="padding: 0.5rem;">5</td>
-                <td style="padding: 0.5rem;">5000</td>
-                <td style="padding: 0.5rem;">+10</td>
-                <td style="padding: 0.5rem;">+10/+4</td>
-                <td style="padding: 0.5rem;">+20</td>
-                <td style="padding: 0.5rem;">+275</td>
-                <td style="padding: 0.5rem;">+4</td>
-                <td style="padding: 0.5rem;">+4</td>
+              <td>10</td><td>4500</td><td>+10</td><td>+10/+5</td><td>+45</td><td>+225</td><td>+5</td><td>+9</td>
             </tr>
-        </tbody>
+
+          </tbody>
         </table>
+
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          *OS BÔNUS RECEBIDOS NÃO SÃO ACUMULATIVOS.
+        </p>
+        
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
+          Armaduras que são evoluidas normalmente recebem um proteção maior, tendendo a ser uma armadura completa que protege o cavaleiro por inteiro, em níveis mais elevados, uma armadura de classe inferior como bronze ou prata pode ser mais poderosa que uma armadura de ouro.
+        </p>
 
         <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;margin-top:1rem;">As habilidades</h2>
         <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
-          <strong style="color:var(--gold-light);">XP</strong>: XP necesário para passar de nível.
+          <strong style="color:var(--gold-light);">XP</strong>: XP que o jogador deverá gastar para passar de nível.
         </p>
         <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
           <strong style="color:var(--gold-light);">RD</strong>: Valor de Redução de Dano da armadura.
@@ -382,180 +381,6 @@ const ARMORS = `
         </li>
 
       </ul>
-    </div>
-
-    <div class="cosmos-card p-6 mb-6">
-      <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">
-        Evolução por Comunhão Cósmica
-      </h2>
-
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-        Além da evolução normal por experiência, uma armadura pode ser aprimorada através da <strong style="color:var(--gold-light);">Comunhão Cósmica</strong>. 
-        Nesse processo o cavaleiro sincroniza seu Cosmo com o da armadura para despertar melhorias únicas.
-      </p>
-
-      <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--gold-light); padding:1rem; margin-bottom:1rem;">
-        <p style="font-size:1rem; color:var(--silver);">
-          A Comunhão Cósmica só pode ser realizada quando a armadura sofre <strong>mais de 50% de dano</strong> e depois é totalmente restaurada. Esse momento representa o renascimento do traje após uma batalha intensa.
-        </p>
-      </div>
-
-      <ul style="font-size:1rem; line-height:1.6; color:var(--silver); padding-left:1.5rem; list-style-type:square;">
-        <li>O jogador deve gastar <strong style="color:var(--gold-light);">250 XP</strong> da reserva de experiência da armadura.</li>
-        <li>Em seguida realiza um <strong>Teste de Concentração</strong>.</li>
-        <li>A CD base é <strong>10 + CD da armadura</strong>.</li>
-        <li>Se falhar, o XP é perdido e a armadura não evolui.</li>
-        <li>Se passar, o jogador rola <strong>1d20</strong> para determinar a força do aprimoramento.</li>
-      </ul>
-
-      <div style="overflow-x:auto; margin-top:1rem;">
-        <table style="width:100%; border-collapse:collapse; color:var(--silver); font-size:0.9rem;">
-          <thead>
-            <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
-              <th style="padding:0.5rem;">Armadura</th>
-              <th style="padding:0.5rem;">CD adicional</th>
-              <th style="padding:0.5rem;">CD Final</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td style="padding:0.5rem;">Bronze</td><td style="padding:0.5rem;">+5</td><td style="padding:0.5rem;">15</td></tr>
-            <tr><td style="padding:0.5rem;">Prata</td><td style="padding:0.5rem;">+10</td><td style="padding:0.5rem;">20</td></tr>
-            <tr><td style="padding:0.5rem;">Ouro</td><td style="padding:0.5rem;">+15</td><td style="padding:0.5rem;">25</td></tr>
-            <tr><td style="padding:0.5rem;">Titan</td><td style="padding:0.5rem;">+20</td><td style="padding:0.5rem;">30</td></tr>
-            <tr><td style="padding:0.5rem;">Kamui</td><td style="padding:0.5rem;">+25</td><td style="padding:0.5rem;">35</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-top:1rem;">
-        Após passar no teste, o jogador rola <strong>1d20</strong> para determinar a intensidade do bônus recebido.
-      </p>
-
-      <div style="overflow-x:auto; margin-top:1rem;">
-        <table style="width:100%; border-collapse:collapse; color:var(--silver); font-size:0.9rem; white-space:nowrap;">
-          <thead>
-            <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
-              <th style="padding:0.5rem;">Resultado (1d20)</th>
-              <th style="padding:0.5rem;">RD</th>
-              <th style="padding:0.5rem;">CA (Arm/Esc)</th>
-              <th style="padding:0.5rem;">Cosmo Adic.</th>
-              <th style="padding:0.5rem;">PV</th>
-              <th style="padding:0.5rem;">Cosmo Recp.</th>
-              <th style="padding:0.5rem;">Mágico</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td style="padding:0.5rem;">1</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td style="padding:0.5rem;">2–5</td>
-                <td>1d4</td>
-                <td>1d4/+1</td>
-                <td>+1d4+1</td>
-                <td>+25</td>
-                <td>+1</td>
-                <td>+1</td>
-            </tr>
-            <tr>
-                <td style="padding:0.5rem;">6–10</td>
-                <td>1d6</td>
-                <td>1d6/+2</td>
-                <td>+1d6+2</td>
-                <td>+50</td>
-                <td>+1</td>
-                <td>+1</td>
-            </tr>
-            <tr>
-                <td style="padding:0.5rem;">11–15</td>
-                <td>1d8</td>
-                <td>1d8/+3</td>
-                <td>+1d8+3</td>
-                <td>+75</td>
-                <td>+1</td>
-                <td>+1</td>
-            </tr>
-            <tr>
-                <td style="padding:0.5rem;">16–19</td>
-                <td>1d10</td>
-                <td>1d10/+4</td>
-                <td>+1d10+4</td>
-                <td>+100</td>
-                <td>+2</td>
-                <td>+2</td>
-            </tr>
-            <tr>
-                <td style="padding:0.5rem;">20</td>
-                <td>1d12</td>
-                <td>1d12/+5</td>
-                <td>+1d12+5</td>
-                <td>+125</td>
-                <td>+3</td>
-                <td>+3</td>
-            </tr>
-        </tbody>
-        </table>
-      </div>
-
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-top:1rem;">
-        Se o resultado for <strong>1</strong>, a tentativa falha e a armadura não recebe nenhum bônus.  
-        Para qualquer outro resultado, o jogador deve rolar <strong>1d6</strong> para definir qual atributo da armadura será aprimorado.
-      </p>
-
-      <div style="overflow-x:auto; margin-top:1rem;">
-        <table style="width:100%; border-collapse:collapse; color:var(--silver); font-size:0.9rem;">
-          <thead>
-            <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
-              <th style="padding:0.5rem;">1d6</th>
-              <th style="padding:0.5rem;">Atributo Melhorado</th>
-              <th style="padding:0.5rem;">Descrição</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding:0.5rem;">1</td>
-              <td style="padding:0.5rem;">RD</td>
-              <td style="padding:0.5rem;">Aumenta a redução de dano da armadura.</td>
-            </tr>
-            <tr>
-              <td style="padding:0.5rem;">2</td>
-              <td style="padding:0.5rem;">CA (Arm/Esc)</td>
-              <td style="padding:0.5rem;">Eleva o bônus defensivo da armadura/Escudo na Classe de Armadura.</td>
-            </tr>
-            <tr>
-              <td style="padding:0.5rem;">3</td>
-              <td style="padding:0.5rem;">Cosmo Adic.</td>
-              <td style="padding:0.5rem;">Aumenta a reserva de cosmo total do cavaleiro.</td>
-            </tr>
-            <tr>
-              <td style="padding:0.5rem;">4</td>
-              <td style="padding:0.5rem;">PV</td>
-              <td style="padding:0.5rem;">Amplia os pontos de vida estruturais da armadura.</td>
-            </tr>
-            <tr>
-              <td style="padding:0.5rem;">5</td>
-              <td style="padding:0.5rem;">Cosmo Recp.</td>
-              <td style="padding:0.5rem;">Aumenta a  capacidade de recuperação de Cosmo por rodada concedida pela armadura.</td>
-            </tr>
-            <tr>
-              <td style="padding:0.5rem;">6</td>
-              <td style="padding:0.5rem;">Mágico</td>
-              <td style="padding:0.5rem;">Melhora o bônus mágico aplicado aos ataques e danos do cavaleiro. Se o bônus for maior que cinco, o jogador pode converter os pontos restantes em habilidades para a sua armadura.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-top:1rem;">
-        Todos os valores obtidos são <strong>acumulativos</strong> e se somam aos bônus atuais da armadura, permitindo que o traje evolua progressivamente conforme o cavaleiro fortalece sua ligação cósmica.
-      </p>
-
     </div>
 
   <div class="cosmos-card p-6 mb-6">
