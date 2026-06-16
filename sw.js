@@ -4,7 +4,7 @@
    Estratégia: Cache First para assets, Network First para HTML.
 ══════════════════════════════════════════════════════════════════ */
 
-const CACHE_VERSION  = 'greco-romano-v8';
+const CACHE_VERSION  = 'greco-romano-v9';
 const CACHE_ASSETS   = CACHE_VERSION + '-assets';  // arquivos estáticos (long-lived)
 const CACHE_PAGES    = CACHE_VERSION + '-pages';   // HTML/navegação
 

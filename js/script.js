@@ -14,8 +14,8 @@
    Pode haver múltiplos em uma mesma página — cada um é independente.
 ══════════════════════════════════════════════════════════════════ */
 
-const APP_VERSION = 'v6.0';
-var   EDITOR_MODE = true; // mude para true em localhost para habilitar o editor de páginas
+const APP_VERSION = 'v7.0';
+var   EDITOR_MODE = false; // mude para true em localhost para habilitar o editor de páginas
 
 /* ══════════════════════════════════════
    FONTE DA VERDADE — páginas e grupos
