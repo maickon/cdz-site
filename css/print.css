@@ -1,0 +1,437 @@
+/* ══════════════════════════════════════════════════════════════════
+   GRECO ROMANO RPG — print.css
+   Layout de Livro de RPG para impressão / PDF.
+══════════════════════════════════════════════════════════════════ */
+
+/* ── Tela: oculta o container de impressão ── */
+#print-book { display: none; }
+
+/* ── Botão na página Livro de Regras ── */
+.pb-generate-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--deep-navy, #0b1230);
+  background: var(--gold, #d6b65a);
+  border: none;
+  padding: 14px 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.12s, opacity 0.2s;
+  box-shadow: 0 4px 20px rgba(214,182,90,0.3);
+  display: inline-block;
+}
+.pb-generate-btn:hover    { background: var(--gold-light, #eabf25); transform: translateY(-1px); }
+.pb-generate-btn:active   { transform: translateY(0); }
+.pb-generate-btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+
+
+/* ══════════════════════════════════════════════════════════════════
+   IMPRESSÃO
+══════════════════════════════════════════════════════════════════ */
+@media print {
+
+  body > *:not(#print-book) { display: none !important; }
+  #print-book                { display: block !important; }
+
+  /* ── Links internos: sem sublinhado e sem URL impressa ── */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a::after { content: none !important; }
+
+  /* ── Configuração de página ── */
+  @page {
+    size: A4 portrait;
+    margin: 2.2cm 3.2cm 2.8cm 3.2cm;
+  }
+
+  @page {
+    @bottom-center {
+      content: "— " counter(page) " —";
+      font-family: 'Cinzel', serif;
+      font-size: 7.5pt;
+      color: #3a3050;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  @page pb-cover {
+    margin: 0;
+    @bottom-center { content: none; }
+  }
+
+  @page pb-toc {
+    @bottom-center { content: none; }
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* ── Base tipográfica ── */
+  #print-book {
+    font-family: 'Crimson Pro', 'Georgia', 'Times New Roman', serif;
+    font-size: 11.5pt;
+    line-height: 1.7;
+    color: #160e24;
+    background: #fff;
+  }
+
+
+  /* ══════════════════════════
+     CAPA (fundo escuro — cores claras são corretas aqui)
+  ══════════════════════════ */
+  .pb-cover {
+    page: pb-cover;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b1230;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .pb-cover-inner { text-align: center; padding: 2cm 3cm; }
+
+  .pb-cover-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.45em;
+    color: #c8a040;
+    text-transform: uppercase;
+    margin: 0 0 2.5cm 0;
+    display: block;
+  }
+
+  .pb-cover-title {
+    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-size: 44pt;
+    font-weight: 900;
+    color: #eabf25;
+    line-height: 1.15;
+    margin: 0 0 1.5cm 0;
+  }
+
+  .pb-cover-ornament {
+    font-size: 18pt;
+    color: #c8a040;
+    margin: 0 0 1.5cm 0;
+    letter-spacing: 0.6em;
+    display: block;
+  }
+
+  .pb-cover-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 12pt;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #d6b65a;
+    text-transform: uppercase;
+    margin: 0 0 0.6cm 0;
+    display: block;
+  }
+
+  .pb-cover-version {
+    font-family: 'Cinzel', serif;
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    color: #8a7040;
+    display: block;
+    margin: 0;
+  }
+
+
+  /* ══════════════════════════
+     SUMÁRIO
+  ══════════════════════════ */
+  .pb-toc {
+    page: pb-toc;
+    page-break-before: always;
+    break-before: page;
+    padding-top: 0.3cm;
+  }
+
+  .pb-toc > h2 {
+    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: #160e24;
+    border-bottom: 2pt solid #8a6820;
+    padding-bottom: 0.35cm;
+    margin-bottom: 0.4cm;
+    page-break-after: avoid;
+  }
+
+  .pb-toc-note {
+    font-style: italic;
+    font-size: 8.5pt;
+    color: #4a4060;
+    margin-bottom: 0.7cm;
+  }
+
+  .pb-toc > ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 1.2cm;
+  }
+
+  .pb-toc-ch {
+    break-inside: avoid;
+    margin-bottom: 0.65cm;
+  }
+
+  .pb-toc-ch-link {
+    display: block;
+    text-decoration: none;
+    color: #160e24;
+  }
+
+  .pb-toc-roman {
+    font-family: 'Cinzel', serif;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .pb-toc-name {
+    font-family: 'Cinzel', serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #160e24;
+    display: block;
+    margin: 0.05cm 0 0.12cm 0;
+  }
+
+  .pb-toc-ch > ul {
+    list-style: none;
+    padding-left: 0.4cm;
+    margin: 0;
+  }
+
+  .pb-toc-ch > ul > li {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: #2a2040;
+    line-height: 1.65;
+  }
+
+  .pb-toc-ch > ul > li::before {
+    content: "· ";
+    color: #2a2040;
+    font-weight: 700;
+  }
+
+  .pb-toc-ch > ul > li > a {
+    color: #2a2040;
+    text-decoration: none;
+  }
+
+
+  /* ══════════════════════════
+     ABERTURA DE CAPÍTULO
+  ══════════════════════════ */
+  .pb-ch-opener {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 5cm;
+    padding-bottom: 1.2cm;
+    border-bottom: 2.5pt solid #8a6820;
+    margin-bottom: 1cm;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .pb-ch-label {
+    font-family: 'Cinzel', serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.5cm;
+  }
+
+  .pb-ch-title {
+    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-size: 30pt;
+    font-weight: 700;
+    color: #160e24;
+    line-height: 1.15;
+    margin: 0 0 0.6cm 0;
+  }
+
+  .pb-ch-rule {
+    width: 4cm;
+    height: 2pt;
+    background: linear-gradient(to right, #8a6820, transparent);
+  }
+
+
+  /* ══════════════════════════
+     SEÇÃO
+  ══════════════════════════ */
+  .pb-section { margin-top: 0.6cm; }
+
+  .pb-sec-title {
+    font-family: 'Cinzel', serif;
+    font-size: 15pt;
+    font-weight: 700;
+    color: #160e24;
+    border-bottom: 1pt solid #8a6820;
+    padding-bottom: 0.22cm;
+    margin: 0.7cm 0 0.45cm 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+
+  /* ══════════════════════════
+     CONTEÚDO
+  ══════════════════════════ */
+
+  .pb-sec-body p {
+    font-size: 11.5pt;
+    margin: 0 0 0.42cm 0;
+    text-align: justify;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+    color: #160e24;
+  }
+
+  .pb-sec-body h3 + p::first-line,
+  .pb-sec-body h4 + p::first-line {
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+  }
+
+  /* Sub-seção nível 1 */
+  .pb-sec-body h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #160e24;
+    margin: 0.6cm 0 0.2cm 0;
+    padding-left: 0.4cm;
+    border-left: 3pt solid #8a6820;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Sub-seção nível 2 */
+  .pb-sec-body h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0.5cm 0 0.15cm 0;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .pb-sec-body h5,
+  .pb-sec-body h6 {
+    font-family: 'Cinzel', serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #2a2040;
+    font-style: italic;
+    margin: 0.35cm 0 0.1cm 0;
+  }
+
+  /* Listas */
+  .pb-sec-body ul,
+  .pb-sec-body ol {
+    padding-left: 1.1cm;
+    margin: 0.15cm 0 0.4cm 0;
+  }
+
+  .pb-sec-body li {
+    font-size: 11.5pt;
+    margin-bottom: 0.14cm;
+    text-align: justify;
+    line-height: 1.65;
+    color: #160e24;
+  }
+
+  .pb-sec-body strong { font-weight: 700; color: #160e24; }
+  .pb-sec-body em     { font-style: italic; color: #2a2040; }
+
+  .pb-sec-body code {
+    font-family: 'Courier New', monospace;
+    font-size: 9pt;
+    background: #f0ede6;
+    color: #1a1020;
+    padding: 1pt 4pt;
+    border-radius: 2pt;
+  }
+
+  .pb-sec-body blockquote {
+    margin: 0.3cm 0 0.3cm 0.5cm;
+    padding: 0.25cm 0.4cm;
+    border-left: 3pt solid #8a6820;
+    background: #f8f4ee;
+    font-style: italic;
+    color: #2a2040;
+  }
+
+  /* ── Tabelas ── */
+  .pb-sec-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.45cm 0 0.55cm 0;
+    font-size: 10.5pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .pb-sec-body th {
+    background: #1a1a2e;
+    color: #f0e0c0;
+    font-family: 'Cinzel', serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-align: left;
+    padding: 6pt 10pt;
+  }
+
+  .pb-sec-body td {
+    padding: 5pt 10pt;
+    border-bottom: 0.5pt solid #d0c8b0;
+    vertical-align: top;
+    line-height: 1.55;
+    color: #160e24;
+  }
+
+  .pb-sec-body tr:nth-child(even) td { background: #faf6ee; }
+
+  .pb-sec-body tbody tr:last-child td {
+    border-bottom: 1.5pt solid #8a6820;
+  }
+
+  /* Definições */
+  .pb-sec-body dl  { margin: 0.2cm 0 0.4cm 0; }
+  .pb-sec-body dt  { font-weight: 700; font-family: 'Cinzel', serif; font-size: 9.5pt; color: #160e24; margin-top: 0.2cm; }
+  .pb-sec-body dd  { padding-left: 0.8cm; margin-bottom: 0.1cm; color: #2a2040; }
+
+  /* ── Quebras de página ── */
+  .pb-sec-title,
+  .pb-sec-body h3,
+  .pb-sec-body h4           { page-break-after: avoid; break-after: avoid; }
+  .pb-sec-body table,
+  .pb-sec-body blockquote   { page-break-inside: avoid; break-inside: avoid; }
+}

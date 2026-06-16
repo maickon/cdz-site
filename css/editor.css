@@ -1,0 +1,209 @@
+/* ══════════════════════════════════════════════════════════════════
+   GRECO ROMANO RPG — editor.css
+   Estilos do Modo Editor (apenas localhost).
+   Inerte quando EDITOR_MODE = false em js/script.js.
+══════════════════════════════════════════════════════════════════ */
+
+/* ── Botão flutuante (canto inferior direito) ── */
+.ed-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 800;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--deep-navy);
+  color: var(--gold);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.6);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ed-toggle:hover     { background: var(--gold); color: var(--deep-navy); }
+.ed-toggle--on       { background: #8b1a2e; border-color: #8b1a2e; color: #fff; }
+.ed-toggle--on:hover { background: #a52237; border-color: #a52237; }
+
+/* ── Toolbar (fixa abaixo do header) ── */
+.ed-toolbar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  z-index: 700;
+  background: rgba(8,13,38,0.97);
+  border-bottom: 1px solid rgba(214,182,90,0.3);
+  padding: 5px 12px;
+  backdrop-filter: blur(10px);
+}
+
+.ed-toolbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ed-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  padding-right: 4px;
+  white-space: nowrap;
+}
+
+.ed-sep {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background: rgba(214,182,90,0.22);
+  margin: 0 3px;
+}
+
+.ed-btn {
+  padding: 3px 9px;
+  border: 1px solid rgba(214,182,90,0.28);
+  background: rgba(214,182,90,0.05);
+  color: var(--silver);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+.ed-btn:hover {
+  background: rgba(214,182,90,0.16);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.ed-hist       { border-color: rgba(180,180,200,0.28); background: rgba(180,180,200,0.05); color: #9098b0; font-size: 0.9rem; }
+.ed-hist:hover { background: rgba(180,180,200,0.16); border-color: #8890a8; color: #c0c8d8; }
+
+.ed-ins       { border-color: rgba(100,150,220,0.28); background: rgba(100,150,220,0.05); color: #a0b8e0; }
+.ed-ins:hover { background: rgba(100,150,220,0.16); border-color: #6890cc; color: #c0d4f2; }
+
+.ed-export       { border-color: rgba(80,190,110,0.38); background: rgba(80,190,110,0.06); color: #80c490; font-weight: 600; }
+.ed-export:hover { background: rgba(80,190,110,0.2); border-color: #4ea060; color: #a8dcb8; }
+
+/* Empurra o main-content para baixo da toolbar */
+body.ed-toolbar-open #main-content { padding-top: 44px; }
+
+/* ── Área editável ── */
+#ed-content[contenteditable="true"] {
+  outline: 2px dashed rgba(214,182,90,0.32) !important;
+  outline-offset: 6px;
+  min-height: 300px;
+  caret-color: var(--gold-light);
+}
+#ed-content[contenteditable="true"] *:hover {
+  outline: 1px dashed rgba(100,150,220,0.38);
+  outline-offset: 2px;
+}
+
+/* ── Modal de exportação ── */
+.ed-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  background: rgba(4,7,22,0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.ed-dialog {
+  background: #0d1535;
+  border: 1px solid rgba(214,182,90,0.38);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 780px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.75);
+}
+
+.ed-dialog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(214,182,90,0.16);
+  font-family: 'Cinzel', serif;
+  font-size: 0.76rem;
+  color: var(--gold);
+  letter-spacing: 0.07em;
+}
+.ed-dialog-head code {
+  color: var(--gold-light);
+  background: rgba(214,182,90,0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+
+.ed-dialog-close {
+  background: none;
+  border: none;
+  color: #6a7090;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+  transition: color 0.15s;
+}
+.ed-dialog-close:hover { color: #fff; }
+
+.ed-dialog-hint {
+  padding: 9px 18px 3px;
+  font-size: 0.78rem;
+  color: #6a7090;
+}
+.ed-dialog-hint code {
+  color: var(--gold-light);
+  background: rgba(214,182,90,0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.ed-dialog-bar { padding: 5px 18px 8px; }
+
+.ed-copy-btn {
+  padding: 5px 13px;
+  border: 1px solid rgba(80,190,110,0.38);
+  background: rgba(80,190,110,0.07);
+  color: #80c490;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.ed-copy-btn:hover { background: rgba(80,190,110,0.2); color: #a8dcb8; }
+
+.ed-code {
+  flex: 1;
+  margin: 0 18px 18px;
+  background: #060c1e;
+  border: 1px solid rgba(214,182,90,0.16);
+  border-radius: 4px;
+  color: #b4c6de;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  padding: 12px;
+  resize: none;
+  overflow-y: auto;
+  outline: none;
+  min-height: 320px;
+}
