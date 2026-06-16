@@ -12,7 +12,7 @@
   const NO_EDIT = new Set(['criaturas', 'tabelas']);
 
   let currentPage = null;
-  let isEditing   = false;
+  let isEditing   = true;
 
   /* ══════════════════════════════════
      HOOK — chamado por script.js após cada navegação
