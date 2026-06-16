@@ -14,6 +14,9 @@
    Pode haver múltiplos em uma mesma página — cada um é independente.
 ══════════════════════════════════════════════════════════════════ */
 
+const APP_VERSION = 'v6.0';
+var   EDITOR_MODE = true; // mude para true em localhost para habilitar o editor de páginas
+
 /* ══════════════════════════════════════
    FONTE DA VERDADE — páginas e grupos
    
@@ -227,6 +230,12 @@ const PAGE_GROUPS = [
     id: 'resumo', label: 'Resumo', icon: '⚜',
     type: 'html',
     get content() { return RESUME; }
+  },
+  {
+    group: 'Guias', groupIcon: '⚜',
+    id: 'livro', label: 'Livro', icon: '📖',
+    type: 'html',
+    get content() { return RULEBOOK; }
   }
 ];
 
@@ -429,6 +438,9 @@ function updateNavActive(page) {
 
 function afterPageRender(page) {
   initPageSearch();
+  if (EDITOR_MODE && typeof window.editorOnPageRender === 'function') {
+    window.editorOnPageRender(page);
+  }
 }
 
 /* ══════════════════════════════════════
@@ -722,6 +734,9 @@ function buildStarfield() {
 $(function() {
   buildStarfield();
   buildNav();
+
+  const verEl = document.getElementById('app-version');
+  if (verEl) verEl.textContent = APP_VERSION;
 
   $('#menu-toggle').on('click', function() {
     if ($('#side-nav').hasClass('open')) closeNav(); else openNav();

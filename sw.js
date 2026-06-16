@@ -4,7 +4,7 @@
    Estratégia: Cache First para assets, Network First para HTML.
 ══════════════════════════════════════════════════════════════════ */
 
-const CACHE_VERSION  = 'greco-romano-v5';
+const CACHE_VERSION  = 'greco-romano-v8';
 const CACHE_ASSETS   = CACHE_VERSION + '-assets';  // arquivos estáticos (long-lived)
 const CACHE_PAGES    = CACHE_VERSION + '-pages';   // HTML/navegação
 
@@ -12,11 +12,15 @@ const CACHE_PAGES    = CACHE_VERSION + '-pages';   // HTML/navegação
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/style.css',
-  '/script.js',
-  '/submenu-search.css',
+  '/css/style.css',
+  '/css/submenu-search.css',
+  '/css/pwa.css',
+  '/js/script.js',
+  '/js/pwa.js',
   '/database.js',
-  '/manifest.json'
+  '/manifest.json',
+  '/img/icon-192.png',
+  '/img/icon-512.png'
 ];
 
 /* Arquivos de páginas JS — cacheados individualmente, falha tolerada */
@@ -26,25 +30,54 @@ const PAGE_SCRIPTS = [
   '/pages/CHARACTER_CREATE.js',
   '/pages/COMBAT.js',
   '/pages/COSMO.js',
+  '/pages/COSMO_D20.js',
   '/pages/MARKET.js',
   '/pages/ARTIFACTS.js',
   '/pages/RESUME.js',
   '/pages/SKILLS.js',
   '/pages/TALENTS.js',
-  '/pages/TECHNIQUES.js'
+  '/pages/TECHNIQUES.js',
+  '/pages/BASE.js',
+  '/pages/MECANIC.js',
+  '/pages/ATTRIBUTES.js',
+  '/pages/LIFE.js',
+  '/pages/DEFENSE.js',
+  '/pages/ATTACK.js',
+  '/pages/TESTS.js',
+  '/pages/EXPERTISE.js',
+  '/pages/TURNS.js',
+  '/pages/BATTLE.js',
+  '/pages/CONDITIONS.js',
+  '/pages/EXAMPLE.js',
+  '/pages/SUMMON_GENERATOR.js',
+  '/pages/REFUGIO_DO_MAL.js',
+  '/pages/ZONA_OCULTA.js',
+  '/pages/TARTARUGA_INVERTIDA.js',
+  '/pages/FENDA_BIQUINI.js',
+  '/pages/CONTINENTE_GRECO.js',
+  '/pages/CONTINENTE_ROMANO.js',
+  '/pages/ILHA_DO_SOL_VERMELHO.js',
+  '/pages/VELHO_OESTE.js',
+  '/pages/BOCA_DO_PAPACRU.js',
+  '/pages/KU.js'
 ];
 
 /* Arquivos opcionais — falha tolerada */
 const OPTIONAL_ASSETS = [
-  '/pwa.js',
-  '/img/icon-192.png',
-  '/img/icon-512.png',
-  '/icon.jpg',
-  '/athenas.jpg',
-  '/bg.jpg',
-  '/sparta.jpg',
-  '/m1.jpg',
-  '/m2.jpg'
+  '/css/SUMMON_GENERATOR.css',
+  '/img/icon.jpg',
+  '/img/athenas.jpg',
+  '/img/esparta.jpg',
+  '/img/bg.jpeg',
+  '/img/m1.jpg',
+  '/img/m2.jpg',
+  '/img/refugiodomal.jpg',
+  '/img/zona-oculta.jpg',
+  '/img/tartaruga-invertida.jpg',
+  '/img/fenda-do-biquini.jpg',
+  '/img/ilha-do-sol-vermelho.jpg',
+  '/img/continente-romano.jpg',
+  '/img/continente-greco.jpg'
 ];
 
 /* ══════════════════════════════════════
