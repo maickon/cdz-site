@@ -1,12 +1,20 @@
 /* ══════════════════════════════════════════════════════════════════
    GRECO ROMANO RPG — sw.js (Service Worker)
-   Cache robusto: falha em um arquivo não derruba o resto.
    Estratégia: Cache First para assets, Network First para HTML.
+   Recursos externos (CDN/Fonts) também são cacheados para offline.
 ══════════════════════════════════════════════════════════════════ */
 
-const CACHE_VERSION  = 'greco-romano-v9';
-const CACHE_ASSETS   = CACHE_VERSION + '-assets';  // arquivos estáticos (long-lived)
-const CACHE_PAGES    = CACHE_VERSION + '-pages';   // HTML/navegação
+const CACHE_VERSION = 'greco-romano-v11';
+const CACHE_ASSETS  = CACHE_VERSION + '-assets';
+const CACHE_PAGES   = CACHE_VERSION + '-pages';
+
+/* Hosts externos que devem ser interceptados e cacheados */
+const CACHED_HOSTS = new Set([
+  'cdnjs.cloudflare.com',
+  'cdn.tailwindcss.com',
+  'fonts.googleapis.com',
+  'fonts.gstatic.com',
+]);
 
 /* Arquivos essenciais — falha aqui aborta o install */
 const CORE_ASSETS = [
@@ -15,15 +23,19 @@ const CORE_ASSETS = [
   '/css/style.css',
   '/css/submenu-search.css',
   '/css/pwa.css',
+  '/css/editor.css',
+  '/css/print.css',
   '/js/script.js',
+  '/js/editor.js',
+  '/js/rulebook.js',
   '/js/pwa.js',
   '/database.js',
   '/manifest.json',
   '/img/icon-192.png',
-  '/img/icon-512.png'
+  '/img/icon-512.png',
 ];
 
-/* Arquivos de páginas JS — cacheados individualmente, falha tolerada */
+/* Páginas JS — cacheados individualmente, falha tolerada */
 const PAGE_SCRIPTS = [
   '/pages/HOME.js',
   '/pages/ARMORS.js',
@@ -59,12 +71,16 @@ const PAGE_SCRIPTS = [
   '/pages/ILHA_DO_SOL_VERMELHO.js',
   '/pages/VELHO_OESTE.js',
   '/pages/BOCA_DO_PAPACRU.js',
-  '/pages/KU.js'
+  '/pages/KU.js',
+  '/pages/RULEBOOK.js',
 ];
 
-/* Arquivos opcionais — falha tolerada */
+/* Opcionais — melhor esforço, silencia erros */
 const OPTIONAL_ASSETS = [
   '/css/SUMMON_GENERATOR.css',
+  '/js/SUBTYPES.js',
+  '/js/TYPE_MAP.js',
+  '/js/SUMMON_GENERATOR.js',
   '/img/icon.jpg',
   '/img/athenas.jpg',
   '/img/esparta.jpg',
@@ -75,10 +91,17 @@ const OPTIONAL_ASSETS = [
   '/img/zona-oculta.jpg',
   '/img/tartaruga-invertida.jpg',
   '/img/fenda-do-biquini.jpg',
-  '/img/ilha-do-sol-vermelho.jpg',
   '/img/continente-romano.jpg',
-  '/img/continente-greco.jpg'
+  '/img/continente-greco.jpg',
+  '/img/ilha-do-sol-vermelho.jpg',
 ];
+
+/* CDN externos — pré-cacheados com mode:no-cors (resposta opaca) */
+const EXTERNAL_ASSETS = [
+  'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',
+  'https://cdn.tailwindcss.com',
+];
+
 
 /* ══════════════════════════════════════
    INSTALL — pré-cacheia tudo
@@ -88,28 +111,35 @@ self.addEventListener('install', event => {
     (async () => {
       const cache = await caches.open(CACHE_ASSETS);
 
-      // Core: qualquer falha aborta o install
+      /* Core: falha aborta install */
       await cache.addAll(CORE_ASSETS);
 
-      // Páginas JS: cada uma individualmente, tolera falha
+      /* Páginas JS: tolerante a falhas individuais */
       await Promise.allSettled(
         PAGE_SCRIPTS.map(url =>
-          cache.add(url).catch(err => console.warn('[SW] Falhou ao cachear:', url, err))
+          cache.add(url).catch(err => console.warn('[SW] Falhou:', url, err))
         )
       );
 
-      // Opcionais: melhor esforço
+      /* Opcionais: totalmente silencioso */
       await Promise.allSettled(
-        OPTIONAL_ASSETS.map(url =>
-          cache.add(url).catch(() => {}) // silencioso
+        OPTIONAL_ASSETS.map(url => cache.add(url).catch(() => {}))
+      );
+
+      /* CDN externos: mode no-cors (resposta opaca) — funciona offline */
+      await Promise.allSettled(
+        EXTERNAL_ASSETS.map(url =>
+          fetch(new Request(url, { mode: 'no-cors' }))
+            .then(res => { if (res) cache.put(url, res); })
+            .catch(err => console.warn('[SW] CDN externo falhou:', url, err))
         )
       );
 
-      // Força ativação imediata sem esperar tabs fecharem
       self.skipWaiting();
     })()
   );
 });
+
 
 /* ══════════════════════════════════════
    ACTIVATE — limpa caches antigos
@@ -126,73 +156,98 @@ self.addEventListener('activate', event => {
             return caches.delete(key);
           })
       );
-      // Assume controle de todas as tabs abertas imediatamente
       await self.clients.claim();
     })()
   );
 });
+
 
 /* ══════════════════════════════════════
    FETCH — estratégia por tipo de recurso
 ══════════════════════════════════════ */
 self.addEventListener('fetch', event => {
   const { request } = event;
-  const url = new URL(request.url);
-
-  // Ignora requisições que não são do próprio domínio
-  if (url.origin !== location.origin) return;
-
-  // Ignora requisições não-GET
   if (request.method !== 'GET') return;
 
-  // Navagação (HTML): Network First → fallback para cache → fallback offline
+  const url = new URL(request.url);
+
+  /* Navegação (HTML): Network First → fallback offline */
   if (request.mode === 'navigate') {
     event.respondWith(networkFirstHTML(request));
     return;
   }
 
-  // Assets (JS, CSS, imagens, fontes): Cache First → fallback para rede
-  event.respondWith(cacheFirstAsset(request));
+  /* Assets do próprio domínio: Cache First */
+  if (url.origin === location.origin) {
+    event.respondWith(cacheFirstAsset(request));
+    return;
+  }
+
+  /* CDN externos conhecidos: Cache First (com cache on-demand) */
+  if (CACHED_HOSTS.has(url.hostname)) {
+    event.respondWith(cacheFirstExternal(request));
+    return;
+  }
+
+  /* Outros domínios: passa para a rede sem interceptar */
 });
 
-/* ── Network First (para HTML/navegação) ── */
+
+/* ── Network First (HTML/navegação) ── */
 async function networkFirstHTML(request) {
   const cache = await caches.open(CACHE_PAGES);
   try {
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone()); // atualiza cache
-    }
-    return networkResponse;
+    const res = await fetch(request);
+    if (res.ok) cache.put(request, res.clone());
+    return res;
   } catch {
-    // Offline: tenta cache
-    const cached = await cache.match(request)
-      || await caches.match('/index.html'); // SPA fallback
-    return cached || offlineFallback();
+    return (
+      (await cache.match(request)) ||
+      (await caches.match('/index.html')) ||
+      (await caches.match('/')) ||
+      offlineFallback()
+    );
   }
 }
 
-/* ── Cache First (para assets estáticos) ── */
+/* ── Cache First (assets locais) ── */
 async function cacheFirstAsset(request) {
   const cached = await caches.match(request);
   if (cached) return cached;
 
   try {
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
+    const res = await fetch(request);
+    if (res.ok) {
       const cache = await caches.open(CACHE_ASSETS);
-      cache.put(request, networkResponse.clone());
+      cache.put(request, res.clone());
     }
-    return networkResponse;
+    return res;
   } catch {
     return offlineFallback(request);
   }
 }
 
-/* ── Resposta de fallback quando offline e sem cache ── */
+/* ── Cache First (CDN externos, resposta pode ser opaca) ── */
+async function cacheFirstExternal(request) {
+  const cached = await caches.match(request);
+  if (cached) return cached;
+
+  try {
+    /* no-cors para scripts/fontes sem CORS explícito */
+    const res = await fetch(new Request(request.url, { mode: 'no-cors' }));
+    if (res) {
+      const cache = await caches.open(CACHE_ASSETS);
+      cache.put(request.url, res.clone());
+    }
+    return res || new Response('', { status: 408 });
+  } catch {
+    return new Response('', { status: 408, statusText: 'Offline' });
+  }
+}
+
+/* ── Fallback genérico ── */
 function offlineFallback(request) {
-  // Para imagens: retorna SVG placeholder
-  if (request && request.destination === 'image') {
+  if (request?.destination === 'image') {
     return new Response(
       `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
         <rect width="100" height="100" fill="#0b1230"/>
@@ -201,6 +256,5 @@ function offlineFallback(request) {
       { headers: { 'Content-Type': 'image/svg+xml' } }
     );
   }
-  // Para o resto: sem resposta (o browser trata)
   return new Response('', { status: 408, statusText: 'Offline' });
 }
