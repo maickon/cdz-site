@@ -21,20 +21,20 @@ const TALENTS = `
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">ELEVAÇÃO CÓSMICA [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Manipular cosmo 5 graduações.</p>
-        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> O cavaleiro está com seu cosmo base em +3 pts, normalmente antes de se iniciar um combate o cavaleiro começa com seu cosmo pela metade.</p>
+        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> O cavaleiro está com sua reserva de cosmo base em +5 pts acima do normal, normalmente antes de se iniciar um combate o cavaleiro começa com seu cosmo pela metade.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">ELEVAÇÃO CÓSMICA APRIMORADA [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Manipular cosmo 10 graduações e elevação cósmica.</p>
-        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> O cavaleiro está com seu cosmo base em +6 pts ao invés de +3. Este talento substitui a sua versão anterior. Normalmente antes de se iniciar um combate o cavaleiro começa com seu cosmo pela metade.</p>
+        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> O cavaleiro está com seu cosmo base em +10 pts ao invés de +5. Este talento substitui a sua versão anterior. Normalmente antes de se iniciar um combate o cavaleiro começa com seu cosmo pela metade.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">COSMO ADICIONAL [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Ter cosmo 20 ou maior e 5 graduações em Manipular cosmo.</p>
-        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;"><strong>Benefício:</strong> Adicione um bônus inerente de +2 ao seu cosmo.</p>
-        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Especial:</strong> Este talento pode ser adquirido várias vezes, e a cada vez que for adquirido some +2 a sua reserva de cosmo geral.</p>
+        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;"><strong>Benefício:</strong> Adicione um bônus inerente de +10 ao seu cosmo.</p>
+        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Especial:</strong> Este talento pode ser adquirido várias vezes, e a cada vez que for adquirido some +10 a sua reserva de cosmo geral.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
@@ -171,7 +171,7 @@ const TALENTS = `
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">EXPLOSÃO CÓSMICA APRIMORADA [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 15 graduações em Manipular cosmo e explosão cósmica.</p>
-        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> A CD é reduzida pela metade, ou seja, metade do seu cosmo total. Quando o seu cosmo chegar ao máximo através desta explosão, ele sofrerá redução de 3 pontos de cosmo por rodada até que alcance ¼ de seu total de cosmo. Este talento pode ser usado quantas vezes o cavaleiro desejar porém, a cada explosão a CD é aumentada em 10. Explodir o cosmo é uma ação livre e não consome ataques de oportunidades.</p>
+        <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> A CD é reduzida pela metade, ou seja, metade do seu cosmo total. Quando o seu cosmo chegar ao máximo através desta explosão, ele sofrerá redução de 3 pontos de cosmo por rodada. Este talento pode ser usado quantas vezes o cavaleiro desejar porém, a cada explosão a CD é aumentada em 10. Explodir o cosmo é uma ação livre e não consome ataques de oportunidades.</p>
       </div>
 
       <div class="talent-item" style="border-left: 2px solid #ff4500; background:rgba(255,69,0,0.02); padding-left: 1rem; margin-bottom: 1.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem;">
@@ -206,7 +206,7 @@ const TALENTS = `
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">SEXTO SENTIDO [Geral]</h3>
+        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">SEXTO SENTIDO - ROKUSHIKI [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 3° nível de cavaleiro, Sabedoria 12.</p>
         <p style="font-size:0.9rem; line-height:1.6; color:#aaa;">Desperta a percepção extrassensorial, permitindo ao cavaleiro sentir o fluxo do Cosmo, prever movimentos inimigos através da intuição e manipular a energia em nível atômico.</p>
         <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver); margin-bottom:0.25rem;"><strong>Benefício:</strong> +2 nos testes de resistência e CD (classe de dificuldade das técnicas), +2 na CA (deflexão), +2 no bônus de ataque, coloca carisma na CA e nos testes de resistência (como bônus de sorte), sua recarga de cosmo aumenta em +1 por rodada.</p>
@@ -214,7 +214,7 @@ const TALENTS = `
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">SÉTIMO SENTIDO [Geral]</h3>
+        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">SÉTIMO SENTIDO - NANASHIKI[Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 12° nível de cavaleiro, Sabedoria 14.</p>
         <p style="font-size:0.9rem; line-height:1.6; color:#aaa;">Representa o domínio absoluto sobre o Cosmo, permitindo ao cavaleiro alcançar a velocidade da luz e lutar em perfeita harmonia com o universo, transcendendo os limites humanos e as leis da física.</p>
         <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> +3 em Ataques, CA, CD de Técnicas e Testes de Resistência. Soma Inteligência na Iniciativa e recebe +3 de Recuperação de Cosmo por rodada e seu deslocamento é dobrado e o cavaleiro não sofre mais ataques de oportunidade.</p>
@@ -223,7 +223,7 @@ const TALENTS = `
       </div>
 
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
-        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">OITAVO SENTIDO [Geral]</h3>
+        <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">OITAVO SENTIDO - ARAYASHIKI [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> 17° nível de cavaleiro, Sabedoria 16.</p>
         <p style="font-size:1rem; margin-bottom:10px; margin-bottom:10px; line-height:1.6; color:var(--silver);">O cavaleiro desperta a oitava consciência (ARAYASHIKI), transcendendo a dualidade entre vida e morte. Ele se torna capaz de transitar pelo submundo mantendo sua consciência e autonomia total.</p>
         <p style="font-size:1rem; margin-bottom:10px; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Benefício:</strong> +4 em Ataques, CA, CD e Resistências. Sua taxa de recuperação de Cosmo por rodada é dobrada. Seus ataques causam dano pleno em Deuses e entidades transcendentais, ignorando imunidades divinas. Ele tem imunidade a Cegueira, Surdez e Atordoado. Percebe o ambiente pela alma. Pode gastar uma ação de movimento para transitar entre planos que conhece ou já visitou e ignora Invisibilidade ou Camuflagem inimiga. Se reduzido a 0 PV, pode realizar um teste de Sabedoria (CD 20) para continuar agindo por 1 rodada por ponto de bônus de Sabedoria.</p>
@@ -233,6 +233,119 @@ const TALENTS = `
         <p style="font-size:1rem; margin-bottom:10px; margin-bottom:10px; line-height:1.6; color:var(--silver);"><strong>Morte Definitiva:</strong> O personagem só tem um fim explicado (morte permanente) se sua vontade for quebrada, se for derrotado novamente enquanto já estiver no Plano Espiritual, ou se sofrer danos catastróficos causados por Poderes ou Armas Divinas, que têm a capacidade de aniquilar a alma.</p>
       </div>
 
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+          <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">NONO SENTIDO - AMALASHIKI [Geral]</h3>
+
+          <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+              <strong>Pré-requisito:</strong> Oitavo Sentido (Arayashiki), 20° nível de Cavaleiro, Sabedoria 22.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              O personagem não apenas sente o Cosmo, ele se torna parte da "Grande Vontade" que permeia o universo. Sua alma alcança um estado de pureza absoluta (Amala), tornando-se imune às leis da mortalidade.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              O cavaleiro desperta a Suprema Virtude, a energia primordial que deu origem ao Big Bang e que reside no âmago dos Grandes Deuses do Olimpo. Ele deixa de ser um mortal que apenas alcançou o poder divino e ascende à condição de uma verdadeira divindade conceitual.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Benefício:</strong> +5 em Ataques, CA, CD de Técnicas e Testes de Resistência. Sua taxa base de recuperação de Cosmo é triplicada.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Corpo de Divindade:</strong> Suas técnicas passam a causar <em>Dano Divino</em>, ignorando qualquer tipo de redução de dano, barreira ou imunidade, exceto aquelas provenientes de outras entidades que também possuam o Nono Sentido. O cavaleiro recebe imunidade a danos de Rank igual ou inferior a 5 e resistência total contra efeitos de morte, manipulação mental e banimento dimensional.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Presença Universal:</strong> Três vezes por dia, o cavaleiro pode atacar qualquer inimigo presente no campo de batalha, independentemente da distância, de obstáculos físicos ou de barreiras dimensionais, atingindo diretamente a própria presença existencial do alvo.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Desintegração Subatômica:</strong> Três vezes por dia, como uma ação livre, o cavaleiro pode realizar um contragolpe (teste resistido de d20 + Cosmo + Rank) para tentar anular completamente uma técnica inimiga, desfazendo sua energia em nível subatômico antes que ela o alcance. Para isso, deve gastar uma quantidade de Cosmo equivalente ao custo da técnica anulada.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Comunhão Cósmica:</strong> Três vezes por dia, o cavaleiro pode se comunicar com qualquer ser existente e transmitir sua Cosmoenergia para ele, independentemente do plano, mundo ou dimensão em que se encontre.
+          </p>
+      </div>
+
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+          <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">DÉCIMO SENTIDO - ANASHIKI [Geral]</h3>
+
+          <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+              <strong>Pré-requisito:</strong> Nono Sentido (Amalashiki), Sabedoria 26, 25° nível ou superior.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              O cavaleiro alcança a consciência do Vazio Primordial, transcendendo por completo a condição de divindade. Sua existência retorna ao estado anterior à própria criação do universo, superando Titãs, Deuses Primordiais, como Chronos, e as próprias leis do Destino. Ele já não faz parte do universo; o universo passa a reagir à sua vontade.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Benefício:</strong> +6 em Ataques, CA, CD de Técnicas e Testes de Resistência. O cavaleiro soma todos os seus modificadores de atributos mentais (Inteligência, Sabedoria e Carisma) às jogadas de Iniciativa, à CA e aos Testes de Resistência. Recebe Redução de Dano 100/– contra qualquer fonte de dano que não provenha de outro ser dotado do Décimo Sentido. Seu Cosmo permanece permanentemente em seu valor máximo, não podendo ser reduzido por fadiga, drenagem ou gasto convencional.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Onipresença:</strong> O cavaleiro pode transitar para qualquer mundo, plano ou dimensão conhecida ou desconhecida, teleportando-se como uma ação de rodada completa. Além disso, pode viajar livremente para o passado ou para o futuro, escolhendo o momento exato de sua chegada.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Onisciência:</strong> O cavaleiro pode se comunicar mentalmente com qualquer ser existente no universo, compreendendo e utilizando instantaneamente qualquer idioma falado, escrito ou conceitual. Ele também percebe a presença, localização e assinatura cósmica de qualquer entidade, independentemente da distância, dimensão ou plano de existência em que ela se encontre.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Onipotência:</strong> Contra seres que possuam o Oitavo Sentido ou inferior, o cavaleiro pode, como uma ação livre, anular completamente qualquer técnica, habilidade, poder sobrenatural ou manifestação de Cosmo utilizada pelo alvo, desfazendo sua existência antes mesmo que produza efeitos. Essa capacidade não afeta entidades dotadas do Nono ou Décimo Sentido.
+          </p>
+      </div>
+
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+          <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">ILIMITADO [Geral]</h3>
+
+          <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+              <strong>Pré-requisito:</strong> Nenhum.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              Seu Cosmo superou as amarras da lógica, da causalidade e da providência. Você é capaz de realizar milagres que transcendem os limites de poder impostos pela natureza aos mortais comuns, ultrapassando barreiras consideradas absolutas até mesmo para heróis lendários.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Benefício:</strong> Suas técnicas deixam de estar sujeitas às limitações máximas estabelecidas pela tabela de <em>Ranks</em> sempre que nela estiver especificado um valor, quantidade, alcance, duração ou outro parâmetro máximo permitido. Sempre que uma técnica possuir um limite numérico determinado exclusivamente pela progressão de Rank, você poderá excedê-lo livremente, desde que ainda seja capaz de arcar com quaisquer custos, testes ou requisitos normalmente exigidos pela técnica utilizada.
+          </p>
+      </div>
+
+
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+          <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">FOCO ATÔMICO [Geral]</h3>
+
+          <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+              <strong>Pré-requisito:</strong> 6° nível de Cavaleiro.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              Suas técnicas transcendem as propriedades defensivas naturais das Armaduras Sagradas, concentrando seu Cosmo em um nível de precisão atômica capaz de romper diretamente suas estruturas de proteção.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Benefício:</strong> Sempre que utilizar uma técnica que cause dano, você pode optar por aplicar <em>Foco Atômico</em>. A técnica ignora completamente qualquer Redução de Dano concedida pela armadura atingida, causando dano direto à sua integridade estrutural. Todo dano sofrido dessa forma é aplicado exclusivamente à armadura, sem ser mitigado por suas propriedades defensivas. Técnicas aprimoradas por este talento têm seu custo de Cosmo dobrado.
+          </p>
+      </div>
+
+      <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
+          <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">ELO DA CORRENTE [Geral]</h3>
+
+          <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;">
+              <strong>Pré-requisito:</strong> Nenhum.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              Você estabelece uma profunda ligação espiritual com seus companheiros, fazendo com que seus Cosmos ressoem em perfeita harmonia. Essa conexão permite compartilhar energia vital e coordenar ataques com uma sincronia quase instintiva.
+          </p>
+
+          <p style="font-size:1rem; margin-bottom:10px; line-height:1.6; color:var(--silver);">
+              <strong>Benefício:</strong> Enquanto estiver a até 9 metros de um aliado, você pode usar uma ação livre para transferir até 20 pontos de seu próprio Cosmo para ele. Além disso, sempre que você e esse aliado atacarem o mesmo alvo durante a mesma rodada, ambos recebem um bônus de +2 nas jogadas de ataque devido à perfeita sincronia de seus Cosmos.
+          </p>
+      </div>
+  
       <div class="talent-item" style="border-left: 2px solid rgba(255,215,0,0.3); padding-left: 1rem; margin-bottom: 1.5rem;">
         <h3 style="color:var(--gold-light); font-size:1.1rem; margin-bottom:0.25rem;">INICIATIVA DE CAVALEIRO [Geral]</h3>
         <p style="font-size:0.9rem; color:#aaa; margin-bottom:0.25rem; font-style:italic;"><strong>Pré-requisito:</strong> Destreza 13 ou maior.</p>

@@ -74,7 +74,7 @@ const RULEBOOK = `
     <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:0.9rem; margin-bottom:0.7rem; letter-spacing:0.1em; text-transform:uppercase;">Configurações recomendadas</h2>
     <ul style="color:var(--silver); line-height:2; font-size:0.88rem; padding-left:1.2rem;">
       <li>Impressora: <strong>Salvar como PDF</strong></li>
-      <li>Formato: <strong>A4 · Retrato</strong> · Margens: Padrão</li>
+      <li>Formato: <strong>A4 · Retrato</strong> · Margens: <strong>Nenhuma</strong></li>
       <li>Ativar <strong>"Gráficos de fundo"</strong> nas opções avançadas para preservar a capa e os cabeçalhos coloridos</li>
     </ul>
   </div>
