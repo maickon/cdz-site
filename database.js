@@ -4,15 +4,15 @@ const database = [
     "description": "Define o nível mínimo que o cavaleiro precisa ter para acessar cada Rank Cósmico. Use como guia para planejar a progressão do seu personagem — cada Rank representa um salto real de poder e exige que você já tenha experiência consolidada antes de alcançá-lo.",
     "full_description": "O requisito estabelece o nível mínimo que uma cavaleiro deverá ter para ter acesso ao nível das técnicas. Cada RANK pertence a um determinado nível. Caso você cumpra tal requisito, você estará habilitado a adquirir aquele RANK desde que tenha XP suficiente para pagar o custo necessário para habilitar o RANK.",
     "data": [
-      { "rank": 1, "nível mínimo": "-", "requisito de rank": "-" },
-      { "rank": 2, "nível mínimo": 4, "requisito de rank": 1 },
-      { "rank": 3, "nível mínimo": 6, "requisito de rank": 2 },
-      { "rank": 4, "nível mínimo": 8, "requisito de rank": 3 },
-      { "rank": 5, "nível mínimo": 10, "requisito de rank": 4 },
-      { "rank": 6, "nível mínimo": 12, "requisito de rank": 5 },
-      { "rank": 7, "nível mínimo": 14, "requisito de rank": 6 },
-      { "rank": 8, "nível mínimo": 16, "requisito de rank": 7 },
-      { "rank": 9, "nível mínimo": 18, "requisito de rank": 8 }
+      { "rank": 1, "nível": "-", "req. de rank": "-" },
+      { "rank": 2, "nível": 4, "req. de rank": 1 },
+      { "rank": 3, "nível": 6, "req. de rank": 2 },
+      { "rank": 4, "nível": 8, "req. de rank": 3 },
+      { "rank": 5, "nível": 10, "req. de rank": 4 },
+      { "rank": 6, "nível": 12, "req. de rank": 5 },
+      { "rank": 7, "nível": 14, "req. de rank": 6 },
+      { "rank": 8, "nível": 16, "req. de rank": 7 },
+      { "rank": 9, "nível": 18, "req. de rank": 8 }
     ]
   },
   {
