@@ -36,7 +36,7 @@ const COSMO = `
         O total de Cosmo da reserva de um cavaleiro é definido pela seguinte fórmula:
       </p>
       <div style="text-align:center; padding:1.25rem; background:rgba(255,215,0,0.05); border:1px solid var(--gold-light); border-radius:4px; color:var(--gold-light); font-size:1rem; font-family:'Cinzel',serif; letter-spacing:0.05em; margin-top:1rem;">
-        Cosmo Máximo = Nível do personagem + Bônus da Classe + Soma dos Modificadores (FOR + DES + CON + INT + SAB + CAR) * O nível da armadura
+        Cosmo Máximo = (Nível do personagem + Bônus da Classe + Soma dos Modificadores [FOR+DES+CON+INT+SAB+CAR]) × Multiplicador da Armadura
       </div>
     </div>
 
@@ -55,8 +55,11 @@ const COSMO = `
 
       <div style="border-left: 3px solid var(--gold-light); padding-left: 1rem;">
         <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Após a Batalha</h3>
+        <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.75rem;">
+          Ao fim do combate, a reserva de Cosmo do cavaleiro tende a se estabilizar na <strong style="color:var(--gold-light);">metade do seu valor máximo</strong>, variando à taxa de <strong style="color:var(--gold-light);">1 ponto por minuto</strong> — aumentando se estiver abaixo da metade, ou diminuindo se estiver acima.
+        </p>
         <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-          Ao fim do combate, o cosmo se mantém onde está, mas começa a diminuir gradativamente à taxa de <strong style="color:var(--gold-light);">1 ponto por minuto</strong>, até se estabilizar na metade da quantidade máxima do cavaleiro.
+          <strong style="color:var(--gold-light);">Exceção:</strong> se o Cosmo estiver no máximo por causa de um talento ou habilidade específica (como Explosão Cósmica), ele segue a taxa de decaimento descrita por esse talento, e não esta regra geral. Se a reserva chegar a 0 durante o combate, ela volta a aumentar normalmente — exceto se uma condição específica tiver causado <strong style="color:var(--gold-light);">Exaustão Cósmica</strong> (veja Condições Especiais, em Combate) ou se o Cosmo cair para um valor negativo, o que pode levar o cavaleiro a desmaiar.
         </p>
       </div>
     </div>

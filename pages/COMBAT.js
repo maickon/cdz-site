@@ -50,22 +50,11 @@ const COMBAT = `
     </h2>
 
     <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-      Em Greco Romano, o combate pode se tornar altamente estratégico dependendo das circunstâncias em que o
-      personagem se encontra. Em determinadas situações pode ser mais seguro evitar um ataque através da esquiva,
-      enquanto em outras será mais vantajoso bloquear o impacto diretamente.
-    </p>
-
-    <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-      Pelas regras padrão, quando um personagem sofre um ataque sua <strong style="color:var(--gold-light);">Classe de Armadura (CA)</strong>
-      é calculada normalmente utilizando o modificador de <strong style="color:var(--gold-light);">Destreza</strong>.
-      O ataque do oponente será resolvido conforme as regras tradicionais do sistema d20: caso o valor de ataque
-      supere a CA, o golpe acerta; caso contrário, ele falha.
+      Sempre que um cavaleiro é alvo de um ataque que precisa superar sua <strong style="color:var(--gold-light);">Classe de Armadura (CA)</strong> — seja um ataque comum ou uma técnica direcionada a ele — o jogador deve escolher entre duas reações: <strong style="color:var(--gold-light);">Bloquear</strong> ou <strong style="color:var(--gold-light);">Esquivar</strong>. Não existe uma terceira opção passiva: defender-se é sempre uma decisão tática, e a forma como a defesa acontece passa a fazer parte da narrativa conduzida pelo próprio jogador.
     </p>
 
     <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1.5rem;">
-      Entretanto, o jogador pode optar por sair desse fluxo padrão e tomar uma decisão tática consciente: bloquear
-      deliberadamente o golpe ou tentar se esquivar dele. Nesses casos, a forma como a defesa acontece passa a fazer
-      parte da narrativa conduzida pelo próprio jogador.
+      <strong style="color:var(--gold-light);">Exceção — Ataques em Área:</strong> técnicas que afetam uma área não têm um alvo único superando uma CA, então não se aplicam a esta escolha. Elas são resolvidas por um teste de resistência (Reflexos, Fortitude ou Vontade, conforme a técnica).
     </p>
 
 
@@ -99,15 +88,18 @@ const COMBAT = `
       </p>
 
       <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-        Entretanto, suportar o impacto sempre gera um <strong style="color:var(--gold-light);">Dano Residual</strong>.
-        Esse dano representa o choque físico transmitido ao corpo do cavaleiro mesmo quando o ataque é bloqueado.
+        Entretanto, suportar o impacto sempre gera um <strong style="color:var(--gold-light);">Dano Residual</strong> — o
+        choque físico mínimo transmitido ao corpo do cavaleiro mesmo quando o ataque é bloqueado com sucesso:
       </p>
 
       <ul style="color:var(--silver); font-size:0.95rem; line-height:1.6; padding-left:1rem;">
-        <li>Dano residual igual ao <strong style="color:var(--gold-light);">modificador de Força do atacante</strong> em ataques físicos comuns.</li>
-        <li>Dano residual igual ao <strong style="color:var(--gold-light);">RANK da técnica</strong> ao bloquear uma técnica especial.</li>
-        <li>Se a técnica for focada em força física, o dano residual é <strong style="color:var(--gold-light);">metade do modificador de Força + metade do RANK da técnica</strong>, arredondado para baixo.</li>
+        <li>Em ataques físicos comuns: igual ao <strong style="color:var(--gold-light);">modificador de Força do atacante</strong>.</li>
+        <li>Ao bloquear uma técnica: <strong style="color:var(--gold-light);">RANK da técnica × Nível do atacante</strong>, nunca podendo exceder o dano total daquela técnica.</li>
       </ul>
+
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-top:0.5rem;">
+        A <strong style="color:var(--gold-light);">Redução de Dano (RD)</strong> da armadura se aplica normalmente ao Dano Residual — uma armadura com RD suficiente pode anulá-lo por completo.
+      </p>
 
     </div>
 
@@ -132,7 +124,7 @@ const COMBAT = `
 
       <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.5rem;">
         Caso o oponente erre o ataque, a esquiva foi bem-sucedida e o personagem não sofre absolutamente
-        nenhum dano, nem ele nem sua armadura.
+        nenhum dano, nem ele nem sua armadura — nem mesmo o Dano Residual do bloqueio.
       </p>
 
       <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.5rem;">
@@ -159,6 +151,19 @@ const COMBAT = `
         <strong style="color:var(--gold-light);">+1 na CA</strong> contra aquele ataque.
         Este bônus representa o cavaleiro elevando sua cosmo-energia para reforçar sua defesa.
         Esse gasto pode ser realizado apenas <strong style="color:var(--gold-light);">uma vez por ataque</strong>.
+      </p>
+
+    </div>
+
+    <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,215,0,0.2); padding:1rem; border-radius:4px; margin-top:1rem;">
+
+      <p style="font-size:1rem; color:var(--silver);">
+        <strong style="color:var(--gold-light);">Especial — Queima de Cosmo Ofensiva:</strong>
+        Antes de fazer um ataque, o cavaleiro pode gastar
+        <strong style="color:var(--gold-light);">4 pontos de Cosmo</strong> para receber
+        <strong style="color:var(--gold-light);">+1 no bônus de ataque</strong> contra aquele golpe específico.
+        Representa o cavaleiro forçando seu Cosmo para furar uma defesa elevada — por isso custa o dobro
+        da versão defensiva. Esse gasto também só pode ser realizado <strong style="color:var(--gold-light);">uma vez por ataque</strong>.
       </p>
 
     </div>
@@ -230,8 +235,8 @@ const COMBAT = `
         <strong style="color:var(--gold-light);">Ação de Suporte Cósmico (Parcial)</strong><br>
         Permite transferir Cosmo da própria reserva para outro personagem.
         O alvo precisa aceitar receber essa energia. Caso contrário,
-        ocorre um teste resistido de Cosmo contra Cosmo
-        <em>(d20 + Cosmo atual)</em>.
+        ocorre um teste resistido de Vontade contra Vontade
+        <em>(d20 + bônus de Vontade)</em> — quem obtiver o maior resultado se sobressai.
         <br><br>
         A distância máxima para transferir Cosmo é:
         <strong style="color:var(--gold-light);">9 metros + (Nível do Cavaleiro × Multiplicador da Armadura)</strong>.
@@ -289,12 +294,7 @@ const COMBAT = `
             </tr>
 
             <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-              <td style="padding:0.4rem;">1 ataque</td>
-              <td style="padding:0.4rem;">Parcial</td>
-            </tr>
-
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
-              <td style="padding:0.4rem;">Até metade do total de ataques</td>
+              <td style="padding:0.4rem;">Um ou mais ataques, mas não todos</td>
               <td style="padding:0.4rem;">Parcial</td>
             </tr>
 
@@ -379,10 +379,24 @@ const COMBAT = `
           4 + (2 × Multiplicador da Armadura)
         </strong>
 
-        <br><br>
+        <div style="margin-top:0.75rem; overflow-x:auto;">
+          <table style="width:50%; text-align:left; border-collapse:collapse; font-size:0.85rem; border:1px solid rgba(255,255,255,0.1);">
+            <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
+              <th style="padding:0.4rem;">Armadura</th>
+              <th style="padding:0.4rem;">Bônus de CA</th>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Bronze</td><td style="padding:0.4rem;">+6</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Prata</td><td style="padding:0.4rem;">+8</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Ouro</td><td style="padding:0.4rem;">+10</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Kamui</td><td style="padding:0.4rem;">+12</td></tr>
+            <tr><td style="padding:0.4rem;">Titan</td><td style="padding:0.4rem;">+14</td></tr>
+          </table>
+        </div>
 
+        <p style="margin-top:0.75rem;">
         Esse bônus se aplica contra qualquer ataque que precise superar a CA do personagem,
         seja um ataque comum ou uma técnica especial.
+        </p>
 
         <br><br>
 
@@ -401,28 +415,22 @@ const COMBAT = `
 
         <br><br>
 
-        Essa postura gera os seguintes efeitos:
+        Essa postura aplica uma penalidade base de <strong style="color:var(--gold-light);">-6 nos ataques</strong> e um bônus base de <strong style="color:var(--gold-light);">+3 na CA</strong>, ajustados pelo <strong style="color:var(--gold-light);">Multiplicador da Armadura</strong> (cada ponto reduz a penalidade em -1 e aumenta o bônus de CA em +1):
 
-        <ul style="padding-left:1rem; margin-top:0.5rem;">
-          <li>Penalidade de <strong style="color:var(--gold-light);">-6 nos ataques</strong></li>
-          <li>Bônus de <strong style="color:var(--gold-light);">+3 na CA</strong></li>
-        </ul>
-
-        <br>
-
-        O <strong style="color:var(--gold-light);">Multiplicador da Armadura</strong> influencia diretamente
-        essa ação, melhorando sua eficiência defensiva.
-
-        <ul style="padding-left:1rem; margin-top:0.5rem;">
-          <li>Cada ponto do multiplicador reduz a penalidade de ataque em <strong style="color:var(--gold-light);">-1</strong></li>
-          <li>Cada ponto do multiplicador aumenta o bônus de CA em <strong style="color:var(--gold-light);">+1</strong></li>
-        </ul>
-
-        <br>
-
-        Dessa forma, um cavaleiro com armadura de alto nível pode transformar essa ação em
-        uma postura extremamente eficiente, chegando ao limite de
-        <strong style="color:var(--gold-light);">-1 no ataque e +8 na CA</strong>.
+        <div style="margin-top:0.5rem; overflow-x:auto;">
+          <table style="width:60%; text-align:left; border-collapse:collapse; font-size:0.85rem; border:1px solid rgba(255,255,255,0.1);">
+            <tr style="border-bottom:1px solid var(--gold-light); color:var(--gold-light);">
+              <th style="padding:0.4rem;">Armadura</th>
+              <th style="padding:0.4rem;">Penalidade de Ataque</th>
+              <th style="padding:0.4rem;">Bônus de CA</th>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Bronze</td><td style="padding:0.4rem;">-5</td><td style="padding:0.4rem;">+4</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Prata</td><td style="padding:0.4rem;">-4</td><td style="padding:0.4rem;">+5</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Ouro</td><td style="padding:0.4rem;">-3</td><td style="padding:0.4rem;">+6</td></tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:0.4rem;">Kamui</td><td style="padding:0.4rem;">-2</td><td style="padding:0.4rem;">+7</td></tr>
+            <tr><td style="padding:0.4rem;">Titan</td><td style="padding:0.4rem;">-1</td><td style="padding:0.4rem;">+8</td></tr>
+          </table>
+        </div>
       </li>
 
 
@@ -445,14 +453,12 @@ const COMBAT = `
         <ul style="padding-left:1rem; margin-top:0.5rem;">
           <li>
             <strong style="color:var(--gold-light);">Ação Parcial:</strong>
-            aumenta a recuperação de Cosmo em um valor adicional equivalente à
-            <strong style="color:var(--gold-light);">metade da recuperação normal</strong>.
+            recupera a Cosmo normal da rodada <strong style="color:var(--gold-light);">+50% adicional</strong>.
           </li>
 
           <li>
             <strong style="color:var(--gold-light);">Ação Completa:</strong>
-            o cavaleiro recupera
-            <strong style="color:var(--gold-light);">o dobro de sua recuperação normal</strong>.
+            recupera a Cosmo normal da rodada <strong style="color:var(--gold-light);">+100% adicional</strong> (o dobro do total).
           </li>
         </ul>
 
@@ -472,13 +478,7 @@ const COMBAT = `
 
         <br><br>
 
-        Esse estado só pode ser ativado quando uma das seguintes condições ocorre durante o combate:
-
-        <ol style="padding-left:1rem; margin-top:0.5rem;">
-          <li>O cavaleiro possui apenas <strong style="color:var(--gold-light);">20% de seus pontos de vida</strong>.</li>
-          <li>O cavaleiro sofreu <strong style="color:var(--gold-light);">3 falhas críticas</strong> durante o combate.</li>
-          <li>Um ou mais aliados do personagem caíram em combate.</li>
-        </ol>
+        Esse estado só pode ser ativado quando o cavaleiro possui <strong style="color:var(--gold-light);">20 pontos de vida ou menos</strong>.
 
         <br>
 
@@ -514,6 +514,10 @@ const COMBAT = `
 
         <br><br>
 
+        O Contragolpe funciona como uma <strong style="color:var(--gold-light);">ação preparada</strong>: é declarado durante o turno do próprio cavaleiro, consumindo a ação correspondente (Parcial ou Completa) daquele turno, e só é resolvido quando a condição declarada acontecer — mesmo que isso ocorra no turno de outro personagem.
+
+        <br><br>
+
         Ao declarar um contragolpe, o jogador precisa estabelecer
         <strong style="color:var(--gold-light);">uma condição específica de ativação</strong>.
         Por exemplo: “Se um inimigo atacar determinado aliado, o contragolpe será executado”.
@@ -530,7 +534,7 @@ const COMBAT = `
         <br>
 
         <strong>
-        d20 + Cosmo Atual + RANK da Técnica
+        d20 + RANK da Técnica
         </strong>
 
         <br><br>
@@ -540,7 +544,7 @@ const COMBAT = `
         <br>
 
         <strong>
-        d20 + Cosmo Atual + Bônus de Ataque
+        d20 + Bônus de Ataque
         </strong>
 
         <br><br>
@@ -570,6 +574,50 @@ const COMBAT = `
       </li>
 
     </ul>
+
+  </div>
+
+  <div class="cosmos-card p-6 mb-6">
+
+    <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:1rem;">
+      Manobras de Combate
+    </h2>
+
+    <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1.5rem;">
+      Além de atacar e se defender, um cavaleiro pode tentar manobras especiais para controlar a posição ou as armas do oponente. Todas seguem a mesma lógica: um teste resistido contra o adversário, usando o bônus de ataque normal.
+    </p>
+
+    <div style="margin-bottom:1.2rem;">
+      <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Agarrar</h3>
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Ação Parcial. Você faz um ataque de toque para segurar o oponente; se acertar, faz um teste de Agarrar (1d20 + BBA + mod. de Força) contra o teste de Agarrar dele. Vencendo, o alvo fica <strong style="color:var(--gold-light);">agarrado</strong>: não pode se mover livremente e sofre penalidade em ataques contra qualquer alvo que não seja quem o agarrou. Normalmente, tentar agarrar provoca um Ataque de Oportunidade do oponente.
+      </p>
+    </div>
+
+    <div style="margin-bottom:1.2rem;">
+      <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Atropelar</h3>
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Ação de Movimento. Você avança pelo espaço ocupado pelo oponente, forçando-o a escolher entre saltar para o lado (saindo do seu caminho) ou bloquear sua passagem. Se ele bloquear, é feito um teste resistido de Força: se você vencer, ele é derrubado e você continua seu movimento; se perder, é você quem é derrubado.
+      </p>
+    </div>
+
+    <div style="margin-bottom:1.2rem;">
+      <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Encontrão</h3>
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Ação Parcial. Você empurra o oponente para trás em vez de feri-lo. Faz um teste resistido de Força contra o alvo; cada 5 pontos de margem na vitória empurra o oponente 1,5 metro na direção do impacto. Normalmente provoca um Ataque de Oportunidade do alvo.
+      </p>
+    </div>
+
+    <div>
+      <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">Desarmar</h3>
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
+        Ação Parcial. Você tenta fazer o oponente soltar a arma (ou item empunhado) com um teste de ataque resistido. Vencendo, o item cai ao solo aos pés do alvo. Normalmente provoca um Ataque de Oportunidade de ambos os lados.
+      </p>
+    </div>
+
+    <p style="font-size:0.95rem; line-height:1.6; color:#aaa; font-style:italic; margin-top:1rem;">
+      Os talentos "Agarrar Aprimorado", "Atropelar Aprimorado", "Encontrão Aprimorado" e "Desarme Aprimorado" (Capítulo de Talentos) removem o risco de Ataque de Oportunidade e concedem bônus adicionais nessas manobras.
+    </p>
 
   </div>
 
@@ -659,27 +707,37 @@ const COMBAT = `
     <div style="margin-bottom:1.2rem;">
 
       <h3 style="color:var(--gold-light); font-size:1rem; margin-bottom:0.25rem;">
-        Super Velocidade
+        Velocidade da Luz
       </h3>
 
       <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-        Um personagem entra na condição de <strong style="color:var(--gold-light);">super velocidade</strong> quando, durante o combate, seu deslocamento base excede o de um oponente em pelo menos 
-        <strong style="color:var(--gold-light);">50 metros</strong>.
+        A partir do despertar do <strong style="color:var(--gold-light);">Sétimo Sentido (Nanashiki)</strong> — ou de uma técnica/talento que conceda explicitamente este efeito — o cavaleiro é capaz de romper a barreira da luz por períodos curtos. Não é um estado permanente: sustentá-lo consome Cosmo a cada rodada, e o corpo não aguenta o esforço por muito tempo.
       </p>
 
       <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-        Para cada <strong style="color:var(--gold-light);">50 metros completos de diferença</strong> entre o deslocamento do cavaleiro e o de um oponente, o cavaleiro recebe 
-        <strong style="color:var(--gold-light);">1 ação extra</strong> contra aquele alvo específico.
+        <strong style="color:var(--gold-light);">Ativação:</strong> custa uma <strong style="color:var(--gold-light);">Ação de Movimento</strong> para entrar no estado, e <strong style="color:var(--gold-light);">10 pontos de Cosmo por rodada</strong> para mantê-lo ativo.
       </p>
 
-      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-        Essas ações extras representam a capacidade do cavaleiro de agir várias vezes antes que o adversário consiga reagir, devido à enorme diferença de velocidade.
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-bottom:0.5rem;">
+        <strong style="color:var(--gold-light);">Enquanto ativo, o cavaleiro recebe:</strong>
       </p>
 
-      <p style="font-size:1rem; line-height:1.6; color:var(--silver);">
-        <strong>Exemplo:</strong> Um Cavaleiro de Ouro possui 200m de deslocamento base e enfrenta Cavaleiros de Bronze com 30m. A diferença é de 170m.  
-        Isso concede <strong style="color:var(--gold-light);">3 ações extras</strong> contra cada oponente (150m de diferença completa em blocos de 50m).
+      <ul style="color:var(--silver); font-size:0.95rem; line-height:1.6; padding-left:1.2rem;">
+        <li><strong style="color:var(--gold-light);">CA Quase Intocável:</strong> +10 na CA. Ataques comuns de oponentes que não estejam também em Velocidade da Luz erram automaticamente — para eles, o cavaleiro já não está mais ali. Apenas técnicas especiais ou ataques de outro oponente em Velocidade da Luz acertam normalmente.</li>
+        <li><strong style="color:var(--gold-light);">Deslocamento Total:</strong> o cavaleiro pode se mover para qualquer ponto do campo de batalha como uma <strong style="color:var(--gold-light);">ação livre</strong>, sem ser limitado pelo deslocamento base.</li>
+        <li><strong style="color:var(--gold-light);">Golpes Relâmpago:</strong> ganha 1 ataque adicional para cada +5 de Bônus Base de Ataque que possuir. Para não travar a mesa rolando vários dados, use a regra de Golpes em Massa abaixo.</li>
+        <li><strong style="color:var(--gold-light);">Iniciativa Absoluta:</strong> role 2d20 para iniciativa e use o maior resultado.</li>
+      </ul>
+
+      <p style="font-size:1rem; line-height:1.6; color:var(--silver); margin-top:0.75rem;">
+        <strong style="color:var(--gold-light);">Golpes em Massa (regra de mesa):</strong> em vez de rolar cada ataque adicional separadamente, role o dano de <strong>um único ataque</strong> e multiplique pelo número total de ataques que o cavaleiro teria direito naquela rodada. Narrativamente, é uma rajada de golpes desferidos em uma fração de segundo — mecanicamente, é uma única rolagem.
       </p>
+
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,215,0,0.2); padding:1rem; border-radius:4px; margin-top:0.75rem;">
+        <p style="font-size:1rem; color:var(--silver);">
+          <strong style="color:var(--gold-light);">Limite do Corpo:</strong> após <strong style="color:var(--gold-light);">3 rodadas consecutivas</strong> em Velocidade da Luz, o cavaleiro precisa de um teste de <strong style="color:var(--gold-light);">Fortitude (CD 25)</strong>. Se falhar, ele entra imediatamente em <strong style="color:var(--gold-light);">Exaustão Cósmica</strong> (veja Condições Especiais, abaixo) e seu Cosmo cai para <strong style="color:var(--gold-light);">0</strong> — o corpo humano não foi feito para sustentar a velocidade da luz por tanto tempo.
+        </p>
+      </div>
     </div>
   
     <div style="margin-bottom:1.2rem;">

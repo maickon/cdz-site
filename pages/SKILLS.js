@@ -328,10 +328,10 @@ const SKILLS = `
 		O Cavaleiro também pode concentrar sua energia para aumentar o poder destrutivo de seu próximo golpe ou técnica. Se obtiver sucesso no teste de Manipular Cosmo, ele recebe um bônus de dano baseado no resultado do teste. Esse bônus se aplica apenas ao próximo ataque que cause dano.
 		</p>
 
-		<p style'="font-size:1.05rem; line-height:1.8; color:var(--silver);margin-bottom:0.9rem;">
+		<p style="font-size:1.05rem; line-height:1.8; color:var(--silver);margin-bottom:0.9rem;">
 			O cavaleiro com a perícia <strong style="color:var(--gold-light);">Concentração</strong> recebe +2 pontos de perícia em manipular cosmo por sinergia.
 		</p>
-	</div>'
+	</div>
 
 
 	<div class="cosmos-card p-6 mb-6 pulse-glow">
@@ -361,8 +361,8 @@ const SKILLS = `
 	      <tr><td>90</td><td>9d6</td><td>9 Km</td><td>+60 pts</td><td>6</td></tr>
 	      <tr><td>100</td><td>10d6</td><td>10 Km</td><td>+70 pts</td><td>7</td></tr>
 	      <tr><td>110</td><td>11d6</td><td>11 Km</td><td>+80 pts</td><td>8</td></tr>
-	      <tr><td>120</td><td>12d6</td><td>12 Km</td><td>90 pts</td><td>9</td></tr>
-	      <tr><td>130</td><td>13d6</td><td>13 Km</td><td>100 pts</td><td>10</td></tr>
+	      <tr><td>120</td><td>12d6</td><td>12 Km</td><td>+90 pts</td><td>9</td></tr>
+	      <tr><td>130</td><td>13d6</td><td>13 Km</td><td>+100 pts</td><td>10</td></tr>
 	      <tr><td>140</td><td>14d6</td><td>14 Km</td><td>110 pts</td><td>11</td></tr>
 	      <tr><td>150</td><td>15d6</td><td>15 Km</td><td>120 pts</td><td>12</td></tr>
 	    </tbody>

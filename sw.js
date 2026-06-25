@@ -4,7 +4,7 @@
    Recursos externos (CDN/Fonts) também são cacheados para offline.
 ══════════════════════════════════════════════════════════════════ */
 
-const CACHE_VERSION = 'greco-romano-v11';
+const CACHE_VERSION = 'greco-romano-v12';
 const CACHE_ASSETS  = CACHE_VERSION + '-assets';
 const CACHE_PAGES   = CACHE_VERSION + '-pages';
 

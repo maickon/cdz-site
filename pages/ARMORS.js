@@ -105,11 +105,11 @@ const ARMORS = `
         Cada armadura aumenta a reserva de cosmo total do seu portador com base no nível de poder da armadura. A reserva de cosmo de um cavaleiro normalmente é: <span style="color:var(--gold-light);"> Soma das habilidades</span> + <span style="color:var(--gold-light);">bônus de classe</span> + <span style="color:var(--gold-light);">bônus adicionais</span>.
       </p>
       <ul style="font-size:1rem; line-height:1.6; color:var(--silver); margin-top:1rem; padding-left:1rem; list-style-type:square;">
-        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 1 (Bronze):</strong> Não afeta o cosmo total do cavaleiro.</li>
-        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 2 (Prata):</strong> Multiplica a reserva de por 2.</li>
-        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 3 (Ouro):</strong> Multiplica a reserva de por 3.</li>
-        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 4 (Kamui):</strong> Multiplica a reserva de por 4.</li>
-        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 5 (Kamui):</strong> Multiplica a reserva de por 5.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 1 (Bronze):</strong> Não afeta o cosmo total do cavaleiro (multiplicador x1).</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 2 (Prata):</strong> Multiplica a reserva total por 2.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 3 (Ouro):</strong> Multiplica a reserva total por 3.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 4 (Kamui):</strong> Multiplica a reserva total por 4.</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:var(--gold-light);">Nível 5 (Titan):</strong> Multiplica a reserva total por 5.</li>
       </ul>
     </div>
 
@@ -164,7 +164,7 @@ const ARMORS = `
       <div class="corner-ornament corner-bl"></div><div class="corner-ornament corner-br"></div>
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">O Processo de Evolução</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-        As armaduras se dividem em 5 classificações de hierarquia: <strong style="color:var(--gold-light);">Bronze, Prata, Ouro, Titan e Kamui</strong>. 
+        As armaduras se dividem em 5 classificações de hierarquia: <strong style="color:var(--gold-light);">Bronze, Prata, Ouro, Kamui e Titan</strong>.
         Sempre que uma armadura perder metade dos seus pontos de vida totais e for 100% restaurada, ela passará por um processo de evolução. Quanto mais perto da destruição chegar, maior será o seu poder após a regeneração.
       </p>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
@@ -175,18 +175,18 @@ const ARMORS = `
     <div class="cosmos-card p-6 mb-6">
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:0.75rem;">Níveis e Benefícios</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-        Toda armadura começa no nível 1 dentro da sua categoria. Para uma armadura subir de nível ela precisa seguir a tabela de experiência abaixo. A coluna XP define o quanto o cavaleiro precisa gastar de XP para evoluir a sua armadura.
+        A primeira armadura sagrada de um cavaleiro começa no nível 1 dentro da sua categoria. Armaduras obtidas posteriormente (veja Memória de Sangue) herdam automaticamente os níveis acumulados no sangue do cavaleiro e continuam evoluindo a partir desse ponto pela tabela de experiência abaixo. A coluna XP define o quanto o cavaleiro precisa gastar para evoluir a sua armadura.
       </p>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
-        As armadruas só podem evoluir em circunstâncias especiais como:
+        As armaduras só podem evoluir em circunstâncias especiais como:
       </p>
       <ul style="font-size:1rem; line-height:1.6; color:var(--silver); padding-left:1.5rem; list-style-type:square;">
         <li style="margin-bottom:0.6rem;">
-          Perder metade dos seus pontos de vida atuais e depois ser 100 restaurado o PV.
+          Perder metade dos seus pontos de vida totais e depois ser 100% restaurada.
         </li>
 
         <li style="margin-bottom:0.6rem;">
-          A armadura ser banhada pelo sangue de uma criatura mistica poderosa.
+          A armadura ser banhada pelo sangue de uma criatura mística poderosa.
         </li>
 
         <li style="margin-bottom:0.6rem;">
@@ -564,15 +564,9 @@ const ARMORS = `
     </li>
 
     <li>
-    <strong style="color:var(--gold-light);">Impulso Cinético (+2)</strong><br>
-    A armadura amplifica o movimento do cavaleiro.  
-    Seu deslocamento base aumenta em <strong>+12 metros</strong>.
-    </li>
-
-    <li>
-    <strong style="color:var(--gold-light);">Impulso Cinético (+4)</strong><br>
-    A armadura amplifica o movimento do cavaleiro.  
-    Seu deslocamento base aumenta em <strong>+24 metros</strong>.
+    <strong style="color:var(--gold-light);">Impulso Cinético (+2, +4)</strong><br>
+    A armadura amplifica o movimento do cavaleiro.
+    Seu deslocamento base aumenta em <strong>+12 metros (+2)</strong> ou <strong>+24 metros (+4)</strong>.
     </li>
 
     <li>

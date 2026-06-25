@@ -231,36 +231,22 @@ const TECHNIQUES = `
       </p>
 
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
-        O custo de XP para habilitar um RANK depende do nível do próprio RANK, conforme a tabela abaixo:
+        O custo de XP para habilitar um RANK depende apenas do nível do próprio RANK, segundo a fórmula abaixo:
       </p>
 
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,215,0,0.2); padding:1rem; border-radius:4px; margin-bottom:0.75rem;">
-        <table style="width:100%; border-collapse:collapse; font-size:1rem; color:var(--silver);">
-          <thead>
-            <tr>
-              <th style="text-align:left; padding:0.4rem 0; color:var(--gold-light);">RANK</th>
-              <th style="text-align:left; padding:0.4rem 0; color:var(--gold-light);">CUSTO XP</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding:0.35rem 0;">2–3</td>
-              <td style="padding:0.35rem 0;">rank × 125 (500xp RANK 2) - (750xp RANK 3)</td>
-            </tr>
-            <tr>
-              <td style="padding:0.35rem 0;">4–6</td>
-              <td style="padding:0.35rem 0;">rank × 250 (1000xp RANK 4) - (1500xp RANK 6)</td>
-            </tr>
-            <tr>
-              <td style="padding:0.35rem 0;">7–9</td>
-              <td style="padding:0.35rem 0;">rank × 500 (3500xp RANK 7) - (4500xp RANK 9)</td>
-            </tr>
-          </tbody>
-        </table>
+      <div style="text-align:center; padding:1.25rem; background:rgba(255,215,0,0.05); border:1px solid var(--gold-light); border-radius:4px; color:var(--gold-light); font-size:1.1rem; font-family:'Cinzel',serif; letter-spacing:0.05em; margin-bottom:0.75rem;">
+        Custo de Habilitar = RANK² × 50 XP
       </div>
 
-      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
+      <p style="font-size:0.95rem; line-height:1.6; color:#aaa; font-style:italic; margin-bottom:0.75rem;">
+        Sempre 1/10 do custo de evoluir uma técnica para esse mesmo RANK — fácil de lembrar: Rank 2 = 200 XP, Rank 5 = 1.250 XP, Rank 9 = 4.050 XP.
+      </p>
+
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
         Uma vez habilitado, o cavaleiro pode criar quantas técnicas quiser dentro daquele RANK, desde que respeite os limites estabelecidos pelo sistema.
+      </p>
+      <p style="font-size:1.05rem; line-height:1.8; color:var(--silver);">
+        <strong style="color:var(--gold-light);">Importante:</strong> este é um custo único para desbloquear o acesso ao RANK. Ele é separado do custo de criar ou evoluir cada técnica dentro desse RANK, descrito na seção <strong style="color:var(--gold-light);">Fórmula de Custo por RANK</strong> a seguir — os dois custos são pagos um depois do outro, e não são alternativas.
       </p>
     </div>
 

@@ -58,7 +58,7 @@ const RESUME = `
       
       <ul style="font-size:1rem; line-height:1.6; color:var(--silver); padding-left:1rem; list-style-type:square;">
         <li style="margin-bottom:0.75rem;">
-          <strong style="color:var(--gold-light);">Cosmo Máximo:</strong> Soma do nível do cavaleiro + bônus de Cosmo da Tabela de Classe + soma de TODOS os modificadores de atributos (FOR + DES + CON + INT + SAB + CAR) vezes o multiplicador da armadura.
+          <strong style="color:var(--gold-light);">Cosmo Máximo:</strong> Some o nível do cavaleiro, o bônus de Cosmo da Tabela de Classe e a soma de TODOS os modificadores de atributos (FOR+DES+CON+INT+SAB+CAR). Multiplique o total pelo multiplicador da armadura.
         </li>
         <li style="margin-bottom:0.75rem;">
           <strong style="color:var(--gold-light);">Cosmo no Combate:</strong> Ao iniciar uma luta, a reserva começa sempre pela <strong style="color:var(--gold-light);">metade</strong> do valor total.
@@ -73,7 +73,7 @@ const RESUME = `
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:1rem;">Criação e Evolução de Técnicas (XP)</h2>
       
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:0.75rem;">
-        <strong style="color:var(--gold-light);">Habilitar um RANK:</strong> Antes de criar uma técnica, você deve pagar o custo fixo em XP para "desbloquear" aquele RANK para o seu personagem (Ex: Rank 2 custa 250 XP; Rank 4 custa 1.000 XP).
+        <strong style="color:var(--gold-light);">Habilitar um RANK:</strong> Antes de criar uma técnica, você deve pagar o custo fixo em XP para "desbloquear" aquele RANK para o seu personagem: <strong style="color:var(--gold-light);">RANK² × 50 XP</strong> (Ex: Rank 2 = 200 XP; Rank 4 = 800 XP; Rank 9 = 4.050 XP). Este custo é separado do custo de criar/evoluir cada técnica, abaixo.
       </p>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1rem;">
         <strong style="color:var(--gold-light);">Criar/Evoluir a Técnica:</strong> Para criar um efeito ou evoluir uma técnica, a fórmula do custo é sempre:
@@ -84,31 +84,39 @@ const RESUME = `
       </div>
 
       <p style="font-size:1rem; line-height:1.6; color:var(--silver); font-style:italic;">
-        <strong>Exemplo de Evolução:</strong> Se você tem uma técnica RANK 2 (2.000 XP) e quer evoluir para RANK 9 (40.500 XP), você paga apenas a diferença (38.500 XP).
+        <strong>Exemplo de Evolução:</strong> Se você tem uma técnica RANK 2 e quer evoluir para RANK 9, você paga o custo cheio do RANK desejado: <strong>40.500 XP</strong> (não a diferença entre os dois ranks).
       </p>
     </div>
 
     <div class="cosmos-card p-6 mb-6">
       <h2 style="font-family:'Cinzel',serif; color:var(--gold-light); font-size:1rem; letter-spacing:0.1em; margin-bottom:1rem;">Regras de Combate e Defesa</h2>
       <p style="font-size:1.05rem; line-height:1.8; color:var(--silver); margin-bottom:1.5rem;">
-        Você não precisa aceitar um ataque passivamente. Reaja de três formas principais:
+        Contra qualquer ataque que precise superar sua CA, você deve escolher entre Bloquear ou Esquivar — não existe opção passiva. Ataques em área não entram nessa escolha (usam teste de resistência). Você também pode reagir com um Contragolpe:
       </p>
 
       <ul style="font-size:1rem; line-height:1.6; color:var(--silver); padding-left:1rem; list-style-type:none;">
         <li style="margin-bottom:1rem; border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem;">
           <strong style="color:var(--gold-light); font-size:1.05rem;">Bloqueio (Ação Reativa)</strong><br>
-          Defesa com corpo, arma ou escudo. Substitui a Destreza pela <strong style="color:var(--gold-light);">Força</strong> na CA. Se for atingido, sofre dano normal. Se tiver sucesso no bloqueio, não sofre o dano total, mas sofre um <strong>Dano Residual</strong> (igual ao mod. de Força do atacante ou RANK da técnica do inimigo).
+          Defesa com corpo, arma ou escudo. Substitui a Destreza pela <strong style="color:var(--gold-light);">Força</strong> na CA. Se for atingido, sofre dano normal. Se tiver sucesso no bloqueio, não sofre o dano total, mas sofre um <strong>Dano Residual</strong>: mod. de Força do atacante (ataque comum) ou RANK da técnica × Nível do atacante, nunca maior que o dano total da técnica (ao bloquear uma técnica). A RD da armadura reduz esse dano normalmente.
         </li>
         <li style="margin-bottom:1rem; border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem;">
           <strong style="color:var(--gold-light); font-size:1.05rem;">Esquiva (Ação Reativa)</strong><br>
-          Mais difícil, porém mais segura. Sofre <strong style="color:var(--gold-light);">-6 de penalidade na CA</strong>. Se tiver sucesso, você não sofre nenhum dano.
-          <div style="margin-top:0.5rem; font-style:italic; color:#aaa;">Nota: Gaste 2 pontos de cosmo em qualquer manobra (Bloqueio ou Esquiva) para ganhar +1 na CA contra aquele ataque.</div>
+          Mais difícil, porém mais segura. Sofre <strong style="color:var(--gold-light);">-6 de penalidade na CA</strong>. Se tiver sucesso, você não sofre nenhum dano (nem o Dano Residual).
+          <div style="margin-top:0.5rem; font-style:italic; color:#aaa;">Nota: Gaste 2 pontos de cosmo em qualquer manobra (Bloqueio ou Esquiva) para ganhar +1 na CA contra aquele ataque. No ataque, o custo é o dobro: 4 pontos de Cosmo para +1 no bônus de ataque.</div>
+        </li>
+        <li style="margin-bottom:1rem; border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem;">
+          <strong style="color:var(--gold-light); font-size:1.05rem;">Ação de Contragolpe</strong><br>
+          "Segurar" a ação (como uma ação preparada) para anular a técnica inimiga. Resolve-se com uma disputa: <strong style="color:var(--gold-light);">d20 + RANK da técnica</strong> (ou + Bônus de Ataque, em ataque comum) de ambas as partes. O maior resultado vence e neutraliza o perdedor.
         </li>
         <li style="border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem;">
-          <strong style="color:var(--gold-light); font-size:1.05rem;">Ação de Contragolpe</strong><br>
-          "Segurar" a ação para anular a técnica inimiga. Resolve-se com uma disputa: <strong style="color:var(--gold-light);">d20 + Cosmo Atual + RANK da técnica</strong> (de ambas as partes). O maior resultado vence e neutraliza o perdedor.
+          <strong style="color:var(--gold-light); font-size:1.05rem;">Velocidade da Luz (a partir do 7º Sentido)</strong><br>
+          Ação de Movimento + 10 Cosmo/rodada para manter. Concede +10 na CA contra ataques comuns, deslocamento livre pelo campo de batalha, 1 ataque extra por +5 de BBA (resolvido em uma única rolagem multiplicada) e iniciativa em vantagem (2d20). Após 3 rodadas seguidas, teste de Fortitude CD 25 ou entra em Exaustão Cósmica e o Cosmo cai a 0.
         </li>
       </ul>
+
+      <p style="font-size:0.95rem; line-height:1.6; color:#aaa; font-style:italic; margin-top:1rem;">
+        Manobras (Agarrar, Atropelar, Encontrão, Desarmar) estão detalhadas na seção de Combate.
+      </p>
     </div>
 
     <div class="cosmos-card p-6">
@@ -125,7 +133,7 @@ const RESUME = `
           <strong style="color:var(--gold-light);">Reparo por Sangue:</strong> Se quebrar, um Reparador de Armaduras (Concentração CD 20) pode sacrificar seus PVs (1 PV doedeiro cura 1 PV da armadura). PVs sacrificados assim demoram <strong>uma semana inteira</strong> para voltar.
         </li>
         <li style="margin-bottom:0.75rem;">
-          <strong style="color:var(--gold-light);">Evolução (Comunhão Cósmica):</strong> Se perder mais de 50% dos PVs e for curada 100%, o cavaleiro pode gastar <strong style="color:var(--gold-light);">250 XP da armadura</strong> e testar uma evolução para ganhar bônus aleatórios.
+          <strong style="color:var(--gold-light);">Evolução (Comunhão Cósmica):</strong> Se perder mais de 50% dos PVs totais e for curada 100%, o cavaleiro pode gastar o XP indicado na Tabela de Evolução de Armaduras para subir um nível e receber os bônus fixos daquele nível.
         </li>
         <li>
           <strong style="color:var(--gold-light);">Memória de Sangue:</strong> Se trocar de armadura (ex: Bronze para Ouro), a nova armadura "lê" o sangue e herda instantaneamente os bônus ganhos nas evoluções passadas.
